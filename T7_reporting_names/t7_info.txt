@@ -1,0 +1,21 @@
+reportingID (review portal lingo)
+compound_id (in reporting name table, taxonomer/utils/reporting_name_resources/explify_reporting_name_info_table.txt)
+26706_10760
+
+reporting_id (in reporting name table)
+26706
+
+taxid
+10760
+
+seqids
+32745
+32746
+32747
+32748
+32749
+32750
+32751
+32752
+32753
+32754

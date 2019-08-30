@@ -1,0 +1,4 @@
+value	mean	std
+genome_cov	58	12
+18s_cov	2717	159
+copy_num	47	10

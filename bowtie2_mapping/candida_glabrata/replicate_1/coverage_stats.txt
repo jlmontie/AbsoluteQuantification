@@ -1,0 +1,5 @@
+value	mean	std
+pct_genome_cov	0	N/A
+genome_cov	95	4
+18s_cov	580	283
+copy_num	6	3
