@@ -55,15 +55,21 @@ def get_organism_counts(file, org_count_dict_ls, dilution, ctrl_count):
     return org_count_dict_ls
 
 
-def get_summary_path(row):
+def get_summary_file(row, organism):
     classification_outdir = row['Diagnostic Output Dir']
+    seq_sple = row['Seq Sple']
+    summary_files = os.listdir(classification_outdir)
+    seq_sple_summary = [file for file in summary_files if seq_sple in file]
+    organism_summary = [file for file in seq_sple_summary if organism in file]
+    
+
 
 
 def get_counts(row):
-    summary_path = 'lod_dxsm/community_std_titration'
+    summary_path = row['Diagnostic Output Dir']
     summary_files = os.listdir(summary_path)
     seq_sple = row['Seq Sple']
-    dilution = row['Dilution']
+    dilution = row['Dilution Factor']
     dxsm_bac = [dxsm_path for dxsm_path in summary_files
                 if seq_sple in dxsm_path.lower() and 'bacterial' in dxsm_path]
     dxsm_fungpar = [dxsm_path for dxsm_path in summary_files
@@ -73,6 +79,7 @@ def get_counts(row):
     # Skip if file is empty
     if os.stat(os.path.join(summary_path, dxsm_bac[0])).st_size == 0:
         return
+    if dxsm_bac
     file_bac = open(os.path.join(summary_path, dxsm_bac[0]))
     file_fungpar = open(os.path.join(summary_path, dxsm_fungpar[0]))
     file_vir = open(os.path.join(summary_path, dxsm_vir[0]))
