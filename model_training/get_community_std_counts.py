@@ -55,6 +55,10 @@ def get_organism_counts(file, org_count_dict_ls, dilution, ctrl_count):
     return org_count_dict_ls
 
 
+def get_summary_path(row):
+    classification_outdir = row['Diagnostic Output Dir']
+
+
 def get_counts(row):
     summary_path = 'lod_dxsm/community_std_titration'
     summary_files = os.listdir(summary_path)
@@ -83,56 +87,36 @@ def get_counts(row):
         print(seq_sple)
         return
 
-    #### Troubleshoot ####
-    if ctrl_count == 0:
-        print(seq_sple)
-    #### End Troubleshoot ####
-
     # Get 16S gene counts for bacteria
     org_count_dict_ls = []
     org_count_dict_ls = get_organism_counts(file_bac, org_count_dict_ls, dilution, ctrl_count)
 
     # Get 18s gene counts for fungal
     org_count_dict_ls = get_organism_counts(file_fungpar, org_count_dict_ls, dilution, ctrl_count)
-    #### Troubleshoot ####
-    for org_count_dict in org_count_dict_ls:
-        if org_count_dict['Read Counts'] == 0:
-            print(seq_sple)
-            print(org_count_dict['taxid'])
-    # if 0 in [org_count_dict['Read Counts'] for org_count_dict in org_count_dict_ls]:
-    #     print(seq_sple)
-    #     print()
-    #### End Troubleshoot ####
     file_bac.close()
     file_fungpar.close()
     file_vir.close()
     return org_count_dict_ls
 
 
-fqo = pd.read_csv('data/FastQataloguer_CommunityStdTitration_2019-07-26.csv')
-# bad_sample = 'idbd-d100302'
-# fqo = fqo[~(fqo['Accession'] == bad_sample)]
-concentrations = pd.read_csv('data/CommunityStandardConcentrations.csv')
-initial_conc = pd.Series(np.log10(concentrations['10x dil'].values), index=concentrations['taxid']).to_dict()
+fqo = pd.read_csv('model_training/FastQataloguer_CommunityStdTitration_2019-07-26.csv')
+concentrations = pd.read_csv('model_training/CommunityStandardConcentrations.csv')
+stock_conc = pd.Series(concentrations['stock copies'].values, index=concentrations['taxid']).to_dict()
 
 with open('data/community_standard_panel.json') as panel_file:
     panel_orgs = json.load(panel_file)
 org_taxids = [int(key) for key in panel_orgs]
 
-fqo['Dilution'] = fqo['Sample Name'].str.split('-', expand=True)[1].str[0].astype(int) * -1 + 1
-fqo['Var Group'] = fqo['Sample Name'].str.split('-', expand=True)[0].str[0]
-fqo = fqo.sort_values(['Var Group', 'Dilution'])
-fqo_group = fqo.groupby('Var Group')
-for group in fqo_group:
-    group_df = group[1]
-    dict_ls = []
-    for idx, row in group_df.iterrows():
-        dict_ls.append(get_counts(row))
-    # Combine list of dictionaries into a single dictionary
-    d = defaultdict(lambda: defaultdict(list))
-    for ls in dict_ls:
-        for count_dict in ls:
-            for key in ["Read Counts", "Concentration", "Dilution", "Ctrl Counts"]:
-                d[count_dict['taxid']][key].append(count_dict[key])
-    with open(f'data/community_std_counts/community_std_counts_16s_{group[0]}.json', 'w') as outfile:
-        json.dump(d, outfile)
+fqo = fqo.sort_values(['Dilution Factor'])
+dict_ls = []
+for idx, row in fqo.iterrows():
+    dict_ls.append(get_counts(row))
+# Combine list of dictionaries into a single dictionary
+d = defaultdict(lambda: defaultdict(list))
+for ls in dict_ls:
+    for count_dict in ls:
+        for key in ["Read Counts", "Concentration", "Dilution", "Ctrl Counts"]:
+            d[count_dict['taxid']][key].append(count_dict[key])
+with open(f'model_training/community_std_counts.json', 'w') as outfile:
+    json.dump(d, outfile)
+
