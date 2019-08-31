@@ -1,0 +1,30 @@
+# Model training input files
+# Three input files are required:
+#
+# 1) FastQataloguerOutput. The path to the "Export Table" output from
+# FastQataloguer (fastqataloguer.idbydna.com). This file should include only
+# the dilution series samples for which the absolute quantification model
+# should be trained.
+# 2) OrganismStockConcentrations. The path to a comma-separated file
+# with at least the folowing columns describing each organism in the sample:
+#  taxid (organism taxid)
+#  organism (organism name)
+#  stock_concentration (the initial concentration of each organism in the mix)
+# 3) SampleDilutionFactors. The path to a comma-separated file describing the
+# dilution factors for each sample. The following columns are required:
+#  Accession (the accession number of the sample)
+#  Dilution Factor (the dilution factor for the sample, e.g. 10 for a 10X dil)
+
+---
+# REQUIRED INPUTS
+FastQataloguerOutput: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/FastQataloguer_CommunityStdTitration_2019-07-26.csv
+OrganismStockConcentrations: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/CommunityStandardConcentrations.csv
+SampleDilutionFactors: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/SampleDilutionFactors.csv
+
+# OPTIONAL INPUTS
+# Set to None to turn off
+Options:
+  # Alternative directory for output files. Default is current working directory.
+  OutputDir: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/output
+  # Alternative directory containing summary files.
+  SummaryFilePath: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/lod_dxsm/community_std_titration
