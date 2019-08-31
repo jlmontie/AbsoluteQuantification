@@ -8,42 +8,55 @@ import gzip
 from collections import defaultdict
 import re
 import plotly.express as px
+from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 pd.set_option('mode.chained_assignment', None)
 import yaml
+from scipy.stats import linregress
+import numpy as np
 
 
 class titration_fit(object):
-    def __init__(self, args):
+    def __init__(self, args, fit_coverage=True):
         """
         Trains a model for absolute quantification from dilution series of a
         quantified organism mix.
-        args is a tuple or list of the following:
-            seq_sple_ls (list): the sample Seq Sple identifiers.
-            summary_dir_ls (list): the directories containing the output summary
-            files for each sample.
-            dilution_factor_ls (list): the dilution factor for each sample.
-            ctrls_ls (list): the control organism names for each sample. **ONLY
-            WORKS FOR PHAGE CTRLS CURRENTLY (i.e., only parses viral summary).
-            org_names (dict): names of the organisms in the mix keyed by taxid.
-            org_conc (dict): stock concentration of the organisms keyed by
-            taxid.
+        args:
+            args (tuple or list) containing:
+                seq_sple_ls (list): the sample Seq Sple identifiers.
+                summary_dir_ls (list): the directories containing the output summary
+                files for each sample.
+                dilution_factor_ls (list): the dilution factor for each sample.
+                ctrls_ls (list): the control organism names for each sample. **ONLY
+                WORKS FOR PHAGE CTRLS CURRENTLY (i.e., only parses viral summary).
+                org_names (dict): names of the organisms in the mix keyed by taxid.
+                org_conc (dict): stock concentration of the organisms keyed by
+                taxid.
+            fit_coverage (boolean): fit model with lower quartile of coverage,
+            otherwise fit to rDNA read counts.
         """
-        self.seq_sple_ls = args[0]
-        self.summary_dir_ls = args[1]
-        self.dilution_ls = args[2]
-        self.ctrls_ls = args[3]
-        self.org_info = args[4]
+        self._seq_sple_ls = args[0]
+        self._summary_dir_ls = args[1]
+        self._dilution_ls = args[2]
+        self._ctrls_ls = args[3]
+        self._org_info = args[4]
+        self._rdna_copies = args[5]
         org_counts = []
         print("Calculating organism coverages")
         for seq_sple, summary_dir, dilution, ctrl in \
-            zip(self.seq_sple_ls, self.summary_dir_ls, self.dilution_ls,
-                self.ctrls_ls):
+            zip(self._seq_sple_ls, self._summary_dir_ls, self._dilution_ls,
+                self._ctrls_ls):
             org_count_dict_ls = \
                 self._get_counts(seq_sple, summary_dir, dilution, ctrl)
             org_counts.extend(org_count_dict_ls)
         print("Combining coverage dictionaries")
         self.org_counts = self._combine_dictionaries(org_counts)
+        self._fit_coverage = fit_coverage
+        self.slope_ = np.nan
+        self.intercept_ = np.nan
+        self.fit_metrics_ = {}
+        self._coverage_log = []
+        self._concentration_log = []
 
 
     def _calculate_lower_quart_cov(self, cov_str):
@@ -70,19 +83,21 @@ class titration_fit(object):
     def _get_organism_counts(self, file, org_count_dict_ls, dilution, ctrl_count):
         for line in file:
             cov_info = json.loads(line)
-            if cov_info['taxid'] in self.org_info:
+            if cov_info['taxid'] in self._org_info:
                 taxid = cov_info['taxid']
-                organism = self.org_info[taxid]['organism']
-                conc = self.org_info[taxid]['stock_concentration'] / dilution
+                organism = self._org_info[taxid]['organism']
+                conc = self._org_info[taxid]['stock_concentration'] / dilution
                 gene_info = cov_info['gene_info']
                 for gene in gene_info:
                     if gene['geneid'] == 0:
                         cov_str = gene['coverage_string']
                         lower_quart_cov = self._calculate_lower_quart_cov(cov_str)
+                        read_count = gene['read_count']
                 org_count_dict_ls.extend([{
                     "taxid": taxid,
                     "Organism": organism,
                     "Coverage": lower_quart_cov,
+                    "Read Counts": read_count,
                     "Concentration": conc,
                     "Dilution": dilution,
                     "Ctrl Counts": ctrl_count
@@ -112,7 +127,7 @@ class titration_fit(object):
         # Combine list of dictionaries into a single dictionary
         d = defaultdict(lambda: defaultdict(list))
         for count_dict in dict_ls:
-            for key in ["Coverage", "Concentration", "Dilution", "Ctrl Counts"]:
+            for key in ["Coverage", "Concentration", "Dilution", "Ctrl Counts", "Read Counts"]:
                 d[count_dict['taxid']][key].append(count_dict[key])
         return d
 
@@ -146,3 +161,105 @@ class titration_fit(object):
         file_fungpar.close()
         file_vir.close()
         return org_count_dict_ls
+
+
+    def fit(self):
+        if self._fit_coverage:
+            cov_key = 'Coverage'
+        else:
+            cov_key = 'Read Counts'
+        cov_norm_log_ls = []
+        conc_log_ls = []
+        for org in self.org_counts.keys():
+            org_dict = self.org_counts[org]
+            conc = np.array(org_dict["Concentration"])
+            reads, ctrls = org_dict[cov_key], org_dict['Ctrl Counts']
+            copy_number_normalizer = self._rdna_copies[str(org)]['copies']
+            reads = np.array(reads) / copy_number_normalizer
+            reads_nonzero_idx = np.argwhere(reads > 0).reshape(-1)
+            reads_nonzero = reads[reads_nonzero_idx]
+            ctrls_nonzero = np.array(ctrls)[reads_nonzero_idx]
+            conc_nonzero = np.log10(conc[reads_nonzero_idx])
+            reads_log = np.log10(reads_nonzero)
+            slope, intercept, r_value, p_value, std_err = linregress(reads_log, conc_nonzero)
+            fit_vals_y = slope * reads_log + intercept
+            fit_vals_x = reads_log
+            # Normalized
+            reads_norm = reads_nonzero / ctrls_nonzero
+            reads_norm_log = np.log10(reads_norm)
+            slope_norm, intercept_norm, r_value_norm, p_value_norm, std_err_norm = \
+                linregress(reads_norm_log, conc_nonzero)
+            fit_vals_norm_y = slope_norm * reads_norm_log + intercept_norm
+            fit_vals_norm_x = reads_norm_log
+            cov_norm_log_ls.extend(reads_norm_log)
+            conc_log_ls.extend(conc_nonzero)
+        slope, intercept, rval, pval, stderr = linregress(cov_norm_log_ls, conc_log_ls)
+        self.slope_ = slope
+        self.intercept_ = intercept
+        self.fit_metrics_ = {'R-sqr': rval**2, 'P-value': pval, 'Stderr': stderr}
+        self._coverage_log = np.array(cov_norm_log_ls)
+        self._concentration_log = np.array(conc_log_ls)
+
+
+    def save_model(self, outdir=None):
+        if outdir is None:
+            outdir = os.getcwd()
+        with open(os.path.join(outdir, 'model_coefficients.txt'), 'w') as outfile:
+            outfile.write(f"slope\t{self.slope_}\nintercept\t{self.intercept_}")
+
+
+    def plot_fit(self, outdir=None, save_fig=True):
+        if outdir is None:
+            outdir = os.getcwd()
+        if self._fit_coverage:
+            xtitle = 'log(Normalized Coverage)'
+        else:
+            xtitle = 'log(Normalized Read Count)'
+        y_hat = self.slope_ * self._coverage_log + self.intercept_
+        fig = make_subplots(rows=1, cols=2, subplot_titles=('Fit', 'Residuals'))
+        # Data scatter
+        fig.add_trace(
+            go.Scatter(
+                x=self._coverage_log,
+                y=self._concentration_log,
+                mode='markers',
+                showlegend=False
+            ),
+            row=1, col=1
+        )
+        # Fit line
+        fig.add_trace(
+            go.Scatter(
+                x=self._coverage_log,
+                y=y_hat,
+                showlegend=False,
+                mode='lines'
+            ),
+            row=1, col=1
+        )
+        # Residuals
+        fig.add_trace(
+            go.Histogram(
+                x=y_hat - self._concentration_log,
+                showlegend=False
+            ),
+            row=1, col=2
+        )
+        fig.update_xaxes(title_text=xtitle, row=1, col=1)
+        fig.update_yaxes(title_text='log(Genomic Equivalents) / ml', row=1, col=1)
+        fig.update_xaxes(title_text='Absolute Deviation', row=1, col=2)
+        fig.update_layout(go.Layout(
+            annotations=[
+                dict(
+                    xref='x1',
+                    yref='y1',
+                    x=np.mean(self._coverage_log),
+                    y=np.max(self._concentration_log),
+                    text=f"Slope: {self.slope_:0.2f}<br>R-sq: {self.fit_metrics_['R-sqr']:0.2f}<br>Std err: {self.fit_metrics_['Stderr']:0.2f}"
+                )
+            ]
+        ))
+        fig.show()
+        if save_fig:
+            fig.write_html(os.path.join(outdir, 'regression_plot.html'))
+

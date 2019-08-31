@@ -18,8 +18,9 @@
 ---
 # REQUIRED INPUTS
 FastQataloguerOutput: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/FastQataloguer_CommunityStdTitration_2019-07-26.csv
-OrganismStockConcentrations: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/CommunityStandardConcentrations.csv
+OrganismStockConcentrations: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/CommunityStandardConcentrationsNoFungi.csv
 SampleDilutionFactors: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/SampleDilutionFactors.csv
+rDnaResourceFile: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/rrndb_16s_copies_with_18s.json
 
 # OPTIONAL INPUTS
 # Set to None to turn off

@@ -22,11 +22,19 @@ def prep_input_files(config):
     dilution_ls = fqo_merged['Dilution Factor'].tolist()
     ctrls_ls = fqo_merged['Control Int Org Names'].tolist()
     org_info_dict = initial_conc.to_dict('index')
-    return seq_sple_ls, summary_dir_ls, dilution_ls, ctrls_ls, org_info_dict
+    with open(config['rDnaResourceFile']) as rdna_file:
+        rDNA_copies = json.load(rdna_file)
+    return seq_sple_ls, summary_dir_ls, dilution_ls, ctrls_ls, org_info_dict, rDNA_copies
 
 
 def fit_model(input_info):
-    model = titration_fit(input_info)
+    model = titration_fit(input_info, fit_coverage=True)
+    model.fit()
+    print(f"Slope: {model.slope_}")
+    print(f"Intercept: {model.intercept_}")
+    print(f"Fit metrics: {model.fit_metrics_}")
+    model.save_model(outdir=config['Options']['OutputDir'])
+    model.plot_fit(save_fig=True, outdir=config['Options']['OutputDir'])
 
 
 # with open('../data/community_standard_panel.json') as panel_file:
