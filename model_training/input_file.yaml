@@ -26,6 +26,6 @@ rDnaResourceFile: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQua
 # Set to None to turn off
 Options:
   # Alternative directory for output files. Default is current working directory.
-  OutputDir: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/output
+  OutputDir: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/output_resp_extraction
   # Alternative directory containing summary files.
   SummaryFilePath: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/lod_dxsm/community_std_titration
