@@ -20,4 +20,4 @@ data/geneious_alignments/cryptococcus_neoformans_full_genome
 data/ref_gene_fastas
 *.cov
 T7_reporting_names/t7_simulated_reads.fa
-
+nohup.out
