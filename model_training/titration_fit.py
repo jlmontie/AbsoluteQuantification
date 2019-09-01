@@ -107,7 +107,7 @@ class titration_fit(object):
 
     def _get_summary_file(self, seq_sple, summary_dir, organism):
         summary_files = os.listdir(summary_dir)
-        seq_sple_filter = [file for file in summary_files if seq_sple in file]
+        seq_sple_filter = [file for file in summary_files if seq_sple in file.lower()]
         organism_filter = [file for file in seq_sple_filter if organism in file]
         lib_filter = [file for file in organism_filter if 'rna' in file]
         summary_filter = [file for file in lib_filter if 'dxsm.out.summary' in file]
