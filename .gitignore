@@ -8,7 +8,6 @@ mnt
 .DS_Store
 AbsoluteQuantification.code-workspace
 temp-plot.html
-test.py
 .ipynb_checkpoints
 __pycache__
 bowtie2_mapping/190812*
