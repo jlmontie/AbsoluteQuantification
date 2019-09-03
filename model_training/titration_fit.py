@@ -170,56 +170,43 @@ class titration_fit(object):
         return org_count_dict_ls
 
 
+    def _get_log_norm_nonzero_vals(self, taxid, org_dict):
+        if self._fit_coverage:
+            cov_key = 'Coverage'
+        else:
+            cov_key = 'Read Counts'
+        conc = np.array(org_dict["Concentration"])
+        cov, ctrls = org_dict[cov_key], org_dict['Ctrl Counts']
+        copy_number_normalizer = self._rdna_copies[str(taxid)]['copies']
+        cov = np.array(cov) / copy_number_normalizer
+        cov_nonzero_idx = np.argwhere(cov > 0).reshape(-1)
+        cov_nonzero = cov[cov_nonzero_idx]
+        ctrls_nonzero = np.array(ctrls)[cov_nonzero_idx]
+        conc_nonzero = np.log10(conc[cov_nonzero_idx])
+        cov_norm = cov_nonzero / ctrls_nonzero
+        cov_norm_log = np.log10(cov_norm)
+        return cov_norm_log, conc_nonzero
+
+
     def fit(self):
         """
         Fit the model with the data given in the initialization of the class.
         args:
             None
         """
-        if self._fit_coverage:
-            cov_key = 'Coverage'
-        else:
-            cov_key = 'Read Counts'
         cov_norm_log_ls = []
         conc_log_ls = []
-        accession_ls = []
-        taxids_ls = []
-        org_names_ls = []
-        for org in self.org_counts.keys():
-            org_dict = self.org_counts[org]
-            conc = np.array(org_dict["Concentration"])
-            reads, ctrls = org_dict[cov_key], org_dict['Ctrl Counts']
-            copy_number_normalizer = self._rdna_copies[str(org)]['copies']
-            reads = np.array(reads) / copy_number_normalizer
-            reads_nonzero_idx = np.argwhere(reads > 0).reshape(-1)
-            reads_nonzero = reads[reads_nonzero_idx]
-            ctrls_nonzero = np.array(ctrls)[reads_nonzero_idx]
-            conc_nonzero = np.log10(conc[reads_nonzero_idx])
-            reads_log = np.log10(reads_nonzero)
-            slope, intercept, r_value, p_value, std_err = linregress(reads_log, conc_nonzero)
-            fit_vals_y = slope * reads_log + intercept
-            fit_vals_x = reads_log
-            # Normalized
-            reads_norm = reads_nonzero / ctrls_nonzero
-            reads_norm_log = np.log10(reads_norm)
-            slope_norm, intercept_norm, r_value_norm, p_value_norm, std_err_norm = \
-                linregress(reads_norm_log, conc_nonzero)
-            fit_vals_norm_y = slope_norm * reads_norm_log + intercept_norm
-            fit_vals_norm_x = reads_norm_log
-            cov_norm_log_ls.extend(reads_norm_log)
-            conc_log_ls.extend(conc_nonzero)
-            accession_ls.extend(org_dict['Accession'])
-            org_names_ls.extend([ncbi.get_name(org)] * len(org_dict['Accession']))
-            taxids_ls.extend([org] * len(org_dict['Accession']))
+        for taxid, org_dict in self.org_counts.items():
+            org_dict = self.org_counts[taxid]
+            cov_norm_log, conc_log = self._get_log_norm_nonzero_vals(taxid, org_dict)
+            cov_norm_log_ls.extend(cov_norm_log)
+            conc_log_ls.extend(conc_log)
         slope, intercept, rval, pval, stderr = linregress(cov_norm_log_ls, conc_log_ls)
         self.slope_ = slope
         self.intercept_ = intercept
         self.fit_metrics_ = {'R-sqr': rval**2, 'P-value': pval, 'Stderr': stderr}
-        self._coverage_log = np.array(cov_norm_log_ls)
-        self._concentration_log = np.array(conc_log_ls)
-        self._accessions_extended = accession_ls
-        self._org_names_extended = org_names_ls
-        self._taxids_extended = taxids_ls
+        self._coverage_log = cov_norm_log_ls
+        self._concentration_log = conc_log_ls
 
 
     def save_model(self, outdir=None):
@@ -251,41 +238,71 @@ class titration_fit(object):
             xtitle = 'log(Normalized Coverage)'
         else:
             xtitle = 'log(Normalized Read Count)'
-        text = [f"Accession: {accession}<br>Organism: {org}<br>Taxid: {taxid}"
-                for accession, org, taxid in zip(self._accessions_extended,
-                                                 self._org_names_extended,
-                                                 self._taxids_extended)]
-        y_hat = self.slope_ * self._coverage_log + self.intercept_
+        # text = [f"Accession: {accession}<br>Organism: {org}<br>Taxid: {taxid}"
+        #         for accession, org, taxid in zip(self._accessions_extended,
+        #                                          self._org_names_extended,
+        #                                          self._taxids_extended)]
+        # y_hat = self.slope_ * self._coverage_log + self.intercept_
+        colors = [
+            '#1f77b4',
+            '#ff7f0e',
+            '#2ca02c',
+            '#d62728',
+            '#9467bd',
+            '#8c564b',
+            '#e377c2',
+            '#7f7f7f',
+            '#bcbd22',
+            '#17becf'
+        ]
         fig = make_subplots(rows=1, cols=2, subplot_titles=('Fit', 'Residuals'))
-        # Data scatter
-        fig.add_trace(
-            go.Scatter(
-                x=self._coverage_log,
-                y=self._concentration_log,
-                mode='markers',
-                showlegend=False,
-                hovertext=text
-            ),
-            row=1, col=1
-        )
+        cov_norm_log_ls = []
+        y_hat_ls = []
+        for idx, (taxid, org_dict) in enumerate(self.org_counts.items()):
+            org_dict = self.org_counts[taxid]
+            cov_norm_log, conc_log = self._get_log_norm_nonzero_vals(taxid, org_dict)
+            y_hat = self.slope_ * cov_norm_log + self.intercept_
+            cov_norm_log_ls.extend(cov_norm_log)
+            y_hat_ls.extend(y_hat)
+            name = ncbi.get_name(taxid)
+            # Data scatter
+            fig.add_trace(
+                go.Scatter(
+                    x=cov_norm_log,
+                    y=conc_log,
+                    mode='markers',
+                    name=name,
+                    legendgroup=taxid,
+                    marker = dict( 
+                        color=colors[idx]
+                    )
+                ),
+                row=1, col=1
+            )
+            # Residuals
+            fig.add_trace(
+                go.Histogram(
+                    x=y_hat - conc_log,
+                    name=name,
+                    legendgroup=taxid,
+                    showlegend=False, 
+                    marker = dict( 
+                        color=colors[idx]
+                    )
+                ),
+                row=1, col=2
+            )
         # Fit line
         fig.add_trace(
             go.Scatter(
-                x=self._coverage_log,
-                y=y_hat,
+                x=cov_norm_log_ls,
+                y=y_hat_ls,
                 showlegend=False,
                 mode='lines'
             ),
             row=1, col=1
         )
         # Residuals
-        fig.add_trace(
-            go.Histogram(
-                x=y_hat - self._concentration_log,
-                showlegend=False
-            ),
-            row=1, col=2
-        )
         fig.update_xaxes(title_text=xtitle, row=1, col=1)
         fig.update_yaxes(title_text='log(Genomic Equivalents) / ml', row=1, col=1)
         fig.update_xaxes(title_text='Absolute Deviation', row=1, col=2)
