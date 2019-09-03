@@ -2,31 +2,38 @@ from absoluteQuant import absoluteQuant
 import json
 import glob
 import os
+import gzip
 
 
 def read_summary_files(path):
     summary_object_ls = []
-    with open(path) as summary_file:
-        for line in summary_file:
-            summary_object_ls.append(json.loads(line))
+    if path.endswith('.gz'):
+        with gzip.open(path,'rt') as summary_file:
+            for line in summary_file:
+                summary_object_ls.append(json.loads(line))
+    else:
+        with open(path,'rt') as summary_file:
+            for line in summary_file:
+                summary_object_ls.append(json.loads(line))
     return summary_object_ls
 
 
-summary_file_dir = 'lod_dxsm/community_std_titration'
-batch_json_path = 'final_script/190724B03.json'
-rdna_resource_path = 'data/rrndb_16s_copies.json'
-out_dir = 'final_script/summary_files_with_quantification'
+summary_file_dir = '/srv/idbydna-group3/results/idbd_dev/_190828_NB551543_0126_AHMW75AFXY_190829/tax'
+batch_json_path = '/srv/idbydna-group3/results/idbd_dev/_190828_NB551543_0126_AHMW75AFXY_190829/batch/190827B02.json'
+rdna_resource_path = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/rrndb_16s_copies.json'
+out_dir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/arup_urine_summary_files_with_quantification'
 
 with open(batch_json_path) as batch_file:
     batch = json.load(batch_file)
 with open(rdna_resource_path) as resource_file:
     rdna_copy_numbers = json.load(resource_file)
-
 for library in batch['libraries']:
     seq_sple = library['seqSple']
+    print(seq_sple)
     # Get summary files
-    summary_file_paths = glob.glob(os.path.join(summary_file_dir, seq_sple.lower() + '*'))
-    summary_file_paths = [path for path in summary_file_paths if path.endswith('dxsm.out.summary')]
+    summary_file_paths = glob.glob(os.path.join(summary_file_dir, seq_sple + '*'))
+    summary_file_paths = [path for path in summary_file_paths if 'dxsm.out.summary' in path]
+    summary_file_paths = [path for path in summary_file_paths if not path.endswith('.done')]
     if len(summary_file_paths) < 3:  # Skip if summary files not present
         continue
     viral_path = [path for path in summary_file_paths if 'rna.viral' in path][0]
@@ -37,7 +44,7 @@ for library in batch['libraries']:
     fungpar_summary = read_summary_files(fungpar_path)
     # Get viral counts
     internal_controls = library['internalControls']['organisms']
-    viral_reportingIds = [ctrl_org['reportingId'] for ctrl_org in internal_controls]
+    viral_reportingIds = '26706_10760'  # if not hardcoded: [ctrl_org['reportingId'] for ctrl_org in internal_controls]
     viral_counts = []
     for org_info in viral_summary:
         if org_info['reporting_id'] in viral_reportingIds:
@@ -46,9 +53,9 @@ for library in batch['libraries']:
     bacterial_summary_with_quant = absoluteQuant(viral_counts, bacterial_summary, rdna_copy_numbers)
     fungpar_summary_with_quant = absoluteQuant(viral_counts, fungpar_summary, rdna_copy_numbers)
     # Write modified summary files
-    with open(os.path.join(out_dir, os.path.basename(bacterial_path)), 'w') as bacterial_out:
+    with open(os.path.join(out_dir, os.path.splitext(os.path.basename(bacterial_path))[0]), 'w') as bacterial_out:
         for line in bacterial_summary_with_quant:
             bacterial_out.write(f"{json.dumps(line)}\n")
-    with open(os.path.join(out_dir, os.path.basename(fungpar_path)), 'w') as fungpar_out:
+    with open(os.path.join(out_dir, os.path.splitext(os.path.basename(fungpar_path))[0]), 'w') as fungpar_out:
         for line in fungpar_summary_with_quant:
             fungpar_out.write(f"{json.dumps(line)}\n")

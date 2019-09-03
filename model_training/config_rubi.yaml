@@ -23,9 +23,18 @@ SampleDilutionFactors: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantifi
 rDnaResourceFile: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/rrndb_16s_copies_with_18s.json
 
 # OPTIONAL INPUTS
-# Set to None to turn off
-Options:
+Paths:
   # Alternative directory for output files. Default is current working directory.
   OutputDir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/output_urine_extraction
   # Alternative directory containing summary files.
   SummaryFilePath: /srv/idbydna-group3/results/idbd_dev/190830_NB551702_0056_AHMVFMAFXY/tax
+
+Output:
+  # Show fit plot (yes or no)
+  ShowPlot: no
+  # Save fit plot (yes or no)
+  SavePlot: yes
+
+Fit:
+  # Fit coverage. Otherwise will fit read counts
+  FitCoverage: yes

@@ -17,6 +17,7 @@ data/geneious_alignments/aspergillus_fumigatus_full_genome
 data/geneious_alignments/candida_albicans_full_genome
 data/geneious_alignments/cryptococcus_neoformans_full_genome
 data/ref_gene_fastas
+data/arup_urine_summary_files_with_quantification
 *.cov
 T7_reporting_names/t7_simulated_reads.fa
 nohup.out

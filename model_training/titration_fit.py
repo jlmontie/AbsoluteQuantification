@@ -14,6 +14,8 @@ pd.set_option('mode.chained_assignment', None)
 import yaml
 from scipy.stats import linregress
 import numpy as np
+from ncbi_taxonomy_utils import ncbi_taxonomy
+ncbi = ncbi_taxonomy()
 
 
 class titration_fit(object):
@@ -32,8 +34,8 @@ class titration_fit(object):
                 org_names (dict): names of the organisms in the mix keyed by taxid.
                 org_conc (dict): stock concentration of the organisms keyed by
                 taxid.
-            fit_coverage (boolean): fit model with lower quartile of coverage,
-            otherwise fit to rDNA read counts.
+            fit_coverage (bool): fit model with lower quartile of coverage,
+            otherwise fit to rDNA read counts. Default True.
         """
         self._seq_sple_ls = args[0]
         self._summary_dir_ls = args[1]
@@ -46,9 +48,13 @@ class titration_fit(object):
         for seq_sple, summary_dir, dilution, ctrl in \
             zip(self._seq_sple_ls, self._summary_dir_ls, self._dilution_ls,
                 self._ctrls_ls):
+
             org_count_dict_ls = \
                 self._get_counts(seq_sple, summary_dir, dilution, ctrl)
+            for org_count_dict in org_count_dict_ls:
+                org_count_dict.update({'Accession': seq_sple})
             org_counts.extend(org_count_dict_ls)
+
         print("Combining coverage dictionaries")
         self.org_counts = self._combine_dictionaries(org_counts)
         self._fit_coverage = fit_coverage
@@ -100,7 +106,7 @@ class titration_fit(object):
                     "Read Counts": read_count,
                     "Concentration": conc,
                     "Dilution": dilution,
-                    "Ctrl Counts": ctrl_count
+                    "Ctrl Counts": ctrl_count,
                 }])
         return org_count_dict_ls
 
@@ -127,7 +133,8 @@ class titration_fit(object):
         # Combine list of dictionaries into a single dictionary
         d = defaultdict(lambda: defaultdict(list))
         for count_dict in dict_ls:
-            for key in ["Coverage", "Concentration", "Dilution", "Ctrl Counts", "Read Counts"]:
+            for key in ["Coverage", "Concentration", "Dilution", "Ctrl Counts",
+                        "Read Counts", "Accession"]:
                 d[count_dict['taxid']][key].append(count_dict[key])
         return d
 
@@ -164,12 +171,20 @@ class titration_fit(object):
 
 
     def fit(self):
+        """
+        Fit the model with the data given in the initialization of the class.
+        args:
+            None
+        """
         if self._fit_coverage:
             cov_key = 'Coverage'
         else:
             cov_key = 'Read Counts'
         cov_norm_log_ls = []
         conc_log_ls = []
+        accession_ls = []
+        taxids_ls = []
+        org_names_ls = []
         for org in self.org_counts.keys():
             org_dict = self.org_counts[org]
             conc = np.array(org_dict["Concentration"])
@@ -193,28 +208,53 @@ class titration_fit(object):
             fit_vals_norm_x = reads_norm_log
             cov_norm_log_ls.extend(reads_norm_log)
             conc_log_ls.extend(conc_nonzero)
+            accession_ls.extend(org_dict['Accession'])
+            org_names_ls.extend([ncbi.get_name(org)] * len(org_dict['Accession']))
+            taxids_ls.extend([org] * len(org_dict['Accession']))
         slope, intercept, rval, pval, stderr = linregress(cov_norm_log_ls, conc_log_ls)
         self.slope_ = slope
         self.intercept_ = intercept
         self.fit_metrics_ = {'R-sqr': rval**2, 'P-value': pval, 'Stderr': stderr}
         self._coverage_log = np.array(cov_norm_log_ls)
         self._concentration_log = np.array(conc_log_ls)
+        self._accessions_extended = accession_ls
+        self._org_names_extended = org_names_ls
+        self._taxids_extended = taxids_ls
 
 
     def save_model(self, outdir=None):
+        """
+        Save the model coefficients.
+        args:
+            outdir (str): Output directory to save coefficients. File will be
+            named 'model_coefficients.txt'.
+        """
         if outdir is None:
             outdir = os.getcwd()
         with open(os.path.join(outdir, 'model_coefficients.txt'), 'w') as outfile:
             outfile.write(f"slope\t{self.slope_}\nintercept\t{self.intercept_}")
 
 
-    def plot_fit(self, outdir=None, save_fig=True):
+    def plot_fit(self, outdir=None, show_fig=True, save_fig=True):
+        """
+        Creat plots for the trained model. Includes two subplots 1) regression
+        2) residuals.
+        args:
+            outdir (str): Output directory to save plot. Only valid with
+            save_fig=True.
+            show_fig (bool): Display the figure in a browser. Default True.
+            save_fig (bool): Save the figure in html format. Default True.
+        """
         if outdir is None:
             outdir = os.getcwd()
         if self._fit_coverage:
             xtitle = 'log(Normalized Coverage)'
         else:
             xtitle = 'log(Normalized Read Count)'
+        text = [f"Accession: {accession}<br>Organism: {org}<br>Taxid: {taxid}"
+                for accession, org, taxid in zip(self._accessions_extended,
+                                                 self._org_names_extended,
+                                                 self._taxids_extended)]
         y_hat = self.slope_ * self._coverage_log + self.intercept_
         fig = make_subplots(rows=1, cols=2, subplot_titles=('Fit', 'Residuals'))
         # Data scatter
@@ -223,7 +263,8 @@ class titration_fit(object):
                 x=self._coverage_log,
                 y=self._concentration_log,
                 mode='markers',
-                showlegend=False
+                showlegend=False,
+                hovertext=text
             ),
             row=1, col=1
         )
@@ -248,18 +289,16 @@ class titration_fit(object):
         fig.update_xaxes(title_text=xtitle, row=1, col=1)
         fig.update_yaxes(title_text='log(Genomic Equivalents) / ml', row=1, col=1)
         fig.update_xaxes(title_text='Absolute Deviation', row=1, col=2)
-        fig.update_layout(go.Layout(
-            annotations=[
-                dict(
-                    xref='x1',
-                    yref='y1',
-                    x=np.mean(self._coverage_log),
-                    y=np.max(self._concentration_log),
-                    text=f"Slope: {self.slope_:0.2f}<br>R-sq: {self.fit_metrics_['R-sqr']:0.2f}<br>Std err: {self.fit_metrics_['Stderr']:0.2f}"
-                )
-            ]
-        ))
-        fig.show()
+        annotations=[
+            dict(
+                xref='x1',
+                yref='y1',
+                x=np.mean(self._coverage_log),
+                y=np.max(self._concentration_log),
+                text=f"Slope: {self.slope_:0.2f}<br>R-sq: {self.fit_metrics_['R-sqr']:0.2f}<br>Std err: {self.fit_metrics_['Stderr']:0.2f}"
+            )
+        ]
+        if show_fig:
+            fig.show()
         if save_fig:
             fig.write_html(os.path.join(outdir, 'regression_plot.html'))
-
