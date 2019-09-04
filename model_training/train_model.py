@@ -48,4 +48,4 @@ if __name__ == '__main__':
     config = yaml.load(stream, Loader=yaml.FullLoader)
     input_info = prep_input_files(config)
     fit_model(input_info)
-    
+    stream.close()
