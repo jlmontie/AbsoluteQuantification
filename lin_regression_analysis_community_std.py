@@ -92,34 +92,6 @@ def generate_fig(value_dict):
             legendgroup=idx
         )
         data.extend([trace, trace2, trace3, trace4])
-        # annotations.extend([
-        #     dict(
-        #         x=-4.5,
-        #         y=np.max([np.max(value_dict[key]['reads_log']) for key in value_dict]) - idx * .2,
-        #         xref='x1',
-        #         yref='y1',
-        #         # text=f'R-squared: {org_dict["r_value"]**2:0.2f}<br>Slope: {org_dict["slope"]:0.2f}',
-        #         text=f'Slope: {org_dict["slope"]:0.2f},   R<sup>2</sup>: {org_dict["r_value"]**2:0.2f}',
-        #         showarrow=False,
-        #         font=dict(
-        #             size=14,
-        #             color=colors[idx]
-        #         )
-        #     ),
-        #     dict(
-        #         x=-4.5,
-        #         y=np.max([np.max(value_dict[key]['reads_norm_log']) for key in value_dict]) - idx * 0.33,
-        #         xref='x2',
-        #         yref='y2',
-        #         # text=f'R-squared: {org_dict["r_value_norm"]**2:0.2f}<br>Slope: {org_dict["slope_norm"]:0.2f}',
-        #         text=f'Slope: {org_dict["slope_norm"]:0.2f},   R<sup>2</sup>: {org_dict["r_value_norm"]**2:0.2f}',
-        #         showarrow=False,
-        #         font=dict(
-        #             size=14,
-        #             color=colors[idx]
-        #         )
-        #     )
-        # ])
     annotations.extend([
         dict(
             x=-2,
@@ -207,40 +179,22 @@ def filter_data(count_dict, copyNumber):#, fit_range, fit_range_norm):
             copy_number_normalizer = copy_numbers[org]['copies']
         else:
             copy_number_normalizer = 1
-        # print(copy_number_normalizer)
         reads = np.array(reads) / copy_number_normalizer
         reads = np.array(reads)
-        # reads_nonzero_idx = np.argwhere((reads > 0) & (np.array(ctrls) > 0)).reshape(-1)
         reads_nonzero_idx = np.argwhere((reads > 0)).reshape(-1)
         reads_nonzero = reads[reads_nonzero_idx]
-        
+
         print(reads_nonzero)
         reads_nonzero[reads_nonzero == 0] = 1
         ctrls_nonzero = np.array(ctrls)[reads_nonzero_idx]
         conc_nonzero = conc[reads_nonzero_idx]
         reads_log = np.log10(reads_nonzero)
-        # fit_idx = np.argwhere((conc_nonzero >= fit_range[0]) & (conc_nonzero <= fit_range[1])).reshape(-1)
-        # print(conc_nonzero)
-        # slope, intercept, r_value, p_value, std_err = linregress(conc_nonzero[fit_idx], reads_log[fit_idx])
         slope, intercept, r_value, p_value, std_err = linregress(conc_nonzero, reads_log)
-        # fit_vals_y = slope * conc_nonzero[fit_idx] + intercept
-        # fit_vals_x = conc_nonzero[fit_idx]
         fit_vals_y = slope * conc_nonzero + intercept
         fit_vals_x = conc_nonzero
         # Normalized
         reads_norm = reads_nonzero / ctrls_nonzero
         reads_norm_log = np.log10(reads_norm)
-        # reads_norm_log_mean = np.mean(reads_norm_log, axis=1)
-        # fit_norm_idx = np.argwhere((conc_nonzero >= fit_range_norm[0]) & (conc_nonzero <= fit_range_norm[1])).reshape(-1)
-        # slope_norm, intercept_norm, r_value_norm, p_value_norm, std_err_norm = \
-        #     linregress(conc_nonzero[fit_norm_idx], reads_norm_log[fit_norm_idx])
-        # fit_vals_norm_y = slope_norm * conc_nonzero[fit_norm_idx] + intercept_norm
-        # fit_vals_norm_x = conc_nonzero[fit_norm_idx]
-
-        # print('conc')
-        # print(conc_nonzero)
-        # print('reads_norm')
-        # print(reads_norm_log)
 
         slope_norm, intercept_norm, r_value_norm, p_value_norm, std_err_norm = \
             linregress(conc_nonzero, reads_norm_log)
@@ -320,26 +274,6 @@ app.layout = html.Div([
             id='graph'
         )
     ], className='row'),
-    # html.Div([
-    #     html.Div([
-    #         dcc.RangeSlider(
-    #             id='fit_range',
-    #             marks={0: '-5', -4: '-4', -3: '-3', -2: '-2', -1: '-1', 10: '0'},
-    #             min=-5,
-    #             max=0,
-    #             value=[-5, 0]
-    #         )
-    #     ], className='six columns', style={'padding': '25px 110px 50px 120px'}),
-    #     html.Div([
-    #         dcc.RangeSlider(
-    #             id='fit_range_norm',
-    #             marks={-5: '-5', -4: '-4', -3: '-3', -2: '-2', -1: '-1', 0: '0'},
-    #             min=-5,
-    #             max=0,
-    #             value=[-5, 0]
-    #         )
-    #     ], className='six columns', style={'padding': '25px 195px 50px 30px'})
-    # ], className='row')
 ], style={'padding': '10px 50px 50px 50px'})
 
 
@@ -347,11 +281,9 @@ app.layout = html.Div([
     Output('graph', 'figure'),
     [Input('var-select', 'value'),
      Input('copy-number-switch', 'on'),
-    #  Input('fit_range', 'value'),
-    #  Input('fit_range_norm', 'value')
      ]
 )
-def update_graph(varSelect, copyNumber):#, fit_range, fit_range_norm):
+def update_graph(varSelect, copyNumber):
     if varSelect == 'a':
         count_data = a
     elif varSelect == 'b':
@@ -360,7 +292,7 @@ def update_graph(varSelect, copyNumber):#, fit_range, fit_range_norm):
         count_data = c
     elif varSelect == 'd':
         count_data = d
-    value_dict = filter_data(count_data, copyNumber) #, fit_range, fit_range_norm)
+    value_dict = filter_data(count_data, copyNumber)
     figure = generate_fig(value_dict)
     return figure
 
