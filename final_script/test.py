@@ -48,17 +48,35 @@ for library in batch['libraries']:
     fungpar_path = [path for path in summary_file_paths if 'rna.fungal_parasite' in path][0]
     fungpar_summary = read_summary_files(fungpar_path)
     # Get viral counts
-    internal_controls = library['internalControls']['organisms']
-    viral_reportingIds = '26706_10760'  # if not hardcoded: [ctrl_org['reportingId'] for ctrl_org in internal_controls]
+    internal_controls = library['internalControls']['organisms'] # if not hardcoded: [ctrl_org['reportingId'] for ctrl_org in internal_controls]
+    viral_reportingIds = [
+        '26706_10760',
+        '26368_532076',
+        '42586_1176767',
+        '42584_1176765',
+        '42575_1195074',
+        '42580_1176434',
+        '42563_227720',
+        '42585_1176766',
+        '27076_1837842',
+        '26418_482822',
+        '27095_1527506',
+        '27118_2053563',
+        '26377_1075775',
+        '27141_2079317',
+        '26708_1075774',
+        '26700_10759',
+        '37655_866889',
+        '26353_1871708'
+    ]
     viral_counts = []
     for org_info in viral_summary:
-        if org_info['reporting_id'] in viral_reportingIds:
+        if org_info['reporting_id'] in viral_reportingIds[0]:
             viral_counts.append(org_info['read_count'])
+    print(viral_counts)
     # Get quantifications
     bacterial_summary_with_quant = absoluteQuant(viral_counts, bacterial_summary, rdna_copy_numbers)
-    print(f"Written length: {len(bacterial_summary_with_quant)}")
     fungpar_summary_with_quant = absoluteQuant(viral_counts, fungpar_summary, rdna_copy_numbers)
-    print(f"Written length: {len(fungpar_summary_with_quant)}")
     # Write modified summary files
     with open(os.path.join(out_dir, os.path.splitext(os.path.basename(bacterial_path))[0]), 'w') as bacterial_out:
         for line in bacterial_summary_with_quant:

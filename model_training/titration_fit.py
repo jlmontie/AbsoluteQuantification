@@ -77,10 +77,12 @@ class titration_fit(object):
         ctrl_count_ls = []
         for line in file_vir:
             cov_info_vir = json.loads(line)
-            if cov_info_vir['name'].lower() in ctrl_orgs:
+            # if cov_info_vir['name'].lower() in ctrl_orgs:
+            if cov_info_vir['reporting_id'] in ctrl_orgs:
                 ctrl_count_ls.append(cov_info_vir['read_count'])
         if len(ctrl_count_ls) > 0:
-            ctrl_count = np.mean(ctrl_count_ls)
+            # ctrl_count = np.mean(ctrl_count_ls)
+            ctrl_count = np.sum(ctrl_count_ls)
         else:
             ctrl_count = np.nan
         return ctrl_count
@@ -145,7 +147,8 @@ class titration_fit(object):
         file_vir = self._get_summary_file(seq_sple, summary_dir, 'viral')
 
         # Get control counts
-        ctrl_orgs = ctrl.split('|')
+        # ctrl_orgs = ctrl.split('|')
+        ctrl_orgs = ctrl
         ctrl_count = self._get_ctrl_counts(file_vir, ctrl_orgs)
         # Skip if controls not found
         if ctrl_count == np.nan:

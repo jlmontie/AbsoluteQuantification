@@ -4,7 +4,7 @@ import math
 def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers):
     slope = 0.911366965829788
     intercept = 9.558518138072943
-    ctrlReadCountsMean = sum(ctrlReadCounts) / len(ctrlReadCounts)
+    ctrlReadCountsMean = sum(ctrlReadCounts) #/ len(ctrlReadCounts)
     updatedSummaryObjectList = []
     for coverageInfo in summaryObjectList:
         taxid = str(coverageInfo['taxid'])
@@ -29,6 +29,4 @@ def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers):
                     genomicEquivalents = 10**genomicEquivalentsLog
         coverageInfo.update({'absolute_quant': genomicEquivalents})
         updatedSummaryObjectList.append(coverageInfo)
-    print(f"Original length: {len(summaryObjectList)}")
-    print(f"Updated length: {len(updatedSummaryObjectList)}")
     return updatedSummaryObjectList
