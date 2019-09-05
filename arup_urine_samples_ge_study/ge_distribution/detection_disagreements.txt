@@ -1,0 +1,11 @@
+Accession	ARUP detection	ARUP quantification	IDBD detection	IDBD quantification
+IDBD-D100414	Escherichia coli	4.301029995663981	None	None
+IDBD-D100415	Escherichia coli	4.477121254719663	Pseudomonas aeruginosa	7.743110586499851
+IDBD-D100416	Escherichia coli	4.6020599913279625	Pseudomonas aeruginosa	8.434176603920957
+IDBD-D100389	Escherichia coli	5.0
+IDBD-D100390	Escherichia coli	5.0
+IDBD-D100392	Escherichia coli	5.0
+IDBD-D100388	Escherichia coli	5.0
+IDBD-D100387	Escherichia coli	5.0
+IDBD-D100383	Escherichia coli	5.0
+IDBD-D100384	Escherichia coli	5.0

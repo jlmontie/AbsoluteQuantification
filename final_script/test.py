@@ -18,8 +18,8 @@ def read_summary_files(path):
     return summary_object_ls
 
 
-summary_file_dir = '/srv/idbydna-group3/results/idbd_dev/_190828_NB551543_0126_AHMW75AFXY_190829/tax'
-batch_json_path = '/srv/idbydna-group3/results/idbd_dev/_190828_NB551543_0126_AHMW75AFXY_190829/batch/190827B02.json'
+summary_file_dir = '/srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/tax'
+batch_json_path = '/srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/batch/190827B02.json'
 rdna_resource_path = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/rrndb_16s_copies.json'
 out_dir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/arup_urine_summary_files_with_quantification'
 
@@ -51,7 +51,9 @@ for library in batch['libraries']:
             viral_counts.append(org_info['read_count'])
     # Get quantifications
     bacterial_summary_with_quant = absoluteQuant(viral_counts, bacterial_summary, rdna_copy_numbers)
+    print(f"Written length: {len(bacterial_summary_with_quant)}")
     fungpar_summary_with_quant = absoluteQuant(viral_counts, fungpar_summary, rdna_copy_numbers)
+    print(f"Written length: {len(fungpar_summary_with_quant)}")
     # Write modified summary files
     with open(os.path.join(out_dir, os.path.splitext(os.path.basename(bacterial_path))[0]), 'w') as bacterial_out:
         for line in bacterial_summary_with_quant:

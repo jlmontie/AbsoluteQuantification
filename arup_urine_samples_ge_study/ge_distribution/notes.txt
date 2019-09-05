@@ -1,0 +1,85 @@
+manual quantification procedure
+1) Get latest 190904_Urine_Sample_Processing_Log.xlsx from Box
+2) Process with arup_organism_list/create_cfu_list.py
+3) Get quantification for samples with final_script/test.py
+4) Plot distribution with ge_distribution.py
+
+38 Species in Coagulase-negative Staphylococci
+Coagulase-Negative Staphylococci
+Karsten Becker, Christine Heilmann, Georg Peters
+Clinical Microbiology Reviews Oct 2014, 27 (4) 870-926; DOI: 10.1128/CMR.00109-13
+https://cmr.asm.org/content/27/4/870
+
+taxids
+1294
+569857
+522262
+1282
+29388
+29380
+33028
+1292
+45972
+1283
+586733
+1290
+1276936
+28035
+29379
+1286
+1281
+70255
+70258
+170573
+555791
+29385
+246432
+1293
+61015
+1288
+29382
+214473
+29378
+29384
+1296
+150056
+42858
+643214
+71237
+
+species
+Staphylococcus muscae
+Staphylococcus microti
+Staphylococcus rostri
+Staphylococcus epidermidis
+Staphylococcus capitis
+Staphylococcus caprae
+Staphylococcus saccharolyticus
+Staphylococcus warneri
+Staphylococcus pasteuri
+Staphylococcus haemolyticus
+Staphylococcus devriesei
+Staphylococcus hominis
+Staphylococcus petrasii
+Staphylococcus lugdunensis
+Staphylococcus auricularis
+Staphylococcus simulans
+Staphylococcus carnosus
+Staphylococcus condimenti
+Staphylococcus piscifermentans
+Staphylococcus pettenkoferi
+Staphylococcus massiliensis
+Staphylococcus saprophyticus
+Staphylococcus equorum
+Staphylococcus gallinarum
+Staphylococcus succinus
+Staphylococcus xylosus
+Staphylococcus cohnii
+Staphylococcus nepalensis
+Staphylococcus arlettae
+Staphylococcus kloosii
+Staphylococcus sciuri
+Staphylococcus fleurettii
+Staphylococcus lentus
+Staphylococcus stepanovicii
+Staphylococcus vitulinus

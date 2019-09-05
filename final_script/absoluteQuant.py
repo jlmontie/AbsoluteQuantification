@@ -29,4 +29,6 @@ def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers):
                     genomicEquivalents = 10**genomicEquivalentsLog
         coverageInfo.update({'absolute_quant': genomicEquivalents})
         updatedSummaryObjectList.append(coverageInfo)
+    print(f"Original length: {len(summaryObjectList)}")
+    print(f"Updated length: {len(updatedSummaryObjectList)}")
     return updatedSummaryObjectList
