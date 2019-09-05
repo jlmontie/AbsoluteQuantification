@@ -39,9 +39,13 @@ def filter_re_match(match):
     return organism_ls, concentration_ls
 
 
-summary_parentdir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/arup_urine_summary_files_with_quantification'
-sample_info = pd.read_excel('/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
-outdir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution'
+summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
+sample_info = pd.read_excel('/Users/jmontgomery/Downloads/190904_Urine_Sample_Processing_Log.xlsx')
+outdir = '/Users/jmontgomery/Desktop/'
+
+# summary_parentdir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/arup_urine_summary_files_with_quantification'
+# sample_info = pd.read_excel('/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
+# outdir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution'
 re_match = sample_info['RESULT LONG TEXT'].apply(search_string)
 
 org_taxids = {
@@ -132,28 +136,22 @@ ge_df = pd.DataFrame(data={
     'Accession': accession_ls,
     'Detected Organism': organism_ls,
     'log(Genomic Equivalents / ml)': ge_ls,
-    'ARUP Conc. (cfu/ml)': arup_conc_ls,
+    'log(cfu/ml)': arup_conc_ls,
 })
+# Manually add quantification for disagreeing detections
+ge_df['Detections'] = 'Concordant'
+ge_df.loc[ge_df['Accession'] == 'IDBD-D100414', 'log(Genomic Equivalents / ml)'] = 7.638295708279279
+ge_df.loc[ge_df['Accession'] == 'IDBD-D100415', 'log(Genomic Equivalents / ml)'] = 7.743110586
+ge_df.loc[ge_df['Accession'] == 'IDBD-D100416', 'log(Genomic Equivalents / ml)'] = 8.434176604
+ge_df.loc[ge_df['Accession'] == 'IDBD-D100414', 'Detections'] = 'Discordant - P.aeruginosa'
+ge_df.loc[ge_df['Accession'] == 'IDBD-D100415', 'Detections'] = 'Discordant - P.aeruginosa'
+ge_df.loc[ge_df['Accession'] == 'IDBD-D100416', 'Detections'] = 'Discordant - P.aeruginosa'
+
 ge_df.to_csv(os.path.join(outdir, 'quantifications.csv'))
-fig = px.histogram(ge_df, x='log(Genomic Equivalents / ml)', nbins=10)
+fig = px.histogram(ge_df, x='log(Genomic Equivalents / ml)', nbins=10, color='Detections')
 fig.update_xaxes(range=[0, 10])
 fig.write_html(os.path.join(outdir, 'hist.html'))
-
-# ge_ls = []
-# accession_ls = []
-# for summary in summary_ls:
-#     with open(os.path.join(summary_parentdir, summary)) as file:
-#         for line in file:
-#             cov_info = json.loads(line)
-#             if cov_info['taxid'] == 562:
-#                 ge_ls.append(cov_info['absolute_quant'])
-#                 accession_ls.append(accession)
-
-# ge_log = np.log10(ge_ls)
-# ge_df = pd.DataFrame(data={'accession': accession_ls, 'log(Genomic Equivalents / ml)': ge_log})
-# ge_df.to_csv(os.path.join(outdir, 'quantifications.csv'))
-# fig = px.histogram(ge_df, x='log(Genomic Equivalents / ml)', nbins=10)
-# fig.update_xaxes(range=[0, 10])
-# fig.write_html(os.path.join(outdir, 'hist.html'))
-
-
+fig_cor = px.scatter(ge_df, x='log(cfu/ml)', y='log(Genomic Equivalents / ml)', color='Detections')
+fig_cor.update_xaxes(range=[3, 6], dtick=1)
+fig_cor.update_yaxes(range=[5, 10])
+fig_cor.write_html(os.path.join(outdir, 'corr.html'))

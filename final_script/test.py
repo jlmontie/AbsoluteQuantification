@@ -17,11 +17,16 @@ def read_summary_files(path):
                 summary_object_ls.append(json.loads(line))
     return summary_object_ls
 
+summary_file_dir = '/Users/jmontgomery/Desktop/tmp_summary'
+batch_json_path = '/Users/jmontgomery/Desktop/tmp_summary/190830B01.json'
+rdna_resource_path = '/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/data/rrndb_16s_copies.json'
+out_dir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
 
-summary_file_dir = '/srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/tax'
-batch_json_path = '/srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/batch/190827B02.json'
-rdna_resource_path = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/rrndb_16s_copies.json'
-out_dir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/arup_urine_summary_files_with_quantification'
+# summary_file_dir = '/srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/tax'
+# batch_json_path = '/srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/batch/190827B02.json'
+# rdna_resource_path = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/rrndb_16s_copies.json'
+# out_dir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/arup_urine_summary_files_with_quantification'
+
 
 with open(batch_json_path) as batch_file:
     batch = json.load(batch_file)
