@@ -22,25 +22,25 @@ def prep_input_files(config):
         summary_dir_ls = fqo['Diagnostic Output Dir'].tolist()
     dilution_ls = fqo_merged['Dilution Factor'].tolist()
     # ctrls_ls = fqo_merged['Control Int Org Names'].tolist()
-    ctrl_ls = [
-        '26706_10760',
-        '26368_532076',
-        '42586_1176767',
-        '42584_1176765',
-        '42575_1195074',
-        '42580_1176434',
-        '42563_227720',
-        '42585_1176766',
-        '27076_1837842',
-        '26418_482822',
-        '27095_1527506',
-        '27118_2053563',
-        '26377_1075775',
-        '27141_2079317',
-        '26708_1075774',
-        '26700_10759',
-        '37655_866889',
-        '26353_1871708'
+    ctrls_ls = [
+        10760,
+        532076,
+        1176767,
+        1176765,
+        1195074,
+        1176434,
+        227720,
+        1176766,
+        1837842,
+        482822,
+        1527506,
+        2053563,
+        1075775,
+        2079317,
+        1075774,
+        10759,
+        866889,
+        1871708
     ]
     org_info_dict = initial_conc.to_dict('index')
     with open(config['rDnaResourceFile']) as rdna_file:

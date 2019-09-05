@@ -45,12 +45,11 @@ class titration_fit(object):
         self._rdna_copies = args[5]
         org_counts = []
         print("Calculating organism coverages")
-        for seq_sple, summary_dir, dilution, ctrl in \
-            zip(self._seq_sple_ls, self._summary_dir_ls, self._dilution_ls,
-                self._ctrls_ls):
+        for seq_sple, summary_dir, dilution in \
+            zip(self._seq_sple_ls, self._summary_dir_ls, self._dilution_ls):
 
             org_count_dict_ls = \
-                self._get_counts(seq_sple, summary_dir, dilution, ctrl)
+                self._get_counts(seq_sple, summary_dir, dilution, self._ctrls_ls)
             for org_count_dict in org_count_dict_ls:
                 org_count_dict.update({'Accession': seq_sple})
             org_counts.extend(org_count_dict_ls)
@@ -74,11 +73,12 @@ class titration_fit(object):
 
 
     def _get_ctrl_counts(self, file_vir, ctrl_orgs):
+        print(ctrl_orgs)
         ctrl_count_ls = []
         for line in file_vir:
             cov_info_vir = json.loads(line)
             # if cov_info_vir['name'].lower() in ctrl_orgs:
-            if cov_info_vir['reporting_id'] in ctrl_orgs:
+            if cov_info_vir['taxid'] in ctrl_orgs:
                 ctrl_count_ls.append(cov_info_vir['read_count'])
         if len(ctrl_count_ls) > 0:
             # ctrl_count = np.mean(ctrl_count_ls)
