@@ -49,31 +49,33 @@ for library in batch['libraries']:
     fungpar_summary = read_summary_files(fungpar_path)
     # Get viral counts
     internal_controls = library['internalControls']['organisms'] # if not hardcoded: [ctrl_org['reportingId'] for ctrl_org in internal_controls]
-    viral_reportingIds = [
-        '26706_10760',
-        '26368_532076',
-        '42586_1176767',
-        '42584_1176765',
-        '42575_1195074',
-        '42580_1176434',
-        '42563_227720',
-        '42585_1176766',
-        '27076_1837842',
-        '26418_482822',
-        '27095_1527506',
-        '27118_2053563',
-        '26377_1075775',
-        '27141_2079317',
-        '26708_1075774',
-        '26700_10759',
-        '37655_866889',
-        '26353_1871708'
+    viral_taxids = [
+        10760,
+        532076,
+        1176767,
+        1176765,
+        1195074,
+        1176434,
+        227720,
+        1176766,
+        1837842,
+        482822,
+        1527506,
+        2053563,
+        1075775,
+        2079317,
+        1075774,
+        10759,
+        866889,
+        1871708
     ]
     viral_counts = []
     for org_info in viral_summary:
-        if org_info['reporting_id'] in viral_reportingIds[0]:
+        if org_info['taxid'] in viral_taxids:
             viral_counts.append(org_info['read_count'])
-    print(viral_counts)
+    if len(viral_counts) < 1:
+        print(f"No IC found for {seq_sple}. Skipping quantification.")
+        continue
     # Get quantifications
     bacterial_summary_with_quant = absoluteQuant(viral_counts, bacterial_summary, rdna_copy_numbers)
     fungpar_summary_with_quant = absoluteQuant(viral_counts, fungpar_summary, rdna_copy_numbers)

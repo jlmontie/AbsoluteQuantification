@@ -78,7 +78,7 @@ class titration_fit(object):
         for line in file_vir:
             cov_info_vir = json.loads(line)
             # if cov_info_vir['name'].lower() in ctrl_orgs:
-            if cov_info_vir['taxid'] in ctrl_orgs:
+            if cov_info_vir['reporting_id'] in ctrl_orgs:
                 ctrl_count_ls.append(cov_info_vir['read_count'])
         if len(ctrl_count_ls) > 0:
             # ctrl_count = np.mean(ctrl_count_ls)

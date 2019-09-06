@@ -2,8 +2,8 @@ import json
 import math
 
 def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers):
-    slope = 0.911366965829788
-    intercept = 9.558518138072943
+    slope = 0.9752025158801086
+    intercept = 9.94632629381537
     ctrlReadCountsMean = sum(ctrlReadCounts) #/ len(ctrlReadCounts)
     updatedSummaryObjectList = []
     for coverageInfo in summaryObjectList:

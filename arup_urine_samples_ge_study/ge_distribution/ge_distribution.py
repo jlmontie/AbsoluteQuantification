@@ -40,7 +40,7 @@ def filter_re_match(match):
 
 
 summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
-sample_info = pd.read_excel('/Users/jmontgomery/Downloads/190904_Urine_Sample_Processing_Log.xlsx')
+sample_info = pd.read_excel('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
 outdir = '/Users/jmontgomery/Desktop/'
 
 # summary_parentdir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/arup_urine_summary_files_with_quantification'
