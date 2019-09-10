@@ -27,6 +27,7 @@ rrndb[['Species taxid', 'Genus taxid']] = pd.DataFrame(
     dtype=pd.Int64Dtype())
 rrndb['Genus'] = rrndb['Genus taxid'].apply(ncbi.get_name)
 rrndb['Species'] = rrndb['Species taxid'].apply(ncbi.get_name)
+rrndb = rrndb[~rrndb['16S gene count'].isna()]
 rrndb_16s_genus = rrndb.groupby(['Genus', 'Genus taxid']).agg(
     {'16S gene count': 'median'}).reset_index()
 rrndb_16s_species = rrndb.groupby(['Species', 'Species taxid']).agg(
@@ -37,7 +38,7 @@ for idx, row in rrndb_16s_genus.iterrows():
         row['16S gene count'], 1), 'rank': 'genus', 'name': row['Genus']}})
 for idx, row in rrndb_16s_species.iterrows():
     gene_counts_dict.update({str(row['Species taxid']): {'copies': round(
-        row['16S gene count'], 1), 'rank': 'genus', 'name': row['Species']}})
+        row['16S gene count'], 1), 'rank': 'species', 'name': row['Species']}})
 # manual entries for those with no taxonomic link to genus
 # set Proteus penneri equal to heterotypic synonym Proteus vulgaris
 # gene_counts_dict.update(

@@ -77,7 +77,6 @@ Acinetobacter pittii,48296,6.0
 Acinetobacter radioresistens,40216,7.0
 Acinetobacter schindleri,108981,7.0
 Acinetobacter soli,487316,7.0
-Acinetobacter sp.,472,
 Acinetobacter sp. ACNIH1,1636603,7.0
 Acinetobacter sp. ACNIH2,1758189,7.0
 Acinetobacter sp. ADP1,62977,7.0
@@ -401,14 +400,12 @@ Bacteroides caccae,47678,5.0
 Bacteroides caecimuris,1796613,5.0
 Bacteroides cellulosilyticus,246787,4.0
 Bacteroides dorei,357276,7.0
-Bacteroides eggerthii,28111,
 Bacteroides fragilis,817,6.0
 Bacteroides helcogenes,290053,5.0
 Bacteroides heparinolyticus,28113,4.0
 Bacteroides ovatus,28116,5.0
 Bacteroides salanitronis,376805,6.0
 Bacteroides thetaiotaomicron,818,5.0
-Bacteroides uniformis,820,
 Bacteroides vulgatus,821,7.0
 Bacteroides zoogleoformans,28119,4.0
 Bacteroidetes bacterium Omega,1457365,3.0
@@ -1139,7 +1136,6 @@ Desulfovibrio salexigens,880,5.0
 Desulfovibrio sp. G11,631220,3.0
 Desulfovibrio vulgaris,881,5.0
 Desulfurella acetivorans,33002,2.0
-Desulfurella multipotens,79269,
 Desulfurispirillum indicum,936456,3.0
 Desulfurivibrio alkaliphilus,427923,2.0
 Desulfurobacterium thermolithotrophum,64160,2.0

@@ -5,10 +5,7 @@ import os
 import glob
 import gzip
 
-# class GenomeCov:
-#     def __init__(self, reference_fasta, fasta_file):
-#         self.reference = reference_fasta
-#         self.fasta = fasta_file
+
 def index_reference(reference_fasta):
     index_basename = os.path.splitext(os.path.basename(reference_fasta))[0]
     index_outdir = os.path.join(os.getcwd(), 'index_files')
