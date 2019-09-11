@@ -49,7 +49,8 @@ def prep_input_files(config):
 
 
 def fit_model(input_info):
-    model = titration_fit(input_info, fit_coverage=config['Fit']['FitCoverage'])
+    model = titration_fit(input_info, fit_coverage=config['Fit']['FitCoverage'],
+                          specific_cutoffs=config['Fit']['SpecificCutoffs'])
     model.fit()
     print(f"Slope: {model.slope_}")
     print(f"Intercept: {model.intercept_}")

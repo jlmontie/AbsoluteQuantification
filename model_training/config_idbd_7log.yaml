@@ -17,8 +17,8 @@
 
 ---
 # REQUIRED INPUTS
-FastQataloguerOutput: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/FastQataloguer_CommunityStd_IDBD_5logs_2019-09-10.csv
-OrganismStockConcentrations: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/CommunityStandardConcentrationsNoPaeruginosa.csv
+FastQataloguerOutput: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/FastQataloguer_CommunityStd_IDBD_7logs_2019-09-10.csv
+OrganismStockConcentrations: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/CommunityStandardConcentrationsNoFungi.csv
 SampleDilutionFactors: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/SampleDilutionFactors7LogsIDBD.csv
 rDnaResourceFile: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/rrndb_16s_copies_with_18s.json
 
@@ -38,3 +38,5 @@ Output:
 Fit:
   # Fit coverage. Otherwise will fit read counts
   FitCoverage: yes
+  # Apply specific cutoffs to coverage.
+  SpecificCutoffs: yes

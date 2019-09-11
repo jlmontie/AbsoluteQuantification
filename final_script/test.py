@@ -86,12 +86,12 @@ for idx, row in sample_info.iterrows():
     bacterial_summary_with_quant = absoluteQuant(viral_counts, bacterial_summary, rdna_copy_numbers)
     fungpar_summary_with_quant = absoluteQuant(viral_counts, fungpar_summary, rdna_copy_numbers)
     # Write modified summary files
-    # with open(os.path.join(out_dir, os.path.splitext(os.path.basename(bacterial_path))[0]), 'w') as bacterial_out:
-    #     for line in bacterial_summary_with_quant:
-    #         bacterial_out.write(f"{json.dumps(line)}\n")
-    # with open(os.path.join(out_dir, os.path.splitext(os.path.basename(fungpar_path))[0]), 'w') as fungpar_out:
-    #     for line in fungpar_summary_with_quant:
-    #         fungpar_out.write(f"{json.dumps(line)}\n")
+    with open(os.path.join(out_dir, os.path.splitext(os.path.basename(bacterial_path))[0]), 'w') as bacterial_out:
+        for line in bacterial_summary_with_quant:
+            bacterial_out.write(f"{json.dumps(line)}\n")
+    with open(os.path.join(out_dir, os.path.splitext(os.path.basename(fungpar_path))[0]), 'w') as fungpar_out:
+        for line in fungpar_summary_with_quant:
+            fungpar_out.write(f"{json.dumps(line)}\n")
     ctrl_ls.append(np.sum(viral_counts))
     accession_ls.append(accession)
 pd.DataFrame(data={'Accession': accession_ls, 'Ctrl Counts': ctrl_ls}).to_csv('~/Downloads/ctrl_counts.csv')

@@ -4,8 +4,10 @@ import plotly
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
+from plotly.colors import DEFAULT_PLOTLY_COLORS as colors
 import pandas as pd
 import numpy as np
+from scipy.stats import linregress
 import re
 
 
@@ -41,12 +43,8 @@ def filter_re_match(match):
 
 
 summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
-sample_info = pd.read_excel('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log_with_plate_counts.xlsx')
+sample_info = pd.read_excel('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
 outdir = '/Users/jmontgomery/Desktop/'
-print(sample_info.info())
-# summary_parentdir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/data/arup_urine_summary_files_with_quantification'
-# sample_info = pd.read_excel('/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
-# outdir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution'
 re_match = sample_info['RESULT LONG TEXT'].apply(search_string)
 
 org_taxids = {
@@ -95,11 +93,6 @@ org_taxids = {
     'Enterococcus species': [1350, 1351, 1352],
     'Klebsiella pneumoniae': [573]
 }
-
-# batch_summary_dir = {
-#     '190827B02': '/srv/idbydna-group3/results/idbd_dev/190830_NB551702_0056_AHMVFMAFXY/tax',
-#     '190830B01': '/srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/tax'
-# }
 
 sample_info['ORGANISM'], sample_info['CONCENTRATION'] = filter_re_match(re_match)
 sample_info['TAXID'] = sample_info['ORGANISM'].copy()
@@ -169,18 +162,11 @@ fig_cor.update_xaxes(range=[4, 5.5], dtick=0.5)
 fig_cor.update_yaxes(range=[5, 9])
 fig_cor.write_html(os.path.join(outdir, 'corr.html'))
 
-colors = [
-    '#1f77b4',
-    '#ff7f0e',
-    '#2ca02c',
-    '#d62728',
-    '#9467bd',
-    '#8c564b',
-    '#e377c2',
-    '#7f7f7f',
-    '#bcbd22',
-    '#17becf'
-]
+lin_fit_x = ge_df.loc[~(ge_df['Plate count log(cfu/ml)'].isna()),
+                      'Plate count log(cfu/ml)']
+lin_fit_y = ge_df.loc[~(ge_df['Plate count log(cfu/ml)'].isna()),
+                      'log(Genomic Equivalents / ml)']
+slope, intercept, rval, pval, stderr = linregress(lin_fit_x, lin_fit_y)
 fig_sub = make_subplots(rows=1, cols=2)
 for idx, organism in enumerate(ge_df['Detected Organism'].unique()):
     fig_sub.add_trace(
@@ -201,13 +187,24 @@ for idx, organism in enumerate(ge_df['Detected Organism'].unique()):
                         ~(ge_df['Plate count log(cfu/ml)'].isna()), 'Plate count log(cfu/ml)'],
             y=ge_df.loc[(ge_df['Detected Organism'] == organism) &
                         ~(ge_df['Plate count log(cfu/ml)'].isna()), 'log(Genomic Equivalents / ml)'],
+            text=ge_df.loc[(ge_df['Detected Organism'] == organism) &
+                        ~(ge_df['Plate count log(cfu/ml)'].isna()), 'Accession'],
             mode='markers',
             showlegend=False,
             name=organism,
             marker=dict(
                 color=colors[idx],
                 size=12
-            )
+            ),
+            hoverinfo='text'
+        ),
+        row=1, col=2
+    )
+    fig_sub.add_trace(
+        go.Scatter(
+            x=np.linspace(lin_fit_x.min(), lin_fit_x.max()),
+            y=slope * np.linspace(lin_fit_x.min(), lin_fit_x.max()) + intercept,
+            showlegend=False
         ),
         row=1, col=2
     )
@@ -227,4 +224,15 @@ fig_sub.update_yaxes(
     title_text='log(Genomic Equivalents / ml)',
     row=1, col=2
 )
+fig_sub.update_layout(annotations=[dict(
+    x=4.75,
+    y=8,
+    text=f"Pearson R:<br>{rval:0.2f}",
+    showarrow=False,
+    xref='x2',
+    yref='y2',
+    font=dict(
+        size=18
+    )
+)])
 fig_sub.write_html(os.path.join(outdir, 'hist_corr.html'))

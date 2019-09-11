@@ -75,8 +75,8 @@ for accession in fqo['Accession']:
         print(f"No IC found for {accession}. Skipping quantification.")
         continue
     # Get quantifications
-    bacterial_summary_with_quant = absoluteQuant(viral_counts, bacterial_summary, rdna_copy_numbers)
-    fungpar_summary_with_quant = absoluteQuant(viral_counts, fungpar_summary, rdna_copy_numbers)
+    bacterial_summary_with_quant = absoluteQuant(viral_counts, bacterial_summary, rdna_copy_numbers) #, quant_mode='read_count')
+    fungpar_summary_with_quant = absoluteQuant(viral_counts, fungpar_summary, rdna_copy_numbers) #, quant_mode='read_count')
     # Write modified summary files
     with open(os.path.join(out_dir, os.path.splitext(os.path.basename(bacterial_path))[0]), 'w') as bacterial_out:
         for line in bacterial_summary_with_quant:

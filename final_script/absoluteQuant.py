@@ -22,8 +22,14 @@ def get_species_genus_taxid(taxid):
 
 
 def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers, quant_mode='coverage'):
-    slope = 0.9752025158801086
-    intercept = 9.94632629381537
+    if quant_mode == 'coverage':
+        slope = 0.9752025158801086
+        intercept = 9.94632629381537
+    elif quant_mode == 'read_count':
+        slope = 0.9777720637374567
+        intercept = 8.752073402926564
+
+
     ctrlReadCountsMean = sum(ctrlReadCounts) #/ len(ctrlReadCounts)
     copyNumberMean = np.mean([val['copies'] for val in rdnaCopyNumbers.values()])
     updatedSummaryObjectList = []
@@ -41,20 +47,33 @@ def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers, quant_mode
                 rdnaAdjustment = copyNumberMean
         for gene in coverageInfo['gene_info']:
             if gene['geneid'] == 0:
-                coverageStr = gene['coverage_string']
-                coverage = coverageStr.split(',')[:-1]
-                coverage = np.array([int(item) for item in coverage])
-                # coverage = coverage[coverage > 0]
-                q1 = np.quantile(coverage, 0.25)
-                coverageQ1 = coverage[coverage <= q1]
-                coverageQ1Mean = np.mean(coverageQ1)
-                coverageNormalized = coverageQ1Mean / (rdnaAdjustment * ctrlReadCountsMean)
-                if coverageNormalized == 0:
-                    genomicEquivalents = 0
+                if gene['coverage'] < 0.97:
+                    genomicEquivalents = np.nan
                     continue
-                coverageLog = np.log10(coverageNormalized)  # Model is log-log
-                genomicEquivalentsLog = slope * coverageLog + intercept
-                genomicEquivalents = 10**genomicEquivalentsLog
+                if quant_mode == 'coverage':
+                    coverageStr = gene['coverage_string']
+                    coverage = coverageStr.split(',')[:-1]
+                    coverage = np.array([int(item) for item in coverage])
+                    # coverage = coverage[coverage > 0]  # this overestimates quant w/ lower coverage!
+                    q1 = np.quantile(coverage, 0.25)
+                    coverageQ1 = coverage[coverage <= q1]
+                    coverageQ1Mean = np.mean(coverageQ1)
+                    coverageNormalized = coverageQ1Mean / (rdnaAdjustment * ctrlReadCountsMean)
+                    if coverageNormalized == 0:
+                        genomicEquivalents = 0
+                        continue
+                    coverageLog = np.log10(coverageNormalized)  # Model is log-log
+                    genomicEquivalentsLog = slope * coverageLog + intercept
+                    genomicEquivalents = 10**genomicEquivalentsLog
+                elif quant_mode == 'read_count':
+                    read_count = gene['read_count']
+                    if read_count == 0:
+                        genomicEquivalents = 0
+                        continue
+                    read_count_normalized = read_count / (rdnaAdjustment * ctrlReadCountsMean)
+                    read_count_log = np.log10(read_count_normalized)
+                    genomicEquivalentsLog = slope * read_count_log + intercept
+                    genomicEquivalents = 10**genomicEquivalentsLog
         coverageInfo.update({'absolute_quant': genomicEquivalents})
         updatedSummaryObjectList.append(coverageInfo)
     return updatedSummaryObjectList

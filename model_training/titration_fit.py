@@ -19,7 +19,7 @@ ncbi = ncbi_taxonomy()
 
 
 class titration_fit(object):
-    def __init__(self, args, fit_coverage=True):
+    def __init__(self, args, fit_coverage=True, specific_cutoffs=False):
         """
         Trains a model for absolute quantification from dilution series of a
         quantified organism mix.
@@ -43,6 +43,7 @@ class titration_fit(object):
         self._ctrls_ls = args[3]
         self._org_info = args[4]
         self._rdna_copies = args[5]
+        self.specific_cutoffs = specific_cutoffs
         org_counts = []
         print("Calculating organism coverages")
         for seq_sple, summary_dir, dilution in \
@@ -98,6 +99,10 @@ class titration_fit(object):
                 gene_info = cov_info['gene_info']
                 for gene in gene_info:
                     if gene['geneid'] == 0:
+                        if self.specific_cutoffs and gene['coverage'] < 0.97:
+                            lower_quart_cov = np.nan
+                            read_count = np.nan
+                            continue
                         cov_str = gene['coverage_string']
                         lower_quart_cov = self._calculate_lower_quart_cov(cov_str)
                         read_count = gene['read_count']
@@ -282,7 +287,7 @@ class titration_fit(object):
                     mode='markers',
                     name=name,
                     legendgroup=taxid,
-                    marker = dict( 
+                    marker = dict(
                         color=colors[idx]
                     )
                 ),
@@ -294,8 +299,8 @@ class titration_fit(object):
                     x=y_hat - conc_log,
                     name=name,
                     legendgroup=taxid,
-                    showlegend=False, 
-                    marker = dict( 
+                    showlegend=False,
+                    marker = dict(
                         color=colors[idx]
                     )
                 ),

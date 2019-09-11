@@ -6,6 +6,7 @@ import sys
 from collections import defaultdict
 import plotly
 import plotly.graph_objects as go
+from plotly.colors import DEFAULT_PLOTLY_COLORS as colors
 
 
 def combine_dictionaries(dict_ls):
@@ -47,21 +48,34 @@ merged_dict = combine_dictionaries(dict_ls)
 merged_df = pd.DataFrame.from_dict(merged_dict, orient='index')
 print(merged_df)
 
+color_dict = dict(zip(taxids, colors)) # for consistent colors for each organism
 data = []
 for taxid in merged_dict.keys():
+    if len(merged_dict[taxid]['calculated concentration']) == 2:
+        text = ['', merged_dict[taxid]['organism'][0]]
+    else:
+        text = merged_dict[taxid]['organism'][0]
+    if taxid == 562 or taxid == 1280:
+        textposition = 'bottom center'
+    else:
+        textposition = 'top center'
     if merged_dict[taxid]['calculated concentration'][0] == 0:
         continue
     trace = go.Scatter(
         x=merged_dict[taxid]['expected concentration'],
         y=merged_dict[taxid]['calculated concentration'],
         name=merged_dict[taxid]['organism'][0],
-        mode='markers',
+        mode='markers+text',
         marker=dict(
-            size=12
-        )
+            size=12,
+            color=color_dict[taxid]
+        ),
+        text=text,
+        textposition=textposition,
+        showlegend=False
     )
     data.append(trace)
-data.append(go.Scatter(
+data.insert(0, go.Scatter(
     x=[0, 10],
     y=[0, 10],
     showlegend=False,
@@ -69,13 +83,15 @@ data.append(go.Scatter(
 ))
 layout = go.Layout(
     xaxis=dict(
-        # range=[6, 10],
+        range=[0, 10],
         title='Expected Conc. (GE/ml)'
     ),
     yaxis=dict(
-        # range=[6, 10],
+        range=[0, 10],
         title='Calculated Conc. (GE/ml)'
-    )
+    ),
+    height=900,
+    width=900
 )
 fig = go.Figure(data, layout)
 fig.write_html('quantification_by_coverage_nonzero.html')
