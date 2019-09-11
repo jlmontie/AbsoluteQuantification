@@ -65,7 +65,7 @@ if __name__ == '__main__':
     parser.add_argument('input_file', help='path to the input yaml file.')
     args = parser.parse_args()
     stream = open(args.input_file, 'r')
-    config = yaml.load(stream, Loader=yaml.FullLoader)
+    config = yaml.load(stream)
     input_info = prep_input_files(config)
     fit_model(input_info)
     stream.close()
