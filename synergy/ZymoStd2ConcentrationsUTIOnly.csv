@@ -1,0 +1,8 @@
+﻿taxid,organism,percentage,stock_concentration,zymo_std_total_dna_ng_ul
+1639,Listeria Monocytogenes,94.8,1.42E+09,1.50E+09
+287,Pseudomonas aeruginosa,4.2,6.30E+07,
+562,Escherichia coli,0.058,8.70E+05,
+28901,Salmonella enterica,0.059,8.85E+05,
+1351,Enterococcus faecalis,0.001,1.50E+04,
+5207,Cryptococcus neoformans,0.00015,2.25E+03,
+1280,Staphylococcus aureus,0.0001,1.50E+03,

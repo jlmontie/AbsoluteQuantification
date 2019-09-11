@@ -21,7 +21,7 @@ def get_species_genus_taxid(taxid):
     return species_taxid, genus_taxid
 
 
-def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers):
+def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers, quant_mode='coverage'):
     slope = 0.9752025158801086
     intercept = 9.94632629381537
     ctrlReadCountsMean = sum(ctrlReadCounts) #/ len(ctrlReadCounts)
@@ -44,6 +44,7 @@ def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers):
                 coverageStr = gene['coverage_string']
                 coverage = coverageStr.split(',')[:-1]
                 coverage = np.array([int(item) for item in coverage])
+                # coverage = coverage[coverage > 0]
                 q1 = np.quantile(coverage, 0.25)
                 coverageQ1 = coverage[coverage <= q1]
                 coverageQ1Mean = np.mean(coverageQ1)

@@ -114,11 +114,14 @@ class titration_fit(object):
 
 
     def _get_summary_file(self, seq_sple, summary_dir, organism):
+        # print(summary_dir)
+        # print(organism)
         summary_files = os.listdir(summary_dir)
-        seq_sple_filter = [file for file in summary_files if seq_sple in file.lower()]
+        seq_sple_filter = [file for file in summary_files if seq_sple in file]
         organism_filter = [file for file in seq_sple_filter if organism in file]
         lib_filter = [file for file in organism_filter if 'rna' in file]
         summary_filter = [file for file in lib_filter if 'dxsm.out.summary' in file]
+        # print(summary_files)
         done_filter = [file for file in summary_filter if not file.endswith('done')]
         final_path = os.path.join(summary_dir, done_filter[0])
         # Skip if file is empty
@@ -142,6 +145,7 @@ class titration_fit(object):
 
 
     def _get_counts(self, seq_sple, summary_dir, dilution, ctrl):
+        print(seq_sple)
         file_bac = self._get_summary_file(seq_sple, summary_dir, 'bacterial')
         file_fungpar = self._get_summary_file(seq_sple, summary_dir, 'fungal_parasite')
         file_vir = self._get_summary_file(seq_sple, summary_dir, 'viral')

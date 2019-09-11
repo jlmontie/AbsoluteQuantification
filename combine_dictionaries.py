@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 def combine_dictionaries(dict_ls):
     d = defaultdict(lambda: defaultdict(list))
     for dictionary in dict_ls:
