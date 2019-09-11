@@ -37,4 +37,4 @@ Output:
 
 Fit:
   # Fit coverage. Otherwise will fit read counts
-  FitCoverage: yes
+  FitCoverage: no
