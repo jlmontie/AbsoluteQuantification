@@ -1,3 +1,0 @@
-{"taxid": 5482, "name": "Candida tropicalis", "quant": 1240055079.1959164}
-{"taxid": 5480, "name": "Candida parapsilosis", "quant": 172241253.6956008}
-{"taxid": 5476, "name": "Candida albicans", "quant": 236994652.24253514}

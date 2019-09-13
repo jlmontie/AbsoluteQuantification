@@ -21,20 +21,20 @@ def read_summary_files(path):
     return summary_object_ls
 
 
-def get_org_quants(summary_with_quant):
+def get_org_quants(summary_with_quant, relevant_org):
+    org_taxid = organism_taxids[relevant_org]
     org_quants = []
     for org_info in summary_with_quant:
-        if org_info['taxid'] not in list(organism_taxids.values()):
-            continue
-        for gene in org_info['gene_info']:
-            if gene['geneid'] == 0:
-                coverage = gene['coverage']
-                if coverage >= 0.97:
-                    org_quants.append({
-                        'taxid': org_info['taxid'],
-                        'name': org_info['name'],
-                        'quant': org_info['absolute_quant']
-                    })
+        if org_info['taxid'] == org_taxid:
+            for gene in org_info['gene_info']:
+                if gene['geneid'] == 0:
+                    coverage = gene['coverage']
+                    if coverage >= 0.97:
+                        org_quants.append({
+                            'taxid': org_info['taxid'],
+                            'name': org_info['name'],
+                            'quant': org_info['absolute_quant']
+                        })
     return org_quants
 
 
@@ -94,9 +94,17 @@ if not os.path.exists(out_dir):
 summary_dir = '/mnt/ahara_results/synergy_patient_sample_results'
 sample_info = pd.read_csv('Nextera_SampleSheets_All_Reproducibility.csv')
 sample_ids = sample_info['Sample_ID'].apply(lambda x: '-'.join(x.split('-')[:5]))
+study_description = pd.read_excel('20190812_Summary_of_Synergy_Reproducibility_Samples_Runs.xlsx')
+study_description = study_description[study_description['Comment'] == 'run passed']
+# make dictionary and look up organism
+relevant_orgs = dict(zip(study_description['Synergy ID'].tolist(),
+                     study_description['Organism'].tolist()))
 
 for id in sample_ids:
     print(id)
+    for synergy_id in relevant_orgs:
+        if synergy_id in id:
+            relevant_org = relevant_orgs[synergy_id]
     org_quants = []
     summary_path_base = os.path.join(summary_dir, id)
     summary_paths = glob.glob(summary_path_base + '.rna.*.dxsm.out.summary.gz')
@@ -119,11 +127,11 @@ for id in sample_ids:
     # Get quantifications
     bacterial_summary_with_quant = absoluteQuant(ic_counts, bacterial_summary,
         rdna_copy_numbers['16s'])
-    bacterial_org_quants = get_org_quants(bacterial_summary_with_quant)
+    bacterial_org_quants = get_org_quants(bacterial_summary_with_quant, relevant_org)
     print(bacterial_org_quants)
     fungpar_summary_with_quant = absoluteQuant(ic_counts, fungpar_summary,
         rdna_copy_numbers['18s'])
-    fungpar_org_quants = get_org_quants(fungpar_summary_with_quant)
+    fungpar_org_quants = get_org_quants(fungpar_summary_with_quant, relevant_org)
     print(fungpar_org_quants)
     org_quants = bacterial_org_quants + fungpar_org_quants
     print(org_quants)

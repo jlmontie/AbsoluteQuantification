@@ -1,2 +1,1 @@
-{"taxid": 1351, "name": "Enterococcus faecalis", "quant": 4097896.469908804}
 {"taxid": 4909, "name": "Candida krusei (Pichia kudriavzevii)", "quant": 1120810739.3839815}
