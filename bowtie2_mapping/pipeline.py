@@ -68,7 +68,23 @@ def get_coverage():
     sp.call(f"bedtools genomecov -ibam {sorted_bam} -d > {coverage_out}", shell=True)
 
 
-def main(cmd_ls):
+def cleanup(destination_subdir):
+    """
+    Clean up intermediate mapping files, *.bam and *.sam.
+    """
+    sp.check_call(f"rm {destination_subdir}/*.bam", shell=True)
+    sp.check_call(f"rm {destination_subdir}/*.sam", shell=True)
+    sp.check_call(f"rm -rf ./index_files", shell=True)
+
+
+def main(index_path, fasta_file, output_sam_file):
+    map_to_reference(index_path, fasta_file, output_sam_file)
+    sam_to_bam(output_sam_file)
+    sort_bam(output_sam_file)
+    get_coverage()
+
+
+if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Calculate genome coverage depth")
     parser.add_argument('-b', '--build_reference_index', help='(Optional) Build index files for reference if they do not exist.')
     parser.add_argument('-i', '--reference_index_path', help='(Optional) Specify path to reference index directory. Otherwise assumes index files are in "index_files" subdirectory')
@@ -90,10 +106,4 @@ def main(cmd_ls):
         fasta_file = args.single_end_fasta
     elif args.paired_end_fasta is not None:
         fasta_file = args.paired_end_fasta
-    map_to_reference(index_path, fasta_file, args.output_sam_file)
-    sam_to_bam(args.output_sam_file)
-    sort_bam(args.output_sam_file)
-
-
-if __name__ == "__main__":
-    main(sys.argv)
+    main(index_path, fasta_file, args.output_sam_file)
