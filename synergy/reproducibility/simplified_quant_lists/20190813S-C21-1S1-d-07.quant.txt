@@ -1,0 +1,2 @@
+{"taxid": 573, "name": "Klebsiella pneumoniae", "quant": 713839.6153977159}
+{"taxid": 5480, "name": "Candida parapsilosis", "quant": 2496924.7055356884}

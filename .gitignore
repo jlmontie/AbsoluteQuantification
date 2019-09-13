@@ -23,3 +23,4 @@ data/arup_urine_summary_files_with_quantification
 *.cov
 T7_reporting_names/t7_simulated_reads.fa
 nohup.out
+synergy/reproducibility/summary_with_quant

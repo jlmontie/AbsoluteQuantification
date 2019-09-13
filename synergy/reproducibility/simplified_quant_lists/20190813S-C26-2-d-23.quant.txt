@@ -1,0 +1,1 @@
+{"taxid": 562, "name": "Escherichia coli", "quant": 78785162.31225422}

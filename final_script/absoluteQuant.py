@@ -29,7 +29,6 @@ def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers, quant_mode
         slope = 0.9777720637374567
         intercept = 8.752073402926564
 
-
     ctrlReadCountsMean = sum(ctrlReadCounts) #/ len(ctrlReadCounts)
     copyNumberMean = np.mean([val['copies'] for val in rdnaCopyNumbers.values()])
     updatedSummaryObjectList = []
@@ -47,9 +46,9 @@ def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers, quant_mode
                 rdnaAdjustment = copyNumberMean
         for gene in coverageInfo['gene_info']:
             if gene['geneid'] == 0:
-                if gene['coverage'] < 0.97:
-                    genomicEquivalents = np.nan
-                    continue
+                # if gene['coverage'] < 0.97:
+                    # genomicEquivalents = np.nan
+                    # continue
                 if quant_mode == 'coverage':
                     coverageStr = gene['coverage_string']
                     coverage = coverageStr.split(',')[:-1]
@@ -65,6 +64,7 @@ def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers, quant_mode
                     coverageLog = np.log10(coverageNormalized)  # Model is log-log
                     genomicEquivalentsLog = slope * coverageLog + intercept
                     genomicEquivalents = 10**genomicEquivalentsLog
+                    break
                 elif quant_mode == 'read_count':
                     read_count = gene['read_count']
                     if read_count == 0:

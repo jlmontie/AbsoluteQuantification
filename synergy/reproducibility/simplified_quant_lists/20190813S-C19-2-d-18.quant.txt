@@ -1,0 +1,2 @@
+{"taxid": 573, "name": "Klebsiella pneumoniae", "quant": 976829.3927877124}
+{"taxid": 4909, "name": "Candida krusei (Pichia kudriavzevii)", "quant": 4306396.2978738565}

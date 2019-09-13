@@ -1,0 +1,2 @@
+{"taxid": 5482, "name": "Candida tropicalis", "quant": 919328994.6697562}
+{"taxid": 5480, "name": "Candida parapsilosis", "quant": 123775654.24071239}
