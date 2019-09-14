@@ -3,7 +3,6 @@ import argparse
 import sys
 import os
 import glob
-import gzip
 
 
 def index_reference(reference_fasta):
@@ -77,11 +76,18 @@ def cleanup(destination_subdir):
     sp.check_call(f"rm -rf ./index_files", shell=True)
 
 
-def main(index_path, fasta_file, output_sam_file):
+def main(index_path, fasta_file, output_sam_file=None):
+    print(f"Processing {os.path.basename(fasta_file)}")
+    print("Mapping to reference")
     map_to_reference(index_path, fasta_file, output_sam_file)
+    print("Converting SAM to BAM")
     sam_to_bam(output_sam_file)
-    sort_bam(output_sam_file)
+    print("Sorting BAM")
+    sort_bam()
+    print("Calculating coverage")
     get_coverage()
+    print("Cleaning up directory")
+    cleanup()
 
 
 if __name__ == "__main__":
