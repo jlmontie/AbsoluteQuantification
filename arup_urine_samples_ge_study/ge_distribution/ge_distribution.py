@@ -44,7 +44,6 @@ def filter_re_match(match):
 
 summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
 sample_info = pd.read_excel('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
-outdir = '/Users/jmontgomery/Desktop/'
 re_match = sample_info['RESULT LONG TEXT'].apply(search_string)
 
 org_taxids = {
@@ -152,15 +151,15 @@ ge_df = pd.DataFrame(data={
 # ge_df.loc[ge_df['Accession'] == 'IDBD-D100415', 'Detections'] = 'Discordant - P.aeruginosa'
 # ge_df.loc[ge_df['Accession'] == 'IDBD-D100416', 'Detections'] = 'Discordant - P.aeruginosa'
 
-ge_df.to_csv(os.path.join(outdir, 'quantifications.csv'))
+ge_df.to_csv('quantifications.csv')
 ge_df = ge_df[~ge_df['log(Genomic Equivalents / ml)'].isna()]
 fig = px.histogram(ge_df, x='log(Genomic Equivalents / ml)', nbins=20)
 fig.update_xaxes(range=[4, 9])
-fig.write_html(os.path.join(outdir, 'hist.html'))
+fig.write_html('hist.html')
 fig_cor = px.scatter(ge_df, x='log(cfu/ml)', y='log(Genomic Equivalents / ml)')
 fig_cor.update_xaxes(range=[4, 5.5], dtick=0.5)
 fig_cor.update_yaxes(range=[5, 9])
-fig_cor.write_html(os.path.join(outdir, 'corr.html'))
+fig_cor.write_html('corr.html')
 
 lin_fit_x = ge_df.loc[~(ge_df['Plate count log(cfu/ml)'].isna()),
                       'Plate count log(cfu/ml)']
@@ -235,4 +234,4 @@ fig_sub.update_layout(annotations=[dict(
         size=18
     )
 )])
-fig_sub.write_html(os.path.join(outdir, 'hist_corr.html'))
+fig_sub.write_html('hist_corr.html')
