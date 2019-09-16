@@ -22,15 +22,21 @@ def map_to_reference(index_path, fasta_file, output):
         if fasta_file[0].endswith('.gz'):
             sp.call(f"gunzip {fasta_file[0]}", shell=True)
             fasta_file1 = os.path.splitext(fasta_file[0])[0]
+        else:
+            fasta_file1 = fasta_file[0]
         if fasta_file[1].endswith('.gz'):
             sp.call(f"gunzip {fasta_file[1]}", shell=True)
             fasta_file2 = os.path.splitext(fasta_file[1])[0]
+        else:
+            fasta_file2 = fasta_file[1]
         cmd_str = f"-1 {fasta_file1} -2 {fasta_file2}"
         outfile_basename = os.path.splitext(os.path.basename(fasta_file[0]))[0]
     else:
         if fasta_file.endswith('.gz'):
             sp.call(f"gunzip {fasta_file}", shell=True)
             fasta_file1 = os.path.splitext(fasta_file)[0]
+        else:
+            fasta_file1 = fasta_file
         cmd_str = f"-U {fasta_file1}"
         outfile_basename = os.path.splitext(os.path.basename(fasta_file))[0]
     if output is None:
@@ -67,13 +73,13 @@ def get_coverage():
     sp.call(f"bedtools genomecov -ibam {sorted_bam} -d > {coverage_out}", shell=True)
 
 
-def cleanup(destination_subdir):
+def cleanup():
     """
     Clean up intermediate mapping files, *.bam and *.sam.
     """
-    sp.check_call(f"rm {destination_subdir}/*.bam", shell=True)
-    sp.check_call(f"rm {destination_subdir}/*.sam", shell=True)
-    sp.check_call(f"rm -rf ./index_files", shell=True)
+    sp.check_call(f"rm {os.path.join(os.getcwd(), '*.bam')}", shell=True)
+    sp.check_call(f"rm {os.path.join(os.getcwd(), '*.sam')}", shell=True)
+    # sp.check_call(f"rm -rf ./index_files", shell=True)
 
 
 def main(index_path, fasta_file, output_sam_file=None):

@@ -1,14 +1,15 @@
 import sys
 import pandas as pd
-# sys.path.insert(0,'../')
-# import pipeline
-import subprocess
+import os
+sys.path.insert(0,'../')
+import pipeline
 
 index_path = 'index_files'
-fqo_path = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/FastQataloguer_ARUP_Urine_2019-09-11.csv'
+fqo_path = '../../arup_urine_samples_ge_study/ge_distribution/FastQataloguer_ARUP_Urine_2019-09-11.csv'
 fqo = pd.read_csv(fqo_path)
-fasta_path = fqo['Original fastq path']
-for path in fasta_path:
-    subprocess.call(f"cp {path} /scratch/jmontgomery/arup_urine", shell=True)
-# fasta_path = fqo['Original fastq path'].values[0]
-# pipeline.main(index_path, fasta_path)
+
+fastq_dir = '/home/jmontgomery/mnt/arup_urine_fqs'
+fastq_file_ls = os.listdir(fastq_dir)
+pipeline.main(index_path, os.path.join(fastq_dir, fastq_file_ls[2]))
+# for fastq in fastq_file_ls:
+    # pipeline.main(index_path, os.path.join(fastq_dir, fastq))
