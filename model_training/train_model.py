@@ -59,6 +59,7 @@ def fit_model(input_info):
     model.plot_fit(show_fig=config['Output']['ShowPlot'],
                    save_fig=config['Output']['SavePlot'],
                    outdir=config['Paths']['OutputDir'])
+    model.save_plot_data(outdir=config['Paths']['OutputDir'])
 
 
 if __name__ == '__main__':

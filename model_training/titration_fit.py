@@ -216,11 +216,13 @@ class titration_fit(object):
             cov_norm_log_ls.extend(cov_norm_log)
             conc_log_ls.extend(conc_log)
         slope, intercept, rval, pval, stderr = linregress(cov_norm_log_ls, conc_log_ls)
+        residuals = (slope * np.array(cov_norm_log_ls) + intercept) - np.array(conc_log_ls)
         self.slope_ = slope
         self.intercept_ = intercept
         self.fit_metrics_ = {'R-sqr': rval**2, 'P-value': pval, 'Stderr': stderr}
         self._coverage_log = cov_norm_log_ls
         self._concentration_log = conc_log_ls
+        self._residuals = residuals
 
 
     def save_model(self, outdir=None):
@@ -271,12 +273,14 @@ class titration_fit(object):
         ]
         fig = make_subplots(rows=1, cols=2, subplot_titles=('Fit', 'Residuals'))
         cov_norm_log_ls = []
+        conc_log_ls = []
         y_hat_ls = []
         for idx, (taxid, org_dict) in enumerate(self.org_counts.items()):
             org_dict = self.org_counts[taxid]
             cov_norm_log, conc_log = self._get_log_norm_nonzero_vals(taxid, org_dict)
             y_hat = self.slope_ * cov_norm_log + self.intercept_
             cov_norm_log_ls.extend(cov_norm_log)
+            conc_log_ls.extend(conc_log)
             y_hat_ls.extend(y_hat)
             name = ncbi.get_name(taxid)
             # Data scatter
@@ -333,3 +337,15 @@ class titration_fit(object):
             fig.show()
         if save_fig:
             fig.write_html(os.path.join(outdir, 'regression_plot.html'))
+
+
+    def save_plot_data(self, outdir=None):
+        if outdir is None:
+            outdir = os.getcwd()
+        pd.DataFrame(
+            data={
+                'log_coverage': self._coverage_log,
+                'log_conc': self._concentration_log,
+                'residuals': self._residuals
+            }
+        ).to_csv(os.path.join(outdir, 'plot_data.csv'))

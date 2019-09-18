@@ -42,6 +42,17 @@ def filter_re_match(match):
     return organism_ls, concentration_ls
 
 
+def get_trendline(df):
+    lin_fit_x = df.loc[~(df['Plate count log(cfu)/ml'].isna()),
+                          'Plate count log(cfu)/ml']
+    lin_fit_y = df.loc[~(df['Plate count log(cfu)/ml'].isna()),
+                          'log(Genomic Equivalents)/ml']
+    slope, intercept, rval, pval, stderr = linregress(lin_fit_x, lin_fit_y)
+    trendline_x=np.linspace(lin_fit_x.min(), lin_fit_x.max())
+    trendline_y=slope * np.linspace(lin_fit_x.min(), lin_fit_x.max()) + intercept
+    return trendline_x, trendline_y, rval
+
+
 summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
 sample_info = pd.read_excel('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
 re_match = sample_info['RESULT LONG TEXT'].apply(search_string)
@@ -103,11 +114,13 @@ for organism in sample_info['ORGANISM'].unique():
 summary_ls = os.listdir(summary_parentdir)
 ge_ls = []
 accession_ls = []
+idbd_ls = []
 arup_conc_ls = []
 plate_conc_ls = []
 organism_ls = []
 for idx, row in sample_info[~sample_info['Accession #'].isna()].iterrows():
     accession = row['Accession #']
+    idbd_num = row['IDBD #']
     arup_conc = int(row['CONCENTRATION'])
     org = row['ORGANISM']
     bac_summary = [file for file in summary_ls if accession in file and 'bacterial' in file]
@@ -126,6 +139,7 @@ for idx, row in sample_info[~sample_info['Accession #'].isna()].iterrows():
                     print(f"{accession} skipped. Organism not present.")
                     ge_log = np.nan
     accession_ls.append(accession)
+    idbd_ls.append(idbd_num)
     arup_conc_ls.append(np.log10(arup_conc))
     organism_ls.append(org)
     if 'Count' in row:
@@ -137,10 +151,11 @@ plate_conc_arr[~np.isnan(plate_conc_arr)] = \
     np.log10(plate_conc_arr[~np.isnan(plate_conc_arr)])
 ge_df = pd.DataFrame(data={
     'Accession': accession_ls,
+    'IDBD #': idbd_ls,
     'Detected Organism': organism_ls,
-    'log(Genomic Equivalents / ml)': ge_ls,
+    'log(Genomic Equivalents)/ml': ge_ls,
     'log(cfu/ml)': arup_conc_ls,
-    'Plate count log(cfu/ml)': plate_conc_arr
+    'Plate count log(cfu)/ml': plate_conc_arr
 })
 # Manually add quantification for disagreeing detections
 # ge_df['Detections'] = 'Concordant'
@@ -152,25 +167,60 @@ ge_df = pd.DataFrame(data={
 # ge_df.loc[ge_df['Accession'] == 'IDBD-D100416', 'Detections'] = 'Discordant - P.aeruginosa'
 
 ge_df.to_csv('quantifications.csv')
-ge_df = ge_df[~ge_df['log(Genomic Equivalents / ml)'].isna()]
-fig = px.histogram(ge_df, x='log(Genomic Equivalents / ml)', nbins=20)
+ge_df = ge_df[~ge_df['log(Genomic Equivalents)/ml'].isna()]
+trendline_x, trendline_y, rval = get_trendline(ge_df)
+fig = px.histogram(ge_df, x='log(Genomic Equivalents)/ml', nbins=20)
 fig.update_xaxes(range=[4, 9])
 fig.write_html('hist.html')
-fig_cor = px.scatter(ge_df, x='log(cfu/ml)', y='log(Genomic Equivalents / ml)')
-fig_cor.update_xaxes(range=[4, 5.5], dtick=0.5)
-fig_cor.update_yaxes(range=[5, 9])
+fig_cor = px.scatter(ge_df[~(ge_df['Plate count log(cfu)/ml'].isna())],
+                     x='Plate count log(cfu)/ml',
+                     y='log(Genomic Equivalents)/ml',
+                     marginal_x='histogram', marginal_y='histogram',
+                     color='Detected Organism',
+                     hover_data=['Accession',
+                                 'Detected Organism',
+                                 'Plate count log(cfu)/ml',
+                                 'log(Genomic Equivalents)/ml'])
+fig_cor.add_scatter(x=trendline_x, y=trendline_y,
+                    mode='lines', showlegend=False)
+fig_cor.update_layout(
+    annotations=[
+        dict(x=4.5, y=7.5, text=f"Pearson R:<br>{rval:0.2f}", showarrow=False)
+    ]
+)
 fig_cor.write_html('corr.html')
 
-lin_fit_x = ge_df.loc[~(ge_df['Plate count log(cfu/ml)'].isna()),
-                      'Plate count log(cfu/ml)']
-lin_fit_y = ge_df.loc[~(ge_df['Plate count log(cfu/ml)'].isna()),
-                      'log(Genomic Equivalents / ml)']
-slope, intercept, rval, pval, stderr = linregress(lin_fit_x, lin_fit_y)
+outliers = ['IDBD-D100438', 'IDBD-D100446', 'IDBD-D100417']
+ge_df_no_outliers = ge_df[~(ge_df['Accession'].isin(outliers))]
+trendline_no_out_x, trendline_no_out_y, rval_no_out = \
+    get_trendline(ge_df_no_outliers)
+fig_cor_no_out = px.scatter(
+    ge_df_no_outliers[~(ge_df_no_outliers['Plate count log(cfu)/ml'].isna())],
+    x='Plate count log(cfu)/ml',
+    y='log(Genomic Equivalents)/ml',
+    marginal_x='histogram', marginal_y='histogram',
+    color='Detected Organism',
+    hover_data=['Accession',
+                'Detected Organism',
+                'Plate count log(cfu)/ml',
+                'log(Genomic Equivalents)/ml']
+)
+fig_cor_no_out.add_scatter(x=trendline_no_out_x, y=trendline_no_out_y,
+                    mode='lines', showlegend=False)
+fig_cor_no_out.update_layout(
+    annotations=[
+        dict(x=4.5, y=7.5, text=f"Pearson R:<br>{rval_no_out:0.2f}",
+             showarrow=False)
+    ]
+)
+fig_cor_no_out.write_html('corr_no_outliers.html')
+
 fig_sub = make_subplots(rows=1, cols=2)
 for idx, organism in enumerate(ge_df['Detected Organism'].unique()):
     fig_sub.add_trace(
         go.Histogram(
-            x=ge_df.loc[ge_df['Detected Organism'] == organism, 'log(Genomic Equivalents / ml)'],
+            x=ge_df.loc[ge_df['Detected Organism'] == organism,
+                        'log(Genomic Equivalents)/ml'],
             # nbinsx=20,
             legendgroup=organism,
             name=organism,
@@ -183,11 +233,14 @@ for idx, organism in enumerate(ge_df['Detected Organism'].unique()):
     fig_sub.add_trace(
         go.Scatter(
             x=ge_df.loc[(ge_df['Detected Organism'] == organism) &
-                        ~(ge_df['Plate count log(cfu/ml)'].isna()), 'Plate count log(cfu/ml)'],
+                        ~(ge_df['Plate count log(cfu)/ml'].isna()),
+                        'Plate count log(cfu)/ml'],
             y=ge_df.loc[(ge_df['Detected Organism'] == organism) &
-                        ~(ge_df['Plate count log(cfu/ml)'].isna()), 'log(Genomic Equivalents / ml)'],
+                        ~(ge_df['Plate count log(cfu)/ml'].isna()),
+                        'log(Genomic Equivalents)/ml'],
             text=ge_df.loc[(ge_df['Detected Organism'] == organism) &
-                        ~(ge_df['Plate count log(cfu/ml)'].isna()), 'Accession'],
+                        ~(ge_df['Plate count log(cfu)/ml'].isna()),
+                        'Accession'],
             mode='markers',
             showlegend=False,
             name=organism,
@@ -201,18 +254,18 @@ for idx, organism in enumerate(ge_df['Detected Organism'].unique()):
     )
     fig_sub.add_trace(
         go.Scatter(
-            x=np.linspace(lin_fit_x.min(), lin_fit_x.max()),
-            y=slope * np.linspace(lin_fit_x.min(), lin_fit_x.max()) + intercept,
+            x=trendline_x,
+            y=trendline_y,
             showlegend=False
         ),
         row=1, col=2
     )
 fig_sub.update_xaxes(
-        title_text='log(Genomic Equivalents / ml)',
+        title_text='log(Genomic Equivalents)/ml',
     row=1, col=1
 )
 fig_sub.update_xaxes(
-    title_text='Plate count log(cfu/ml)',
+    title_text='Plate count log(cfu)/ml',
     row=1, col=2
 )
 fig_sub.update_yaxes(
@@ -220,7 +273,7 @@ fig_sub.update_yaxes(
     row=1, col=1
 )
 fig_sub.update_yaxes(
-    title_text='log(Genomic Equivalents / ml)',
+    title_text='log(Genomic Equivalents)/ml',
     row=1, col=2
 )
 fig_sub.update_layout(annotations=[dict(
