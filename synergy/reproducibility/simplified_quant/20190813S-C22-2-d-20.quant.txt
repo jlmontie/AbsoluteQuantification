@@ -1,1 +1,1 @@
-{"taxid": 5476, "name": "Candida albicans", "quant": 6413551.249283439}
+{"taxid": 5476, "name": "Candida albicans", "quant": 6413551.249283439, "ic_counts": 1865}

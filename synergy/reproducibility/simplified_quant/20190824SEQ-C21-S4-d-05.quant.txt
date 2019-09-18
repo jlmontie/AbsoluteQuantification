@@ -1,1 +1,1 @@
-{"taxid": 5480, "name": "Candida parapsilosis", "quant": 2402642.94919377}
+{"taxid": 5480, "name": "Candida parapsilosis", "quant": 2402642.94919377, "ic_counts": 67983}
