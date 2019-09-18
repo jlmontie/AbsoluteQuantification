@@ -1,0 +1,1 @@
+{"taxid": 5480, "name": "Candida parapsilosis", "quant": 2151606.829098058, "ic_counts": 41172}

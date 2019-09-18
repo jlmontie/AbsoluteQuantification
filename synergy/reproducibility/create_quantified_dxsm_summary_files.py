@@ -93,8 +93,10 @@ out_dir = 'summary_with_quant'
 if not os.path.exists(out_dir):
     os.mkdir(out_dir)
 summary_dir = '/mnt/ahara_results/synergy_patient_sample_results'
-sample_info = pd.read_csv('Nextera_SampleSheets_All_Reproducibility.csv')
-sample_ids = sample_info['Sample_ID'].apply(lambda x: '-'.join(x.split('-')[:5]))
+sample_info = pd.read_csv('CombinedRegistrationFiles.csv')
+sample_info = sample_info[~(sample_info['seqSple'].str.contains('-C14')) &
+                          ~(sample_info['seqSple'].str.contains('-C16'))]
+sample_ids = sample_info['seqSple']
 study_description = pd.read_excel('20190812_Summary_of_Synergy_Reproducibility_Samples_Runs.xlsx')
 study_description = study_description[study_description['Comment'] == 'run passed']
 # make dictionary and look up organism
@@ -106,10 +108,15 @@ for id in sample_ids:
     for synergy_id in relevant_orgs:
         if synergy_id in id:
             relevant_org = relevant_orgs[synergy_id]
+        else:
+            continue
     org_quants = []
     summary_path_base = os.path.join(summary_dir, id)
     summary_paths = glob.glob(summary_path_base + '.rna.*.dxsm.out.summary.gz')
-    viral_path = [path for path in summary_paths if 'viral' in path][0]
+    viral_path_ls = [path for path in summary_paths if 'viral' in path]
+    if len(viral_path_ls) < 1:
+        continue
+    viral_path = viral_path_ls[0]
     viral_summary = read_summary_files(viral_path)
     bacterial_path = [path for path in summary_paths if 'bacterial' in path][0]
     bacterial_summary = read_summary_files(bacterial_path)
@@ -129,13 +136,10 @@ for id in sample_ids:
     bacterial_summary_with_quant = absoluteQuant(ic_counts, bacterial_summary,
         rdna_copy_numbers['16s'])
     bacterial_org_quants = get_org_quants(bacterial_summary_with_quant, relevant_org, ic_counts)
-    print(bacterial_org_quants)
     fungpar_summary_with_quant = absoluteQuant(ic_counts, fungpar_summary,
         rdna_copy_numbers['18s'])
     fungpar_org_quants = get_org_quants(fungpar_summary_with_quant, relevant_org, ic_counts)
-    print(fungpar_org_quants)
     org_quants = bacterial_org_quants + fungpar_org_quants
-    print(org_quants)
     with open(os.path.join('simplified_quant', id + '.quant.txt'), 'w') as outfile:
         for line in org_quants:
             outfile.write(f"{json.dumps(line)}\n")
