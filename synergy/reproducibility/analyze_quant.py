@@ -13,6 +13,7 @@ batch = []
 taxid = []
 name = []
 quant = []
+ic = []
 for file in quant_files:
     path = os.path.join('simplified_quant', file)
     sample_id = '-'.join(file.split('-')[1:3])
@@ -30,8 +31,9 @@ for file in quant_files:
             taxid.append(quant_dict['taxid'])
             name.append(quant_dict['name'])
             quant.append(quant_dict['quant'])
+            ic.append(quant_dict['ic_counts'])
 df = pd.DataFrame(data={'Sample ID':sample, 'Batch': batch, 'taxid': taxid,
-                  'Organism': name, 'quant': quant})
+                  'Organism': name, 'quant': quant, 'ic count': ic})
 df['log(GE)/ml'] = np.log10(df['quant'])
 df = df[~(df['Sample ID'].isin(['C14', 'C16']))]
 

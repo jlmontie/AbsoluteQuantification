@@ -1,1 +1,1 @@
-{"taxid": 5482, "name": "Candida tropicalis", "quant": 919328994.6697562}
+{"taxid": 5482, "name": "Candida tropicalis", "quant": 919328994.6697562, "ic_counts": 4363}

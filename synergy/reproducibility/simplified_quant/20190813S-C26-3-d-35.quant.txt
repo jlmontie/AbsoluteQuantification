@@ -1,1 +1,1 @@
-{"taxid": 562, "name": "Escherichia coli", "quant": 54261264.9113917}
+{"taxid": 562, "name": "Escherichia coli", "quant": 54261264.9113917, "ic_counts": 692}

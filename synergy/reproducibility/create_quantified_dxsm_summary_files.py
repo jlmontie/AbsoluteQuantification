@@ -21,7 +21,7 @@ def read_summary_files(path):
     return summary_object_ls
 
 
-def get_org_quants(summary_with_quant, relevant_org):
+def get_org_quants(summary_with_quant, relevant_org, ic_counts):
     org_taxid = organism_taxids[relevant_org]
     org_quants = []
     for org_info in summary_with_quant:
@@ -33,7 +33,8 @@ def get_org_quants(summary_with_quant, relevant_org):
                         org_quants.append({
                             'taxid': org_info['taxid'],
                             'name': org_info['name'],
-                            'quant': org_info['absolute_quant']
+                            'quant': org_info['absolute_quant'],
+                            'ic_counts': sum(ic_counts)
                         })
     return org_quants
 
@@ -127,11 +128,11 @@ for id in sample_ids:
     # Get quantifications
     bacterial_summary_with_quant = absoluteQuant(ic_counts, bacterial_summary,
         rdna_copy_numbers['16s'])
-    bacterial_org_quants = get_org_quants(bacterial_summary_with_quant, relevant_org)
+    bacterial_org_quants = get_org_quants(bacterial_summary_with_quant, relevant_org, ic_counts)
     print(bacterial_org_quants)
     fungpar_summary_with_quant = absoluteQuant(ic_counts, fungpar_summary,
         rdna_copy_numbers['18s'])
-    fungpar_org_quants = get_org_quants(fungpar_summary_with_quant, relevant_org)
+    fungpar_org_quants = get_org_quants(fungpar_summary_with_quant, relevant_org, ic_counts)
     print(fungpar_org_quants)
     org_quants = bacterial_org_quants + fungpar_org_quants
     print(org_quants)
