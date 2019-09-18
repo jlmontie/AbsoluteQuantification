@@ -1,1 +1,0 @@
-{"taxid": 5476, "name": "Candida albicans", "quant": 7486037.63770208, "ic_counts": 2040}

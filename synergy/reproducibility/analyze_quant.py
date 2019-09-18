@@ -17,16 +17,23 @@ ic = []
 total_reads = []
 for file in quant_files:
     seq_sple = file.split('.')[0]
+    print(seq_sple)
     path = os.path.join('simplified_quant', file)
-    sample_id = '-'.join(file.split('-')[1:3])
+    if 'T7' in file:
+        sample_id = '-'.join(file.split('-')[2:4])
+        display_id = file.split('-')[2]
+    else:
+        sample_id = '-'.join(file.split('-')[1:3])
+        display_id = file.split('-')[1]
     with open(os.path.join('batch_jsons', batch_key[sample_id] + '.json')) as batch_file:
         batch_json = json.load(batch_file)
     reads = np.nan
     for lib in batch_json['libraries']:
         if lib['seqSple'] == seq_sple:
             reads = lib['readInfo']['totalReads']
+    if reads == np.nan:
+        print(f"{file} not found in json")
     total_reads.append(reads)
-    display_id = file.split('-')[1]
     sample.append(display_id)
     batch.append(batch_key[sample_id])
     if os.stat(path).st_size == 0:
@@ -42,17 +49,18 @@ for file in quant_files:
             name.append(quant_dict['name'])
             quant.append(quant_dict['quant'])
             ic.append(quant_dict['ic_counts'])
-print(len(ic))
-print(len(total_reads))
+
 df = pd.DataFrame(data={'Sample ID':sample, 'Batch': batch, 'taxid': taxid,
                   'Organism': name, 'quant': quant, 'IC count': ic,
                   'Total reads': total_reads,
                   'Normalized IC': np.array(ic) / (np.array(total_reads) / 1e6)})
 df['log(GE)/ml'] = np.log10(df['quant'])
 df = df[~(df['Sample ID'].isin(['C14', 'C16']))]
-
+df.to_csv('df.csv')
 df_inter = df[df['Sample ID'].isin(['C17', 'C18', 'C21', 'C22', 'C24', 'C25', 'C26', 'C27'])]
-print(len(df_inter['quant'].isna()))
+df_inter.to_csv('df_inter.csv')
+print(df_inter.shape)
+print(f"NA values: {len(df_inter.isna())}")
 # fig_inter = px.scatter(df_inter, x='Sample ID', y='log(GE)/ml', color='Batch',
 #                 category_orders={'Sample ID': df_inter['Sample ID'].sort_values()},
 #                 hover_data=['Batch', 'Organism', 'log(GE)/ml'])
@@ -82,7 +90,7 @@ fig_inter_norm = px.box(
     }
 )
 fig_inter_norm.update_layout(title='Inter Run Variation')
-fig_inter_norm.show()
+# fig_inter_norm.show()
 fig_inter_norm.write_html('InterRunVariation.html')
 
 # Internal controls
@@ -106,7 +114,7 @@ fig_ic = px.box(
     color='Batch'
 )
 fig_ic.update_layout(title='Inter Run IC')
-fig_ic.show()
+# fig_ic.show()
 fig_ic.write_html('InterRunIC.html')
 
 # Normalized internal controls
@@ -130,7 +138,7 @@ fig_ic_norm = px.box(
     color='Batch'
 )
 fig_ic_norm.update_layout(title='Inter Run Normalized IC')
-fig_ic_norm.show()
+# fig_ic_norm.show()
 fig_ic_norm.write_html('InterRunICNorm.html')
 
 # Total reads
@@ -154,7 +162,7 @@ fig_total_reads = px.box(
     color='Batch'
 )
 fig_total_reads.update_layout(title='Inter Run Total Reads')
-fig_total_reads.show()
+# fig_total_reads.show()
 fig_total_reads.write_html('InterRunTotalReads.html')
 
 # Inter run variation, trouble organisms
@@ -165,11 +173,12 @@ fig_inter = px.scatter(df_inter[df['Organism'].isin(['Candida tropicalis',
 fig_inter.update_traces(marker=dict(size=14))
 fig_inter.update_xaxes(range=[-1, 2])
 fig_inter.update_layout(height=700, width=700)
-fig_inter.show()
+# fig_inter.show()
 fig_inter.write_html('LargeInterRunVariation.html')
 
 # Intra run variation
 df_intra = df[df['Batch']=='20190813B']
+print(df_intra)
 intra_mean = df_intra.groupby('Sample ID').transform('mean')
 df_intra['Deviation from sample mean, log(GE)/ml'] = \
     df_intra['log(GE)/ml'] - intra_mean['log(GE)/ml']

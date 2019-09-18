@@ -1,1 +1,0 @@
-{"taxid": 4909, "name": "Candida krusei (Pichia kudriavzevii)", "quant": 4082377.946299163, "ic_counts": 7543}
