@@ -38,6 +38,11 @@ for summary in quant_dxsm:
         for line in file:
             cov_info = json.loads(line)
             if cov_info['taxid'] in taxids:
+                for gene in cov_info['gene_info']:
+                    if gene['geneid'] == 0:
+                        coverage = gene['coverage']
+                if coverage < 0.97:
+                    continue
                 org_idx = taxids.index(cov_info['taxid'])
                 if cov_info['absolute_quant'] == 0:
                     calculated_conc = cov_info['absolute_quant']
@@ -52,7 +57,6 @@ for summary in quant_dxsm:
 
 merged_dict = combine_dictionaries(dict_ls)
 merged_df = pd.DataFrame.from_dict(merged_dict, orient='index')
-print(merged_df)
 
 color_dict = dict(zip(taxids, colors)) # for consistent colors for each organism
 data = []
