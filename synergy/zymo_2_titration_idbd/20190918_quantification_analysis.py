@@ -6,17 +6,38 @@ import sys
 from collections import defaultdict
 import plotly
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 from plotly.colors import DEFAULT_PLOTLY_COLORS as colors
 
 
-def combine_dictionaries(dict_ls):
+def combine_dictionaries(dict_ls, top_level_key):
     d = defaultdict(lambda: defaultdict(list))
     for dictionary in dict_ls:
         key_ls = list(dictionary.keys())
-        key_ls.remove('taxid')
+        key_ls.remove(top_level_key)
         for key in key_ls:
-            d[dictionary['taxid']][key].append(dictionary[key])
+            d[dictionary[top_level_key]][key].append(dictionary[key])
     return d
+
+
+def add_sublots(fig, organism, row=None, col=None, showlegend=True):
+    color_dict = dict(zip([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], colors)) # for consistent colors for each dilution
+    for dilution in set(merged_dict_organism[organism]['dilution']):
+        dilution_idx = [i for i, x in enumerate(merged_dict_organism[organism]['dilution']) if x == dilution]
+        fig.add_trace(
+            go.Scatter(
+                x=np.array(merged_dict_organism[organism]['expected concentration'])[dilution_idx],
+                y=np.array(merged_dict_organism[organism]['calculated concentration'])[dilution_idx],
+                name=str(dilution),
+                mode='markers',
+                marker=dict(color=color_dict[dilution]),
+                legendgroup=str(dilution),
+                showlegend=showlegend
+            ), row=row, col=col
+        )
+    fig.update_xaxes(title='Expected Conc. (GE/ml)', range=[3, 10], row=row, col=col)
+    fig.update_yaxes(title='Calculated Conc. (GE/ml)', range=[3, 10], row=row, col=col)
+    return fig
 
 
 zymo_orgs = pd.read_csv('ZymoStd2ConcentrationsTitrationIDBD.csv')
@@ -52,57 +73,37 @@ for summary in quant_dxsm:
                 dict_ls.append({'taxid': cov_info['taxid'],
                         'organism': organisms[org_idx],
                         'expected concentration': expected_conc,
-                        'calculated concentration': calculated_conc
+                        'calculated concentration': calculated_conc,
+                        'dilution': dilution_factor + 1
                 })
 
-merged_dict = combine_dictionaries(dict_ls)
-merged_df = pd.DataFrame.from_dict(merged_dict, orient='index')
+merged_dict = combine_dictionaries(dict_ls, 'taxid')
+merged_dict_organism = combine_dictionaries(dict_ls, 'organism')
+print(merged_dict_organism.keys())
 
-color_dict = dict(zip(taxids, colors)) # for consistent colors for each organism
-data = []
-for taxid in merged_dict.keys():
-    if len(merged_dict[taxid]['calculated concentration']) == 2:
-        text = ['', merged_dict[taxid]['organism'][0]]
-    else:
-        text = merged_dict[taxid]['organism'][0]
-    if taxid == 562 or taxid == 1280:
-        textposition = 'bottom center'
-    else:
-        textposition = 'top center'
-    if merged_dict[taxid]['calculated concentration'][0] == 0:
-        continue
-    trace = go.Scatter(
-        x=merged_dict[taxid]['expected concentration'],
-        y=merged_dict[taxid]['calculated concentration'],
-        name=merged_dict[taxid]['organism'][0],
-        mode='markers+text',
-        marker=dict(
-            size=12,
-            color=color_dict[taxid]
-        ),
-        text=text,
-        textposition=textposition,
-        showlegend=False
-    )
-    data.append(trace)
-data.insert(0, go.Scatter(
-    x=[0, 10],
-    y=[0, 10],
-    showlegend=False,
-    mode='lines'
-))
-layout = go.Layout(
-    xaxis=dict(
-        range=[0, 10],
-        title='Expected Conc. (GE/ml)'
-    ),
-    yaxis=dict(
-        range=[0, 10],
-        title='Calculated Conc. (GE/ml)'
-    ),
-    height=900,
-    width=900
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=[
+        'Pseudomonas aeruginosa',
+        'Listeria Monocytogenes',
+        'Bacillus subtilis',
+        'Saccharomyces cerevisiae'
+    ]
 )
-fig = go.Figure(data, layout)
-fig.write_html('quantification_by_coverage_nonzero.html')
-# fig.show()
+for col in [1, 2]:
+    for row in [1, 2]:
+        fig.add_trace(
+            go.Scatter(
+                x=[0, 10],
+                y=[0, 10],
+                showlegend=False,
+                mode='lines',
+                line=dict(color='rgb(0.25, 0.25, 0.25)')
+            ), row=row, col=col
+        )
+
+fig = add_sublots(fig, 'Pseudomonas aeruginosa', row=1, col=1, showlegend=True)
+fig = add_sublots(fig, 'Listeria Monocytogenes', row=1, col=2, showlegend=False)
+fig = add_sublots(fig, 'Bacillus subtilis', row=2, col=1, showlegend=False)
+fig = add_sublots(fig, 'Saccharomyces cerevisiae', row=2, col=2, showlegend=False)
+fig.show()
