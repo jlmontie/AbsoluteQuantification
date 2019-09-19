@@ -23,12 +23,13 @@ def get_species_genus_taxid(taxid):
 
 def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers, quant_mode='coverage'):
     if quant_mode == 'coverage':
+        # Half log urine extraction, all bacteria, no cutoffs
         # slope = 0.9752025158801086
         # intercept = 9.94632629381537
-        # Half log urine extraction, no P aeruginosa
+        # Half log urine extraction, no P aeruginosa, with cutoffs
         slope = 1.025813761718345
         intercept = 10.195966838524328
-        # Full log urine extraction, no P aeruginosa
+        # Full log urine extraction, no P aeruginosa, with cutoffs
         # slope = 1.2169746581769076
         # intercept = 10.99130819075618
     elif quant_mode == 'read_count':
