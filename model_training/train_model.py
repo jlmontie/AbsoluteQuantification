@@ -4,6 +4,7 @@ import yaml
 from titration_fit import titration_fit
 import json
 import argparse
+import os
 
 
 def prep_input_files(config):
@@ -49,6 +50,8 @@ def prep_input_files(config):
 
 
 def fit_model(input_info):
+    if not os.path.exists(os.path.join(config['Paths']['OutputDir'], 'model_output')):
+        os.mkdir(os.path.join(config['Paths']['OutputDir'], 'model_output'))
     model = titration_fit(input_info, fit_coverage=config['Fit']['FitCoverage'],
                           specific_cutoffs=config['Fit']['SpecificCutoffs'])
     model.fit()
