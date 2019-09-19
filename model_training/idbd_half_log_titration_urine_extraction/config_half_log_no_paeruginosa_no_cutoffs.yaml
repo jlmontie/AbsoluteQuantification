@@ -39,4 +39,4 @@ Fit:
   # Fit coverage. Otherwise will fit read counts
   FitCoverage: yes
   # Apply specific cutoffs to coverage.
-  SpecificCutoffs: yes
+  SpecificCutoffs: no

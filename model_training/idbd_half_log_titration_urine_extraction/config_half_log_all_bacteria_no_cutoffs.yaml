@@ -18,7 +18,7 @@
 ---
 # REQUIRED INPUTS
 FastQataloguerOutput: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/idbd_half_log_titration_urine_extraction/FastQataloguer_CommunityStd_Urine_2019-08-31.csv
-OrganismStockConcentrations: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/concentration_files/CommunityStandardConcentrationsNoPaeruginosa.csv
+OrganismStockConcentrations: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/concentration_files/CommunityStandardConcentrationsNoFungi.csv
 SampleDilutionFactors: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/idbd_half_log_titration_urine_extraction/SampleDilutionFactors_UrineExtraction.csv
 rDnaResourceFile: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/rrndb_16s_copies_with_18s.json
 
@@ -39,4 +39,4 @@ Fit:
   # Fit coverage. Otherwise will fit read counts
   FitCoverage: yes
   # Apply specific cutoffs to coverage.
-  SpecificCutoffs: yes
+  SpecificCutoffs: no
