@@ -9,6 +9,8 @@ import pandas as pd
 import numpy as np
 from scipy.stats import linregress
 import re
+from ncbi_taxonomy_utils import ncbi_taxonomy
+ncbi = ncbi_taxonomy()
 
 
 def search_string(string):
@@ -50,9 +52,10 @@ def get_trendline(df):
     slope, intercept, rval, pval, stderr = linregress(lin_fit_x, lin_fit_y)
     trendline_x=np.linspace(lin_fit_x.min(), lin_fit_x.max())
     trendline_y=slope * np.linspace(lin_fit_x.min(), lin_fit_x.max()) + intercept
-    return trendline_x, trendline_y, rval
+    return trendline_x, trendline_y, rval, (slope, intercept)
 
-
+with open('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/data/explify_core_meta_keyed_by_taxid_190705_resp_extended.json') as cutoff_file:
+    cutoffs = json.load(cutoff_file)
 summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
 sample_info = pd.read_excel('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
 re_match = sample_info['RESULT LONG TEXT'].apply(search_string)
@@ -118,6 +121,8 @@ idbd_ls = []
 arup_conc_ls = []
 plate_conc_ls = []
 organism_ls = []
+below_cutoffs = open(os.path.join('detections_below_cutoff.txt'), 'w')
+below_cutoffs.write("Accession\tOrganism\tCoverage\tCutoff\n")
 for idx, row in sample_info[~sample_info['Accession #'].isna()].iterrows():
     accession = row['Accession #']
     idbd_num = row['IDBD #']
@@ -132,7 +137,18 @@ for idx, row in sample_info[~sample_info['Accession #'].isna()].iterrows():
         ge_log = np.nan
         for line in file:
             cov_info = json.loads(line)
+            for gene in cov_info['gene_info']:
+                if gene['geneid'] == 0:
+                    coverage = gene['coverage']
             if cov_info['taxid'] in row['TAXID']:
+                # Apply cutoffs
+                # cutoff_value = cutoffs[str(cov_info['taxid'])]['RNA_stringent']
+                # if coverage < cutoff_value:
+                #     print(f"{org} taxid {cov_info['taxid']} found for {accession} but below cutoff with coverage of {coverage} with cutoff of {cutoff_value}.")
+                #     below_cutoffs.write(f"{accession}\t{ncbi.get_name(cov_info['taxid'])}\t{coverage}\t{cutoff_value}\n")
+                #     continue
+                if org == 'Coagulase negative':
+                    print(f"Coagulase negative {cov_info['taxid']} found for {accession}")
                 if cov_info['absolute_quant'] != np.nan and cov_info['absolute_quant'] != 0:
                     ge_log = np.log10(cov_info['absolute_quant'])
                 else:
@@ -145,6 +161,7 @@ for idx, row in sample_info[~sample_info['Accession #'].isna()].iterrows():
     if 'Count' in row:
         plate_conc_ls.append(row['Count'])
     ge_ls.append(ge_log)
+below_cutoffs.close()
 
 plate_conc_arr = np.array(plate_conc_ls)
 plate_conc_arr[~np.isnan(plate_conc_arr)] = \
@@ -157,42 +174,37 @@ ge_df = pd.DataFrame(data={
     'log(cfu/ml)': arup_conc_ls,
     'Plate count log(cfu)/ml': plate_conc_arr
 })
-# Manually add quantification for disagreeing detections
-# ge_df['Detections'] = 'Concordant'
-# ge_df.loc[ge_df['Accession'] == 'IDBD-D100414', 'log(Genomic Equivalents / ml)'] = 7.638295708279279
-# ge_df.loc[ge_df['Accession'] == 'IDBD-D100415', 'log(Genomic Equivalents / ml)'] = 7.743110586
-# ge_df.loc[ge_df['Accession'] == 'IDBD-D100416', 'log(Genomic Equivalents / ml)'] = 8.434176604
-# ge_df.loc[ge_df['Accession'] == 'IDBD-D100414', 'Detections'] = 'Discordant - P.aeruginosa'
-# ge_df.loc[ge_df['Accession'] == 'IDBD-D100415', 'Detections'] = 'Discordant - P.aeruginosa'
-# ge_df.loc[ge_df['Accession'] == 'IDBD-D100416', 'Detections'] = 'Discordant - P.aeruginosa'
 
 ge_df.to_csv('quantifications.csv')
 ge_df = ge_df[~ge_df['log(Genomic Equivalents)/ml'].isna()]
-trendline_x, trendline_y, rval = get_trendline(ge_df)
+trendline_x, trendline_y, rval, coeff = get_trendline(ge_df)
 fig = px.histogram(ge_df, x='log(Genomic Equivalents)/ml', nbins=20)
 fig.update_xaxes(range=[4, 9])
 fig.write_html('hist.html')
-fig_cor = px.scatter(ge_df[~(ge_df['Plate count log(cfu)/ml'].isna())],
-                     x='Plate count log(cfu)/ml',
-                     y='log(Genomic Equivalents)/ml',
-                     marginal_x='histogram', marginal_y='histogram',
-                     color='Detected Organism',
-                     hover_data=['Accession',
-                                 'Detected Organism',
-                                 'Plate count log(cfu)/ml',
-                                 'log(Genomic Equivalents)/ml'])
-fig_cor.add_scatter(x=trendline_x, y=trendline_y,
-                    mode='lines', showlegend=False)
-fig_cor.update_layout(
+fig_corr = px.scatter(
+    ge_df[~(ge_df['Plate count log(cfu)/ml'].isna())],
+    x='Plate count log(cfu)/ml',
+    y='log(Genomic Equivalents)/ml',
+    marginal_x='histogram', marginal_y='histogram',
+    color='Detected Organism',
+    hover_data=['Accession',
+                'Detected Organism',
+                'Plate count log(cfu)/ml',
+                'log(Genomic Equivalents)/ml'
+    ]
+)
+fig_corr.add_scatter(x=np.linspace(4, 7), y=coeff[0] * np.linspace(4, 7) + coeff[1],
+                     mode='lines', showlegend=False)
+fig_corr.update_layout(
     annotations=[
         dict(x=4.5, y=7.5, text=f"Pearson R:<br>{rval:0.2f}", showarrow=False)
     ]
 )
-fig_cor.write_html('corr.html')
+fig_corr.write_html('corr.html')
 
 outliers = ['IDBD-D100438', 'IDBD-D100446', 'IDBD-D100417']
 ge_df_no_outliers = ge_df[~(ge_df['Accession'].isin(outliers))]
-trendline_no_out_x, trendline_no_out_y, rval_no_out = \
+trendline_no_out_x, trendline_no_out_y, rval_no_out, _ = \
     get_trendline(ge_df_no_outliers)
 fig_cor_no_out = px.scatter(
     ge_df_no_outliers[~(ge_df_no_outliers['Plate count log(cfu)/ml'].isna())],
