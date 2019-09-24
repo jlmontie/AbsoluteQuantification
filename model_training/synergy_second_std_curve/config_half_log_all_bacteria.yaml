@@ -1,0 +1,42 @@
+# Model training input files
+# Three input files are required:
+#
+# 1) FastQataloguerOutput. The path to the "Export Table" output from
+# FastQataloguer (fastqataloguer.idbydna.com). This file should include only
+# the dilution series samples for which the absolute quantification model
+# should be trained.
+# 2) OrganismStockConcentrations. The path to a comma-separated file
+# with at least the folowing columns describing each organism in the sample:
+#  taxid (organism taxid)
+#  organism (organism name)
+#  stock_concentration (the initial concentration of each organism in the mix)
+# 3) SampleDilutionFactors. The path to a comma-separated file describing the
+# dilution factors for each sample. The following columns are required:
+#  Accession (the accession number of the sample)
+#  Dilution Factor (the dilution factor for the sample, e.g. 10 for a 10X dil)
+
+---
+# REQUIRED INPUTS
+FastQataloguerOutput: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/synergy_second_std_curve/FastQataloguer_Synergy_Zymo_StdCurve_2019-09-20.csv
+OrganismStockConcentrations: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/concentration_files/CommunityStandardConcentrationsNoFungi.csv
+SampleDilutionFactors: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/synergy_second_std_curve/SampleDilutionFactors7LogsSynergy.csv
+rDnaResourceFile: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/rrndb_16s_copies_with_18s.json
+
+# OPTIONAL INPUTS
+Paths:
+  # Alternative directory for output files. Default is current working directory.
+  OutputDir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/synergy_second_std_curve
+  # Alternative directory containing summary files.
+  SummaryFilePath:
+
+Output:
+  # Show fit plot (yes or no)
+  ShowPlot: no
+  # Save fit plot (yes or no)
+  SavePlot: yes
+
+Fit:
+  # Fit coverage. Otherwise will fit read counts
+  FitCoverage: yes
+  # Apply specific cutoffs to coverage.
+  SpecificCutoffs: yes

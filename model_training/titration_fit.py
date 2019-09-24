@@ -51,6 +51,9 @@ class titration_fit(object):
 
             org_count_dict_ls = \
                 self._get_counts(seq_sple, summary_dir, dilution, self._ctrls_ls)
+            if org_count_dict_ls is None:
+                print(f"Skipping {seq_sple}. All summary files not found.")
+                continue
             for org_count_dict in org_count_dict_ls:
                 org_count_dict.update({'Accession': seq_sple})
             org_counts.extend(org_count_dict_ls)
@@ -130,6 +133,8 @@ class titration_fit(object):
         summary_filter = [file for file in lib_filter if 'dxsm.out.summary' in file]
         # print(summary_files)
         done_filter = [file for file in summary_filter if not file.endswith('done')]
+        if len(done_filter) == 0:
+            return
         final_path = os.path.join(summary_dir, done_filter[0])
         # Skip if file is empty
         if os.stat(final_path).st_size == 0:
@@ -156,7 +161,8 @@ class titration_fit(object):
         file_bac = self._get_summary_file(seq_sple, summary_dir, 'bacterial')
         file_fungpar = self._get_summary_file(seq_sple, summary_dir, 'fungal_parasite')
         file_vir = self._get_summary_file(seq_sple, summary_dir, 'viral')
-
+        if any([summary is None for summary in [file_bac, file_fungpar, file_vir]]):
+            return
         # Get control counts
         # ctrl_orgs = ctrl.split('|')
         ctrl_orgs = ctrl
