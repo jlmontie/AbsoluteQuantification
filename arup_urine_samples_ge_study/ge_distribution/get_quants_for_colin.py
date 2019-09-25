@@ -77,12 +77,47 @@ orgs = {
     'IDBD-D100400': {
         'orgs': ['Escherichia coli'],
         'taxids': [562]
+    },
+    '20190816-T7V1-C25-3-d-34': {
+        'orgs': [
+            'Pseudomonas aeruginosa',
+            'Gardnerella vaginalis',
+        ],
+        'taxids': [
+            287,
+            2702
+        ]
+    },
+    '20190820SEQ-C10-d-32': {
+        'orgs': [
+            'Staphylococcus aureus',
+            'Gardnerella vaginalis',
+            'Staphylococcus argenteus'
+        ],
+        'taxids': [
+            1280,
+            2702,
+            985002
+        ]
+    },
+    '20190813S-C27-1S1-d-12': {
+        'orgs': [
+            'Klebsiella pneumoniae',
+            'Escherichia coli',
+            'Gardnerella vaginalis'
+        ],
+        'taxids': [
+            573,
+            562,
+            2702
+        ]
     }
 }
 
 summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
 files = os.listdir(summary_parentdir)
 files = [file for file in files if any(key in file for key in list(orgs.keys()))]
+print(files)
 quants = defaultdict(lambda: defaultdict(list))
 accession_ls = []
 coverage_ls = []
@@ -106,7 +141,6 @@ for file in files:
                 coverage_ls.append(coverage)
                 organism_ls.append(org_info['name'])
                 quant_ls.append(quant)
-        if len(organism_ls) < len(taxids):
 
 
 print(quants)
