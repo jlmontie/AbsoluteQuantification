@@ -114,7 +114,8 @@ orgs = {
     }
 }
 
-summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
+summary_parentdir = '/home/jmontgomery/AbsoluteQuantification/synergy/reproducibility/summary_with_quant20190820SEQ-C10-d-32'
+output = '/home/jmontgomery/tmp/arup_urine_quants.csv'
 files = os.listdir(summary_parentdir)
 files = [file for file in files if any(key in file for key in list(orgs.keys()))]
 print(files)
@@ -150,4 +151,4 @@ quants_df = pd.DataFrame(data={
     'Quantification': quant_ls,
     'Coverage': coverage_ls
 })
-quants_df.to_csv('/Users/jmontgomery/Downloads/arup_urine_quants.csv')
+quants_df.to_csv(output)
