@@ -1,0 +1,24 @@
+NM_001139500.2	ORC4	Homo sapiens origin recognition complex subunit 4 (ORC4), transcript variant 6, mRNA
+NM_001160148.2	KANTR	Homo sapiens KDM5C adjacent transcript (KANTR), transcript variant 2, long non-coding RNA
+NM_002262.5	DDHD1	PREDICTED: Homo sapiens DDHD domain containing 1 (DDHD1), transcript variant X3, mRNA
+NR_147039.2	DDHD1	PREDICTED: Homo sapiens DDHD domain containing 1 (DDHD1), transcript variant X4, mRNA
+NM_001351063.2	KLRD1	Homo sapiens killer cell lectin like receptor D1 (KLRD1), transcript variant 1, mRNA
+NM_017437.3	SOD2	Homo sapiens superoxide dismutase 2 (SOD2), transcript variant 1, mRNA
+XM_005268103.3	CPSF2	Homo sapiens cleavage and polyadenylation specific factor 2 (CPSF2), transcript variant 1, mRNA
+NM_001322819.2	KLRD1	Homo sapiens killer cell lectin like receptor D1 (KLRD1), transcript variant 6, mRNA
+NM_000636.4	KPNA5	Homo sapiens karyopherin subunit alpha 5 (KPNA5), transcript variant 2, mRNA
+NR_110456.2	DDHD1	Homo sapiens DDHD domain containing 1 (DDHD1), transcript variant 1, mRNA
+NM_001190882.2	DDHD1	Homo sapiens DDHD domain containing 1 (DDHD1), transcript variant 3, mRNA
+XM_011537189.3	FGF13	Homo sapiens fibroblast growth factor 13 (FGF13), transcript variant 2, mRNA
+NM_001139498.2	FGF13	Homo sapiens fibroblast growth factor 13 (FGF13), transcript variant 4, mRNA
+NM_030637.3	KLRD1	Homo sapiens killer cell lectin like receptor D1 (KLRD1), transcript variant 8, non-coding RNA
+NM_001366305.2	SOD2	Homo sapiens superoxide dismutase 2 (SOD2), transcript variant 8, mRNA
+
+ORC4
+KANTR
+DDHD1
+KLRD1
+SOD2
+CPSF2
+KPNA5
+FGF13
