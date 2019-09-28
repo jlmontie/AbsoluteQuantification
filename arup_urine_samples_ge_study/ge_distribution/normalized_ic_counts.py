@@ -5,7 +5,7 @@ import os
 import gzip
 import pandas as pd
 import numpy as np
-import plotly as px
+import plotly.express as px
 
 
 def read_summary_files(path):
@@ -129,7 +129,7 @@ accession_ls, ctrl_ls, total_reads_ls, normalized_ctrl_ls, read_count_ls, \
 for idx, row in merged.iterrows():
     accession = row['Accession']
     total_reads = row['Reads PostQual']
-    quantification = 10**(row['log(Genomic Equivalents / ml)'])
+    quantification = 10**(row['log(Genomic Equivalents)/ml'])
     print(accession)
     # Get summary files
     summary_file_paths = glob.glob(os.path.join(summary_file_dir, '*' + accession + '*'))
@@ -189,6 +189,7 @@ fig = px.box(df, y='Normalized IC', log_y=True, points='all',
              title='Normalized IC count, ARUP urine samples (n=96)',
              color='Detection', hover_data=['Accession', 'Detection', 'Normalized IC'])
 fig.update_yaxes(range=[0, 5.1])
+fig.write_html('Normalized_IC_Counts.html')
 fig.show()
 df.to_csv('Normalized_IC_Counts.csv')
 
