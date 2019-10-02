@@ -30,5 +30,4 @@ arup_urine_samples_ge_study/human_quantification/kallisto_analysis/GCF_000001405
 model_training/bootstrap_env/
 lod_dxsm/idbd_7log_std_titration/
 model_training/bootstrap_env
-model_training/bootstrap_env/
 .vscode
