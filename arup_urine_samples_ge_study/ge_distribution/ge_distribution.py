@@ -57,6 +57,7 @@ def get_trendline(df):
 with open('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/data/explify_core_meta_keyed_by_taxid_190705_resp_extended.json') as cutoff_file:
     cutoffs = json.load(cutoff_file)
 summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
+# summary_parentdir = '/Users/jmontgomery/Desktop/tmp_summary_quant_no_t7_expansion'
 sample_info = pd.read_excel('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
 re_match = sample_info['RESULT LONG TEXT'].apply(search_string)
 

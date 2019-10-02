@@ -27,6 +27,7 @@ summary_file_dir = '/Users/jmontgomery/Desktop/tmp_summary'
 sample_info = pd.read_excel('/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/arup_urine_samples_ge_study/ge_distribution/190904_Urine_Sample_Processing_Log.xlsx')
 rdna_resource_path = '/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/data/rrndb_16s_copies.json'
 out_dir = '/Users/jmontgomery/Desktop/tmp_summary_quant'
+# out_dir = '/Users/jmontgomery/Desktop/tmp_summary_quant_no_t7_expansion'
 
 with open(rdna_resource_path) as resource_file:
     rdna_copy_numbers = json.load(resource_file)
@@ -46,6 +47,7 @@ for idx, row in sample_info.iterrows():
     bacterial_summary = read_summary_files(bacterial_path)
     fungpar_path = [path for path in summary_file_paths if 'rna.fungal_parasite' in path][0]
     fungpar_summary = read_summary_files(fungpar_path)
+    # viral_taxids = [10760]
     viral_taxids = [
         10760,
         532076,
