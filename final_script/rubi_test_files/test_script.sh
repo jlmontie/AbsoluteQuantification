@@ -3,4 +3,4 @@ SCRIPT=/uufs/chpc.utah.edu/common/home/u0002613/taxonomer/utils/explify_v2/exbox
 CONFIG=/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/config_yq_tmp.json
 YAML=/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/input.yaml
 
-$PYTHON $SCRIPT $CONFIG $YAML
+$PYTHON $SCRIPT $CONFIG $YAML 
