@@ -22,3 +22,5 @@ data/arup_urine_summary_files_with_quantification
 *.cov
 T7_reporting_names/t7_simulated_reads.fa
 nohup.out
+model_training/bootstrap_env/
+lod_dxsm/idbd_7log_std_titration/
