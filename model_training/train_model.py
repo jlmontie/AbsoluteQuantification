@@ -14,7 +14,7 @@ def prep_input_files(config):
     dilution_factors_df = pd.read_csv(config['SampleDilutionFactors'])
     fqo_merged = fqo.merge(dilution_factors_df, on='Accession')
     # seq_sple_ls = fqo_merged['Seq Sple']
-    accession_ls = fqo_merged['Accession']
+    accession_ls = fqo_merged['Seq Sple']
     if config['Paths']['SummaryFilePath'] is not None:
         summary_dir_ls = config['Paths']['SummaryFilePath']
         if not isinstance(summary_dir_ls, list):

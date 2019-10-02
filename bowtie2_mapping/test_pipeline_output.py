@@ -1,7 +1,6 @@
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from scipy.signal import savgol_filter as savgol
 from scipy import signal
 import numpy as np
 import os
@@ -36,13 +35,15 @@ def generate_fig(coverage_df_filt_melt, coverage_filtered):
     return fig
 
 
-df = pd.read_csv('coverage_out', sep='\t', header=None)
-df = df.rename(columns={0: 'chromosome', 1: 'base', 2: 'Coverage'})
-df['Position'] = df.index.values
-df = df.drop(columns=['chromosome', 'base'])
-y, cov_filt = filter_data(df)
-filtered_coverage_mean = np.nanmean(y)
-filtered_coverage_std = np.nanstd(y)
-print(f"Mean genome coverage: {filtered_coverage_mean:0.0f} +/- {filtered_coverage_std:0.0f}")
-fig = generate_fig(cov_filt, y)
-fig.show()
+for cov_file in os.listdir('arup_urine_human_analysis/coverage_output/IDBD-D100464'):
+    cov_file = os.path.join('arup_urine_human_analysis/coverage_output/IDBD-D100464', cov_file)
+    df = pd.read_csv(cov_file, sep='\t', header=None)
+    df = df.rename(columns={0: 'chromosome', 1: 'base', 2: 'Coverage'})
+    df['Position'] = df.index.values
+    df = df.drop(columns=['chromosome', 'base'])
+    y, cov_filt = filter_data(df)
+    filtered_coverage_mean = np.nanmean(y)
+    filtered_coverage_std = np.nanstd(y)
+    print(f"Mean genome coverage: {filtered_coverage_mean:0.0f} +/- {filtered_coverage_std:0.0f}")
+    fig = generate_fig(cov_filt, y)
+    fig.write_html(f'{os.path.join(cov_file)}.html')
