@@ -1,0 +1,6 @@
+- accession: 20190930SEQ-AD1-d-01-0015-GAACTGAGCG-CGCTCCACGA-5d94d793-r
+  internal_control_reporting_ids: ['26706_10760']
+  output_dir: /uufs/chpc.utah.edu/common/home/u0286349/tmp
+  read_file: /uufs/chpc.utah.edu/common/home/idbydna-group2/results/synergy/191001_NDX550287_RUO_0015_AHT5VYAFXY/fqs/fq_filt/Nextera/20190930SEQ-AD1-d-01-0015-GAACTGAGCG-CGCTCCACGA-5d94d793_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
