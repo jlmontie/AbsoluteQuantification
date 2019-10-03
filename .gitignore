@@ -33,4 +33,4 @@ model_training/bootstrap_env
 .vscode/*
 model_training/bootstrap_env
 .vscode/settings.json
-final_script/final_test_files_rubi/*.summary*
+final_script/rubi_test_files/output_files
