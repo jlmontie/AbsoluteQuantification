@@ -21,7 +21,7 @@ def get_genus_species_taxid(taxid):
 
 
 ncbi = ncbi_taxonomy()
-rrndb = pd.read_csv('data/rrnDB/rrnDB-5.5.tsv', sep='\t')
+rrndb = pd.read_csv('../data/rrndb/rrnDB-5.5.tsv', sep='\t')
 rrndb[['Species taxid', 'Genus taxid']] = pd.DataFrame(
     rrndb['NCBI tax id'].apply(get_genus_species_taxid).tolist(),
     dtype=pd.Int64Dtype())
@@ -39,19 +39,9 @@ for idx, row in rrndb_16s_genus.iterrows():
 for idx, row in rrndb_16s_species.iterrows():
     gene_counts_dict.update({str(row['Species taxid']): {'copies': round(
         row['16S gene count'], 1), 'rank': 'species', 'name': row['Species']}})
-# manual entries for those with no taxonomic link to genus
-# set Proteus penneri equal to heterotypic synonym Proteus vulgaris
-# gene_counts_dict.update(
-#     {'102862': {"copies": 7.0, "rank": "species", "name": "Proteus penneri"}})
-# gene_counts_dict.update(
-#     {'623': {"copies": 7.0, "rank": "species", "name": "Shigella flexneri"}})
-# gene_counts_dict.update(
-#     {'624': {"copies": 7.0, "rank": "species", "name": "Shigella sonnei"}})
-# gene_counts_dict.update(
-#     {'51288': {"copies": 7.0, "rank": "species", "name": "Kluyvera ascorbata"}})
 
-with open('data/rrndb_16s_copies.json', 'w') as outfile:
+with open('rrndb_16s_copies.json', 'w') as outfile:
     json.dump(gene_counts_dict, outfile)
 
-rrndb_16s_genus.to_csv('data/dna_16s_copies_genus.csv', index=False)
-rrndb_16s_species.to_csv('data/dna_16s_copies_species.csv', index=False)
+rrndb_16s_genus.to_csv('dna_16s_copies_genus.csv', index=False)
+rrndb_16s_species.to_csv('dna_16s_copies_species.csv', index=False)
