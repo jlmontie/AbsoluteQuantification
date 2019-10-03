@@ -1,1 +1,0 @@
-{"taxid": 5418, "name": "Cryptococcus laurentii (Papiliotrema laurentii)", "quant": 129102910.06753294, "ic_counts": 1160}

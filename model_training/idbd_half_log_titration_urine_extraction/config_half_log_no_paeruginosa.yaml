@@ -26,6 +26,8 @@ rDnaResourceFile: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantificatio
 Paths:
   # Alternative directory for output files. Default is current working directory.
   OutputDir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/idbd_half_log_titration_urine_extraction
+  # Model parameters subdirectory
+  ModelSubDir: model_output_no_paeruginosa
   # Alternative directory containing summary files.
   SummaryFilePath: /srv/idbydna-group3/results/idbd_dev/190830_NB551702_0056_AHMVFMAFXY/tax
 

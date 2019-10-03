@@ -25,7 +25,7 @@ rDnaResourceFile: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantificatio
 # OPTIONAL INPUTS
 Paths:
   # Alternative directory for output files. Default is current working directory.
-  OutputDir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/synergy_second_std_curve
+  OutputDir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/synergy_second_std_curve/model_output_no_ecoli
   # Alternative directory containing summary files.
   SummaryFilePath:
 

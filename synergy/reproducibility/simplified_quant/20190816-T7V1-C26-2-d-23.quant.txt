@@ -1,1 +1,0 @@
-{"taxid": 562, "name": "Escherichia coli", "quant": 48046253.40172673, "ic_counts": 8152}

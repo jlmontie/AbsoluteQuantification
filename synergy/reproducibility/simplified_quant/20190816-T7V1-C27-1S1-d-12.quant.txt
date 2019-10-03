@@ -1,1 +1,0 @@
-{"taxid": 573, "name": "Klebsiella pneumoniae", "quant": 77964753.14860629, "ic_counts": 3503}
