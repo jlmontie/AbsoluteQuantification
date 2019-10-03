@@ -1,1 +1,0 @@
-{"taxid": 5482, "name": "Candida tropicalis", "quant": 12769445.737031598, "ic_counts": 21800}

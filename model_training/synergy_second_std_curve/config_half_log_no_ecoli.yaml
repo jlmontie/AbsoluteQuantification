@@ -17,19 +17,17 @@
 
 ---
 # REQUIRED INPUTS
-FastQataloguerOutput: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/idbd_half_log_titration_urine_extraction/FastQataloguer_CommunityStd_Urine_2019-08-31.csv
-OrganismStockConcentrations: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/concentration_files/CommunityStandardConcentrationsNoPaeruginosa.csv
-SampleDilutionFactors: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/idbd_half_log_titration_urine_extraction/SampleDilutionFactors_UrineExtraction.csv
+FastQataloguerOutput: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/synergy_second_std_curve/FastQataloguer_Synergy_Zymo_StdCurve_2019-09-20.csv
+OrganismStockConcentrations: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/concentration_files/CommunityStandardConcentrationsNoEcoli.csv
+SampleDilutionFactors: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/synergy_second_std_curve/SampleDilutionFactors7LogsSynergy.csv
 rDnaResourceFile: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/rrndb_16s_copies_with_18s.json
 
 # OPTIONAL INPUTS
 Paths:
   # Alternative directory for output files. Default is current working directory.
-  OutputDir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/idbd_half_log_titration_urine_extraction
-  # Model parameters subdirectory
-  ModelSubDir: model_output_no_paeruginosa
+  OutputDir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/model_training/synergy_second_std_curve/model_output_no_ecoli
   # Alternative directory containing summary files.
-  SummaryFilePath: /srv/idbydna-group3/results/idbd_dev/190830_NB551702_0056_AHMVFMAFXY/tax
+  SummaryFilePath:
 
 Output:
   # Show fit plot (yes or no)

@@ -119,8 +119,9 @@ class titration_fit(object):
 
 
     def _get_summary_file(self, seq_sple, summary_dir, organism):
-        # print(summary_dir)
-        # print(organism)
+        print(summary_dir)
+        print(organism)
+        print(seq_sple)
         summary_files = os.listdir(summary_dir)
         seq_sple_filter = [file for file in summary_files if seq_sple in file.lower()]
         if len(seq_sple_filter) == 0:
@@ -234,7 +235,7 @@ class titration_fit(object):
         """
         if outdir is None:
             outdir = os.getcwd()
-        with open(os.path.join(outdir, 'model_output', 'model_coefficients.txt'), 'w') as outfile:
+        with open(os.path.join(outdir, 'model_coefficients.txt'), 'w') as outfile:
             outfile.write(f"slope\t{self.slope_}\nintercept\t{self.intercept_}")
 
 
@@ -336,7 +337,7 @@ class titration_fit(object):
         if show_fig:
             fig.show()
         if save_fig:
-            fig.write_html(os.path.join(outdir, 'model_output', 'regression_plot.html'))
+            fig.write_html(os.path.join(outdir, 'regression_plot.html'))
 
 
     def save_plot_data(self, outdir=None):
@@ -348,4 +349,4 @@ class titration_fit(object):
                 'log_conc': self._concentration_log,
                 'residuals': self._residuals
             }
-        ).to_csv(os.path.join(outdir, 'model_output', 'plot_data.csv'))
+        ).to_csv(os.path.join(outdir, 'plot_data.csv'))

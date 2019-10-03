@@ -1,1 +1,0 @@
-{"taxid": 1351, "name": "Enterococcus faecalis", "quant": 137231585.13057882, "ic_counts": 30172}

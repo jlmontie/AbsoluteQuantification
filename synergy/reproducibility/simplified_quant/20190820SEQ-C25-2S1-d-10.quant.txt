@@ -1,1 +1,0 @@
-{"taxid": 287, "name": "Pseudomonas aeruginosa", "quant": 58512495.30864383, "ic_counts": 3416}
