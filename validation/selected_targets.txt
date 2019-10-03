@@ -1,0 +1,5 @@
+class	name	taxid	seqid
+bacterial	e_coli	562	24293
+bacterial	k_pneumoniae	573	1943
+fungal	c_albicans	5476	2238
+fungal	c_tropicalis	5482	8643
