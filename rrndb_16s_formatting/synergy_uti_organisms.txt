@@ -87,3 +87,15 @@ code	name	preferred name	taxid
 1	Mycobacterium chelonae	Mycobacteroides chelonae	1774
 1	Mycobacterium intracellulare	 	1767
 1	Mycobacterium scrofulaceum	 	1783
+1	Candida albicans	 	5476
+1	Candida glabrata	[Candida] glabrata	5478
+1	Candida tropicalis	 	5482
+1	Candida parapsilosis	 	5480
+1	Cryptococcus neoformans	 	5207
+1	Pichia kudriavzevii	 	4909
+1	Trichosporon asahii	 	82508
+1	Aspergillus flavus	 	5059
+1	Trichosporon beigelii	 	5553
+1	Candida dubliniensis	 	42374
+1	Clavispora lusitaniae	 	36911
+1	Cyberlindnera fabianii	 	36022
