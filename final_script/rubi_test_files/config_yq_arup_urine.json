@@ -56,5 +56,5 @@
 "redis_config": "/uufs/chpc.utah.edu/common/home/u0286349/tmp/redis.conf",
 "redis_socket": "/tmp/tmp_redis.sock",
 "rdna_resource": "/uufs/chpc.utah.edu/common/home/u0002613/taxonomer/utils/rrndb_resource/rrndb_16s_18s.json",
-"absolute_quant_coeff": {"slope": 1.013875881594209, "intercept": 12.446039813516776}
+"absolute_quant_coeff": {"slope": 0.9466522986292824, "intercept": 9.7485682076022}
 }
