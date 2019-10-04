@@ -1,7 +1,10 @@
 import sys
 sys.path.insert(0, '/uufs/chpc.utah.edu/common/home/u0002613/taxonomer/utils/explify_v2/simulation_scripts')
 from sim_reads import simulate_reads_tiled_by_depth as simulate
+<<<<<<< HEAD
 from sim_reads import simulate_reads_tiled as simulate_tiled
+=======
+>>>>>>> 4064c8233d94af7ba80895ac4f1fe7efdb09c1e4
 import glob
 import numpy as np
 
