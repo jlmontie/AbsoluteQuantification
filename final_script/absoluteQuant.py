@@ -28,8 +28,8 @@ def absoluteQuant(ctrlReadCounts, summaryObjectList, rdnaCopyNumbers, quant_mode
             # slope = 0.9752025158801086
             # intercept = 9.94632629381537
             # Half log urine extraction, no P aeruginosa, with cutoffs
-            slope = 1.025813761718345
-            intercept = 10.195966838524328
+            slope = 0.9466522986292824
+            intercept = 9.7485682076022
             # Full log urine extraction, no P aeruginosa, with cutoffs
             # slope = 1.2169746581769076
             # intercept = 10.99130819075618
