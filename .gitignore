@@ -26,3 +26,4 @@ model_training/bootstrap_env/
 lod_dxsm/idbd_7log_std_titration/
 final_script/rubi_test_files/
 .vscode/
+validation/simulated_reads/*.fa
