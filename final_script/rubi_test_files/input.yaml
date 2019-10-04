@@ -1,30 +1,728 @@
-- accession: 190909-1-1-IDBD-D100461-d-01-AHTF3MAFXY-TCTGGTATCC-GTAAGCAACG-5d77c3ce
-  internal_control_reporting_ids: ['26706_10760']
+- accession: 190828-1-1-IDBD-D100376-d-01-AHMW75AFXY-TGATTATACG-TGTAATCGAC-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
   output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
-  read_file: /srv/idbydna-group3/results/idbd_rnd_v2/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100461-d-01-AHTF3MAFXY-TCTGGTATCC-GTAAGCAACG-5d77c3ce_S1_R1_001.postAdapt.postQual.fastq.gz
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100376-d-01-AHMW75AFXY-TGATTATACG-TGTAATCGAC-5d6e759f_S1_R1_001.postAdapt.postQual.fastq.gz
   tag: None
   type: rna
-- accession: 190828-1-1-IDBD-D100388-d-12-AHMW75AFXY-CTGCGAGCCA-TGGCCGGATT-5d67e5e1
-  internal_control_reporting_ids: ['26706_10760']
+- accession: 190828-1-1-IDBD-D100378-d-03-AHMW75AFXY-GGTAACTCGC-TCACCAACTT-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
   output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
-  read_file: /srv/idbydna-group3/results/idbd_rnd_v2/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100388-d-12-AHMW75AFXY-CTGCGAGCCA-TGGCCGGATT-5d67e5e1_S12_R1_001.postAdapt.postQual.fastq.gz
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100378-d-03-AHMW75AFXY-GGTAACTCGC-TCACCAACTT-5d6e759f_S3_R1_001.postAdapt.postQual.fastq.gz
   tag: None
   type: rna
-- accession: 190904-2-1-IDBD-D100400-d-04-AHTGT2AFXY-ACCACGACAT-CCGCATACGA-5d70f2ad
-  internal_control_reporting_ids: ['26706_10760']
+- accession: 190828-1-1-IDBD-D100380-d-05-AHMW75AFXY-TGTAATCGAC-CGCGGTGATC-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
   output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
-  read_file: /srv/idbydna-group3/results/idbd_rnd_v2/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100400-d-04-AHTGT2AFXY-ACCACGACAT-CCGCATACGA-5d70f2ad_S4_R1_001.postAdapt.postQual.fastq.gz
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100380-d-05-AHMW75AFXY-TGTAATCGAC-CGCGGTGATC-5d6e759f_S5_R1_001.postAdapt.postQual.fastq.gz
   tag: None
   type: rna
-- accession: 190909-1-1-IDBD-D100463-d-03-AHTF3MAFXY-ACGGTCAGGA-AACGAGGCCG-5d77c3ce
-  internal_control_reporting_ids: ['26706_10760']
+- accession: 190828-1-1-IDBD-D100379-d-04-AHMW75AFXY-ACCGGCCGTA-AATATTGCCA-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
   output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
-  read_file: /srv/idbydna-group3/results/idbd_rnd_v2/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100463-d-03-AHTF3MAFXY-ACGGTCAGGA-AACGAGGCCG-5d77c3ce_S3_R1_001.postAdapt.postQual.fastq.gz
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100379-d-04-AHMW75AFXY-ACCGGCCGTA-AATATTGCCA-5d6e759f_S4_R1_001.postAdapt.postQual.fastq.gz
   tag: None
   type: rna
-- accession: 190828-1-1-IDBD-D100390-d-14-AHMW75AFXY-AGATCCATTA-TGGTAGAGAT-5d67e5e1
-  internal_control_reporting_ids: ['26706_10760']
+- accession: 190828-1-1-IDBD-D100381-d-06-AHMW75AFXY-GTGCAGACAG-ACGGATGGTA-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
   output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
-  read_file: /srv/idbydna-group3/results/idbd_rnd_v2/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100390-d-14-AHMW75AFXY-AGATCCATTA-TGGTAGAGAT-5d67e5e1_S14_R1_001.postAdapt.postQual.fastq.gz
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100381-d-06-AHMW75AFXY-GTGCAGACAG-ACGGATGGTA-5d6e759f_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100388-d-12-AHMW75AFXY-CTGCGAGCCA-TGGCCGGATT-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100388-d-12-AHMW75AFXY-CTGCGAGCCA-TGGCCGGATT-5d6e759f_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100384-d-09-AHMW75AFXY-ACTCGGCAAT-TTCAGTTGTC-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100384-d-09-AHMW75AFXY-ACTCGGCAAT-TTCAGTTGTC-5d6e759f_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100389-d-13-AHMW75AFXY-CGTTATTCTA-AACCTTATGG-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100389-d-13-AHMW75AFXY-CGTTATTCTA-AACCTTATGG-5d6e759f_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100391-d-15-AHMW75AFXY-GTCCTGGATA-TTCGCCACCG-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100391-d-15-AHMW75AFXY-GTCCTGGATA-TTCGCCACCG-5d6e759f_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100394-d-18-AHMW75AFXY-GACACCATGT-TACACGTTGA-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100394-d-18-AHMW75AFXY-GACACCATGT-TACACGTTGA-5d6e759f_S18_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100395-d-19-AHMW75AFXY-GTGACACGCA-GTCCGTAAGC-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100395-d-19-AHMW75AFXY-GTGACACGCA-GTCCGTAAGC-5d6e759f_S19_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100411-d-01-AHMV3HAFXY-TTGGAATTCC-GTATTGACGT-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100411-d-01-AHMV3HAFXY-TTGGAATTCC-GTATTGACGT-5d700753_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100413-d-03-AHMV3HAFXY-GGAGCGTGTA-ACTTACGGAT-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100413-d-03-AHMV3HAFXY-GGAGCGTGTA-ACTTACGGAT-5d700753_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100416-d-06-AHMV3HAFXY-CCTCCGTCCA-CACCGATGTG-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100416-d-06-AHMV3HAFXY-CCTCCGTCCA-CACCGATGTG-5d700753_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100417-d-07-AHMV3HAFXY-TCCATTGCCG-TCGTGCATTC-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100417-d-07-AHMV3HAFXY-TCCATTGCCG-TCGTGCATTC-5d700753_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100419-d-09-AHMV3HAFXY-GAGAATGGTT-TTGCTGCCGA-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100419-d-09-AHMV3HAFXY-GAGAATGGTT-TTGCTGCCGA-5d700753_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100420-d-10-AHMV3HAFXY-ACACAGGTGG-ACAACGCTCA-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100420-d-10-AHMV3HAFXY-ACACAGGTGG-ACAACGCTCA-5d700753_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100438-d-01-AHTGN3AFXY-ACTCGGCAAT-TTCAGTTGTC-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100438-d-01-AHTGN3AFXY-ACTCGGCAAT-TTCAGTTGTC-5d717712_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100441-d-04-AHTGN3AFXY-CTGCGAGCCA-TGGCCGGATT-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100441-d-04-AHTGN3AFXY-CTGCGAGCCA-TGGCCGGATT-5d717712_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100440-d-03-AHTGN3AFXY-CCATCTCGCC-AACCATAGAA-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100440-d-03-AHTGN3AFXY-CCATCTCGCC-AACCATAGAA-5d717712_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100457-d-13-AHTGN3AFXY-GGAATTGTAA-AGGATGTGCT-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100457-d-13-AHTGN3AFXY-GGAATTGTAA-AGGATGTGCT-5d717712_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100460-d-16-AHTGN3AFXY-AACGCACGAG-TATCCGAGGC-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100460-d-16-AHTGN3AFXY-AACGCACGAG-TATCCGAGGC-5d717712_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100459-d-15-AHTGN3AFXY-CTGAGGAATA-AGTGGTTAAG-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100459-d-15-AHTGN3AFXY-CTGAGGAATA-AGTGGTTAAG-5d717712_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100398-d-02-AHTGT2AFXY-GGTTGCGAGG-TTGCTCTATT-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100398-d-02-AHTGT2AFXY-GGTTGCGAGG-TTGCTCTATT-5d71c50b_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100405-d-09-AHTGT2AFXY-TGATTATACG-TGTAATCGAC-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100405-d-09-AHTGT2AFXY-TGATTATACG-TGTAATCGAC-5d71c50b_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100408-d-12-AHTGT2AFXY-ACCGGCCGTA-AATATTGCCA-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100408-d-12-AHTGT2AFXY-ACCGGCCGTA-AATATTGCCA-5d71c50b_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100399-d-03-AHTGT2AFXY-TAAGCATCCA-AATGGATTGA-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100399-d-03-AHTGT2AFXY-TAAGCATCCA-AATGGATTGA-5d71c50b_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100400-d-04-AHTGT2AFXY-ACCACGACAT-CCGCATACGA-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100400-d-04-AHTGT2AFXY-ACCACGACAT-CCGCATACGA-5d71c50b_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100453-d-20-AHTGT2AFXY-ATGGTTGACT-AGGACAGGCC-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100453-d-20-AHTGT2AFXY-ATGGTTGACT-AGGACAGGCC-5d71c50b_S20_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100410-d-14-AHTGT2AFXY-GTGCAGACAG-ACGGATGGTA-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100410-d-14-AHTGT2AFXY-GTGCAGACAG-ACGGATGGTA-5d71c50b_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100451-d-18-AHTGT2AFXY-CCATCATTAG-AGAGGCAACC-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100451-d-18-AHTGT2AFXY-CCATCATTAG-AGAGGCAACC-5d71c50b_S18_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100445-d-16-AHTGT2AFXY-TATGTAGTCA-CATTAGTGCG-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100445-d-16-AHTGT2AFXY-TATGTAGTCA-CATTAGTGCG-5d71c50b_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100473-d-02-AHTF37AFXY-CTCGCTTCGG-TTGACTAGTA-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100473-d-02-AHTF37AFXY-CTCGCTTCGG-TTGACTAGTA-5d77bde5_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100482-d-11-AHTF37AFXY-AGGATGTGCT-GGAATTGTAA-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100482-d-11-AHTF37AFXY-AGGATGTGCT-GGAATTGTAA-5d77bde5_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100488-d-17-AHTF37AFXY-CCTGCGGAAC-AGCCTATGAT-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100488-d-17-AHTF37AFXY-CCTGCGGAAC-AGCCTATGAT-5d77bde5_S17_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100489-d-18-AHTF37AFXY-TTCATAAGGT-CCTTCTAACA-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100489-d-18-AHTF37AFXY-TTCATAAGGT-CCTTCTAACA-5d77bde5_S18_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100487-d-16-AHTF37AFXY-ACACAGGTGG-ACAACGCTCA-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100487-d-16-AHTF37AFXY-ACACAGGTGG-ACAACGCTCA-5d77bde5_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100485-d-14-AHTF37AFXY-GTATTGACGT-TTGGAATTCC-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100485-d-14-AHTF37AFXY-GTATTGACGT-TTGGAATTCC-5d77bde5_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100486-d-15-AHTF37AFXY-CTTGTACACC-AAGCGCGCTT-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100486-d-15-AHTF37AFXY-CTTGTACACC-AAGCGCGCTT-5d77bde5_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100470-d-10-AHTF3MAFXY-ACGCCTTGTT-ACGTTCCTTA-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100470-d-10-AHTF3MAFXY-ACGCCTTGTT-ACGTTCCTTA-5d77d5b6_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100466-d-06-AHTF3MAFXY-CCTCTACATG-AGGAGGTATC-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100466-d-06-AHTF3MAFXY-CCTCTACATG-AGGAGGTATC-5d77d5b6_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100467-d-07-AHTF3MAFXY-GGAGCGTGTA-ACTTACGGAT-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100467-d-07-AHTF3MAFXY-GGAGCGTGTA-ACTTACGGAT-5d77d5b6_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100471-d-11-AHTF3MAFXY-TTCTACATAC-TTACAGTTAG-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100471-d-11-AHTF3MAFXY-TTCTACATAC-TTACAGTTAG-5d77d5b6_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100509-d-02-AHTF3TAFXY-ACTTCAAGCG-TTCATGGTTC-5d82aeae
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190913_NB551543_0135_AHTF3TAFXY/fqs/fq_filt/Nextera/190913-1-1-IDBD-D100509-d-02-AHTF3TAFXY-ACTTCAAGCG-TTCATGGTTC-5d82aeae_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100492-d-01-AHTF3TAFXY-GTCCGTAAGC-AAGATACACG-5d82aeae
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190913_NB551543_0135_AHTF3TAFXY/fqs/fq_filt/Nextera/190913-1-1-IDBD-D100492-d-01-AHTF3TAFXY-GTCCGTAAGC-AAGATACACG-5d82aeae_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100377-d-02-AHMW75AFXY-CAGCCGCGTA-CACGGCTAGT-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100377-d-02-AHMW75AFXY-CAGCCGCGTA-CACGGCTAGT-5d6e759f_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100383-d-08-AHMW75AFXY-TATGTAGTCA-CATTAGTGCG-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100383-d-08-AHMW75AFXY-TATGTAGTCA-CATTAGTGCG-5d6e759f_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100382-d-07-AHMW75AFXY-CAATCGGCTG-TTCCTACAGC-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100382-d-07-AHMW75AFXY-CAATCGGCTG-TTCCTACAGC-5d6e759f_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100392-d-16-AHMW75AFXY-CAGTGGCACT-CCTATTGTTA-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100392-d-16-AHMW75AFXY-CAGTGGCACT-CCTATTGTTA-5d6e759f_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100387-d-11-AHMW75AFXY-CCATCTCGCC-AACCATAGAA-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100387-d-11-AHMW75AFXY-CCATCTCGCC-AACCATAGAA-5d6e759f_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100393-d-17-AHMW75AFXY-AGTGTTGCAC-CGTGTACCAG-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100393-d-17-AHMW75AFXY-AGTGTTGCAC-CGTGTACCAG-5d6e759f_S17_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100386-d-10-AHMW75AFXY-GTCTAATGGC-CCTGACCACT-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100386-d-10-AHMW75AFXY-GTCTAATGGC-CCTGACCACT-5d6e759f_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100390-d-14-AHMW75AFXY-AGATCCATTA-TGGTAGAGAT-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100390-d-14-AHMW75AFXY-AGATCCATTA-TGGTAGAGAT-5d6e759f_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100396-d-20-AHMW75AFXY-ACAGTGTATG-CCGTATGTTC-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100396-d-20-AHMW75AFXY-ACAGTGTATG-CCGTATGTTC-5d6e759f_S20_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100412-d-02-AHMV3HAFXY-CCTCTACATG-AGGAGGTATC-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100412-d-02-AHMV3HAFXY-CCTCTACATG-AGGAGGTATC-5d700753_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100415-d-05-AHMV3HAFXY-GTATTCCACC-TTGTCTACAT-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100415-d-05-AHMV3HAFXY-GTATTCCACC-TTGTCTACAT-5d700753_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100414-d-04-AHMV3HAFXY-TCATAGATTG-CACCTTAATC-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100414-d-04-AHMV3HAFXY-TCATAGATTG-CACCTTAATC-5d700753_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100439-d-02-AHTGN3AFXY-GTCTAATGGC-CCTGACCACT-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100439-d-02-AHTGN3AFXY-GTCTAATGGC-CCTGACCACT-5d717712_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100418-d-08-AHMV3HAFXY-CGGTTACGGC-CTATAGTCTT-5d700753
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190903_NB551543_0129_AHMV3HAFXY/fqs/fq_filt/Nextera/190903-1-1-IDBD-D100418-d-08-AHMV3HAFXY-CGGTTACGGC-CTATAGTCTT-5d700753_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100447-d-08-AHTGN3AFXY-CAGTGGCACT-CCTATTGTTA-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100447-d-08-AHTGN3AFXY-CAGTGGCACT-CCTATTGTTA-5d717712_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100446-d-07-AHTGN3AFXY-GTCCTGGATA-TTCGCCACCG-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100446-d-07-AHTGN3AFXY-GTCCTGGATA-TTCGCCACCG-5d717712_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100443-d-06-AHTGN3AFXY-AGATCCATTA-TGGTAGAGAT-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100443-d-06-AHTGN3AFXY-AGATCCATTA-TGGTAGAGAT-5d717712_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100448-d-09-AHTGN3AFXY-AGTGTTGCAC-CGTGTACCAG-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100448-d-09-AHTGN3AFXY-AGTGTTGCAC-CGTGTACCAG-5d717712_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100442-d-05-AHTGN3AFXY-CGTTATTCTA-AACCTTATGG-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100442-d-05-AHTGN3AFXY-CGTTATTCTA-AACCTTATGG-5d717712_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100458-d-14-AHTGN3AFXY-GCATAAGCTT-TGCGACGGAA-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100458-d-14-AHTGN3AFXY-GCATAAGCTT-TGCGACGGAA-5d717712_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100456-d-12-AHTGN3AFXY-TGATGTAAGA-AAGGACGCAC-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100456-d-12-AHTGN3AFXY-TGATGTAAGA-AAGGACGCAC-5d717712_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100455-d-11-AHTGN3AFXY-CCTGTCTGTC-TCACAACAGT-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100455-d-11-AHTGN3AFXY-CCTGTCTGTC-TCACAACAGT-5d717712_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100454-d-10-AHTGN3AFXY-GACACCATGT-TACACGTTGA-5d717712
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551543_0130_AHTGN3AFXY/fqs/fq_filt/Nextera/190904-1-1-IDBD-D100454-d-10-AHTGN3AFXY-GACACCATGT-TACACGTTGA-5d717712_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100401-d-05-AHTGT2AFXY-GCCGCACTCT-CGAGGTCGGA-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100401-d-05-AHTGT2AFXY-GCCGCACTCT-CGAGGTCGGA-5d71c50b_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100397-d-01-AHTGT2AFXY-AACCATAGAA-CCATCTCGCC-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100397-d-01-AHTGT2AFXY-AACCATAGAA-CCATCTCGCC-5d71c50b_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100409-d-13-AHTGT2AFXY-TGTAATCGAC-CGCGGTGATC-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100409-d-13-AHTGT2AFXY-TGTAATCGAC-CGCGGTGATC-5d71c50b_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100407-d-11-AHTGT2AFXY-GGTAACTCGC-TCACCAACTT-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100407-d-11-AHTGT2AFXY-GGTAACTCGC-TCACCAACTT-5d71c50b_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100406-d-10-AHTGT2AFXY-CAGCCGCGTA-CACGGCTAGT-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100406-d-10-AHTGT2AFXY-CAGCCGCGTA-CACGGCTAGT-5d71c50b_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100403-d-07-AHTGT2AFXY-GTGACACGCA-GTCCGTAAGC-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100403-d-07-AHTGT2AFXY-GTGACACGCA-GTCCGTAAGC-5d71c50b_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100402-d-06-AHTGT2AFXY-CCACCAGGCA-ATTCCATAAG-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100402-d-06-AHTGT2AFXY-CCACCAGGCA-ATTCCATAAG-5d71c50b_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100404-d-08-AHTGT2AFXY-ACAGTGTATG-CCGTATGTTC-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100404-d-08-AHTGT2AFXY-ACAGTGTATG-CCGTATGTTC-5d71c50b_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100450-d-17-AHTGT2AFXY-AGAGGCAACC-CCATCATTAG-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100450-d-17-AHTGT2AFXY-AGAGGCAACC-CCATCATTAG-5d71c50b_S17_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100452-d-19-AHTGT2AFXY-GATAGGCCGA-GCCATGTGCG-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100452-d-19-AHTGT2AFXY-GATAGGCCGA-GCCATGTGCG-5d71c50b_S19_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100444-d-15-AHTGT2AFXY-CAATCGGCTG-TTCCTACAGC-5d71c50b
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190904_NB551702_0057_AHTGT2AFXY/fqs/fq_filt/Nextera/190904-2-1-IDBD-D100444-d-15-AHTGT2AFXY-CAATCGGCTG-TTCCTACAGC-5d71c50b_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100472-d-01-AHTF37AFXY-TCTATCCTAA-CCAGTCGACG-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100472-d-01-AHTF37AFXY-TCTATCCTAA-CCAGTCGACG-5d77bde5_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100476-d-05-AHTF37AFXY-TGGCTAATCA-CTACATGCCT-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100476-d-05-AHTF37AFXY-TGGCTAATCA-CTACATGCCT-5d77bde5_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100474-d-03-AHTF37AFXY-CTGTTGGTCC-AACGGTCTAT-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100474-d-03-AHTF37AFXY-CTGTTGGTCC-AACGGTCTAT-5d77bde5_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100477-d-06-AHTF37AFXY-AACACTGTTA-TGAGACTTGC-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100477-d-06-AHTF37AFXY-AACACTGTTA-TGAGACTTGC-5d77bde5_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100475-d-04-AHTF37AFXY-TTACCTGGAA-CTGGAACTGT-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100475-d-04-AHTF37AFXY-TTACCTGGAA-CTGGAACTGT-5d77bde5_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100481-d-10-AHTF37AFXY-ATACCAACGC-CGCAGCAATT-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100481-d-10-AHTF37AFXY-ATACCAACGC-CGCAGCAATT-5d77bde5_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100478-d-07-AHTF37AFXY-ATTGCGCGGT-GCGGAGCCAA-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100478-d-07-AHTF37AFXY-ATTGCGCGGT-GCGGAGCCAA-5d77bde5_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100479-d-08-AHTF37AFXY-TGGCGCGAAC-AGTATCAGTT-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100479-d-08-AHTF37AFXY-TGGCGCGAAC-AGTATCAGTT-5d77bde5_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100480-d-09-AHTF37AFXY-TAATGTGTCT-TATGCCTTAC-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100480-d-09-AHTF37AFXY-TAATGTGTCT-TATGCCTTAC-5d77bde5_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100491-d-20-AHTF37AFXY-CTGACTCTAC-TGACGGCCGT-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100491-d-20-AHTF37AFXY-CTGACTCTAC-TGACGGCCGT-5d77bde5_S20_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100490-d-19-AHTF37AFXY-CTCTGCAGCG-TACATCCATC-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100490-d-19-AHTF37AFXY-CTCTGCAGCG-TACATCCATC-5d77bde5_S19_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100483-d-12-AHTF37AFXY-CACGGAACAA-GTGCTAGGTT-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100483-d-12-AHTF37AFXY-CACGGAACAA-GTGCTAGGTT-5d77bde5_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100484-d-13-AHTF37AFXY-TGGAGTACTT-TCCACACAGA-5d77bde5
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190905_NB551702_0058_AHTF37AFXY/fqs/fq_filt/Nextera/190905-2-1-IDBD-D100484-d-13-AHTF37AFXY-TGGAGTACTT-TCCACACAGA-5d77bde5_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100461-d-01-AHTF3MAFXY-TCTGGTATCC-GTAAGCAACG-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100461-d-01-AHTF3MAFXY-TCTGGTATCC-GTAAGCAACG-5d77d5b6_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100462-d-02-AHTF3MAFXY-CATTAGTGCG-TATGTAGTCA-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100462-d-02-AHTF3MAFXY-CATTAGTGCG-TATGTAGTCA-5d77d5b6_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100463-d-03-AHTF3MAFXY-ACGGTCAGGA-AACGAGGCCG-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100463-d-03-AHTF3MAFXY-ACGGTCAGGA-AACGAGGCCG-5d77d5b6_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100468-d-08-AHTF3MAFXY-TCATAGATTG-CACCTTAATC-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100468-d-08-AHTF3MAFXY-TCATAGATTG-CACCTTAATC-5d77d5b6_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100464-d-04-AHTF3MAFXY-GGCAAGCCAG-CGGATGCTTG-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100464-d-04-AHTF3MAFXY-GGCAAGCCAG-CGGATGCTTG-5d77d5b6_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100465-d-05-AHTF3MAFXY-TTGGAATTCC-GTATTGACGT-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100465-d-05-AHTF3MAFXY-TTGGAATTCC-GTATTGACGT-5d77d5b6_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100469-d-09-AHTF3MAFXY-TATTGCGCTC-CCTAACACAG-5d77d5b6
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190909_NB551543_0132_AHTF3MAFXY/fqs/fq_filt/Nextera/190909-1-1-IDBD-D100469-d-09-AHTF3MAFXY-TATTGCGCTC-CCTAACACAG-5d77d5b6_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100511-d-04-AHTF3TAFXY-GCGTTGGTAT-GGAAGTATGT-5d82aeae
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190913_NB551543_0135_AHTF3TAFXY/fqs/fq_filt/Nextera/190913-1-1-IDBD-D100511-d-04-AHTF3TAFXY-GCGTTGGTAT-GGAAGTATGT-5d82aeae_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100510-d-03-AHTF3TAFXY-TCAGAAGGCG-TATGATGGCC-5d82aeae
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190913_NB551543_0135_AHTF3TAFXY/fqs/fq_filt/Nextera/190913-1-1-IDBD-D100510-d-03-AHTF3TAFXY-TCAGAAGGCG-TATGATGGCC-5d82aeae_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100513-d-06-AHTF3TAFXY-TCATAGATTG-CACCTTAATC-5d82aeae
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190913_NB551543_0135_AHTF3TAFXY/fqs/fq_filt/Nextera/190913-1-1-IDBD-D100513-d-06-AHTF3TAFXY-TCATAGATTG-CACCTTAATC-5d82aeae_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100512-d-05-AHTF3TAFXY-ACATATCCAG-ATTGCACATA-5d82aeae
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190913_NB551543_0135_AHTF3TAFXY/fqs/fq_filt/Nextera/190913-1-1-IDBD-D100512-d-05-AHTF3TAFXY-ACATATCCAG-ATTGCACATA-5d82aeae_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100514-d-07-AHTF3TAFXY-GTATTCCACC-TTGTCTACAT-5d82aeae
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files
+  read_file: /srv/idbydna-group3/results/idbd_dev/190913_NB551543_0135_AHTF3TAFXY/fqs/fq_filt/Nextera/190913-1-1-IDBD-D100514-d-07-AHTF3TAFXY-GTATTCCACC-TTGTCTACAT-5d82aeae_S17_R1_001.postAdapt.postQual.fastq.gz
   tag: None
   type: rna

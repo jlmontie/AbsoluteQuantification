@@ -6,7 +6,7 @@ fqo = pd.read_csv('../../arup_urine_samples_ge_study/ge_distribution/FastQatalog
 fqo['accession_id'] = fqo['Original fastq path'].apply(lambda x: x.split('/')[-1].split('.')[0].split('_')[0])
 random_5 = np.random.choice(np.arange(len(fqo)), 5)
 yaml_ls = []
-with open('input_.yaml', 'w') as yaml_out:
+with open('input.yaml', 'w') as yaml_out:
     for idx, row in fqo.iterrows():
         # row = fqo.iloc[num, :]
         fastq_path = row['Original fastq path']
@@ -14,7 +14,7 @@ with open('input_.yaml', 'w') as yaml_out:
         output_dir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files'
         yaml_dict = {
             'accession': accession_id,
-            'internal_control_reporting_ids': list(['26706_10760']),
+            'internal_control_reporting_ids': ['26706_10760'],
             'output_dir': output_dir,
             'read_file': fastq_path,
             'tag': 'None',
