@@ -124,6 +124,7 @@ idbd_ls = []
 arup_conc_ls = []
 plate_conc_ls = []
 organism_ls = []
+coverage_ls = []
 below_cutoffs = open(os.path.join('detections_below_cutoff.txt'), 'w')
 below_cutoffs.write("Accession\tOrganism\tCoverage\tCutoff\n")
 for idx, row in sample_info[~sample_info['Accession #'].isna()].iterrows():
@@ -140,9 +141,10 @@ for idx, row in sample_info[~sample_info['Accession #'].isna()].iterrows():
         ge_log = np.nan
         for line in file:
             cov_info = json.loads(line)
-            for gene in cov_info['gene_info']:
-                if gene['geneid'] == 0:
-                    coverage = gene['coverage']
+            # for gene in cov_info['gene_info']:
+            #     if gene['geneid'] == 0:
+            #         coverage = gene['coverage']
+            #         coverage_ls.append(coverage)
             if cov_info['taxid'] in row['TAXID']:
                 # Apply cutoffs
                 # cutoff_value = cutoffs[str(cov_info['taxid'])]['RNA_stringent']
@@ -150,6 +152,9 @@ for idx, row in sample_info[~sample_info['Accession #'].isna()].iterrows():
                 #     print(f"{org} taxid {cov_info['taxid']} found for {accession} but below cutoff with coverage of {coverage} with cutoff of {cutoff_value}.")
                 #     below_cutoffs.write(f"{accession}\t{ncbi.get_name(cov_info['taxid'])}\t{coverage}\t{cutoff_value}\n")
                 #     continue
+                for gene in cov_info['gene_info']:
+                    if gene['geneid'] == 0:
+                        coverage = gene['coverage']
                 if org == 'Coagulase negative':
                     print(f"Coagulase negative {cov_info['taxid']} found for {accession}")
                 if cov_info['absolute_quant'] != np.nan and cov_info['absolute_quant'] != 0:
@@ -161,6 +166,7 @@ for idx, row in sample_info[~sample_info['Accession #'].isna()].iterrows():
     idbd_ls.append(idbd_num)
     arup_conc_ls.append(np.log10(arup_conc))
     organism_ls.append(org)
+    coverage_ls.append(coverage)
     if 'Count' in row:
         plate_conc_ls.append(row['Count'])
     ge_ls.append(ge_log)
@@ -175,7 +181,8 @@ ge_df = pd.DataFrame(data={
     'Detected Organism': organism_ls,
     'log(Genomic Equivalents)/ml': ge_ls,
     'log(cfu/ml)': arup_conc_ls,
-    'Plate count log(cfu)/ml': plate_conc_arr
+    'Plate count log(cfu)/ml': plate_conc_arr,
+    'coverage': coverage_ls
 })
 
 ge_df.to_csv(quant_out)
