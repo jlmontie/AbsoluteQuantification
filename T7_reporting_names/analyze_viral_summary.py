@@ -1,13 +1,7 @@
 import json
-
-with open('T7_reporting_names/t7_simulated_reads.dna.viral.dxsm.out.summary') as file:
-    total_read_count = 0
-    for line in file:
-        org_info = json.loads(line)
-        total_read_count += org_info['read_count']
-
-with open('T7_reporting_names/t7_simulated_reads.dna.viral.dxsm.out.summary') as file, \
-    open('T7_reporting_names/t7_simulate_reads_summary_info.txt', 'w') as outfile:
+total_read_count = 1e6
+with open('T7_090918RESP115-18250402467-d_NC_001604.rna.viral.dxsm.out.summary') as file, \
+    open('t7_simulate_reads_summary_info.txt', 'w') as outfile:
     outfile.write('taxid\tncbi_name\treporting_id\tcompound_id\tread_count\tread_pcnt\n')
     for line in file:
         org_info = json.loads(line)

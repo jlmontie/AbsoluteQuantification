@@ -1,0 +1,7 @@
+- accession: T7_090918RESP115-18250402467-d_NC_001604
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/tmp/t7_sim_out
+  read_file: /uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/validation/simulated_reads/T7_090918RESP115-18250402467-d_NC_001604.fa
+  tag: None
+  type: rna

@@ -11,7 +11,7 @@ with open('input.yaml', 'w') as yaml_out:
         # row = fqo.iloc[num, :]
         fastq_path = row['Original fastq path']
         accession_id = row['accession_id']
-        output_dir = '/uufs/chpc.utah.edu/common/home/u0002613/AbsoluteQuantification/AbsoluteQuantification/final_script/rubi_test_files/output_files'
+        output_dir = '/uufs/chpc.utah.edu/common/home/u0002613/mnt/synergy_validation'
         yaml_dict = {
             'accession': accession_id,
             'internal_control_reporting_ids': ['26706_10760'],
