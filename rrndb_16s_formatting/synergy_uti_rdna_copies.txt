@@ -1,0 +1,101 @@
+taxid	organism	rdna_copies
+562	Escherichia coli	7.0
+813	Chlamydia trachomatis	2.0
+287	Pseudomonas aeruginosa	4.0
+1280	Staphylococcus aureus	6.0
+573	Klebsiella pneumoniae	8.0
+584	Proteus mirabilis	7.0
+485	Neisseria gonorrhoeae	4.0
+1351	Enterococcus faecalis	4.0
+2130	Ureaplasma urealyticum	2.0
+2097	Mycoplasma genitalium	1.0
+727	Haemophilus influenzae	6.0
+2098	Mycoplasma hominis	2.0
+29385	Staphylococcus saprophyticus	6.0
+1282	Staphylococcus epidermidis	6.0
+615	Serratia marcescens	7.0
+470	Acinetobacter baumannii	6.0
+550	Enterobacter cloacae	8.0
+1311	Streptococcus agalactiae	7.0
+1773	Mycobacterium tuberculosis	1.0
+1352	Enterococcus faecium	6.0
+2702	Gardnerella vaginalis	2.0
+546	Citrobacter freundii	8.0
+585	Proteus vulgaris	7.0
+817	Bacteroides fragilis	6.0
+571	Klebsiella oxytoca	8.0
+134821	Ureaplasma parvum	2.0
+582	Morganella morganii	7.0
+43771	Corynebacterium urealyticum	3.0
+729	Haemophilus parainfluenzae	6.0
+588	Providencia stuartii	7.0
+1376	Aerococcus urinae	4.0
+480	Moraxella catarrhalis	4.0
+28901	Salmonella enterica	7.0
+1639	Listeria monocytogenes	6.0
+40324	Stenotrophomonas maltophilia	4.0
+160	Treponema pallidum	2.0
+1724	Corynebacterium renale	4.0
+1283	Staphylococcus haemolyticus	6.0
+292	Burkholderia cepacia	6.0
+747	Pasteurella multocida	6.0
+471	Acinetobacter calcoaceticus	6.0
+587	Providencia rettgeri	7.0
+630	Yersinia enterocolitica	7.0
+197	Campylobacter jejuni	3.0
+730	[Haemophilus] ducreyi	6.0
+1328	Streptococcus anginosus	4.0
+545	Citrobacter koseri	7.0
+548	Klebsiella aerogenes	8.0
+666	Vibrio cholerae	9.0
+119206	Aerococcus sanguinicola	4.0
+102862	Proteus penneri	mean of all bacterial organisms used
+623	Shigella flexneri	mean of all bacterial organisms used
+51288	Kluyvera ascorbata	mean of all bacterial organisms used
+624	Shigella sonnei	mean of all bacterial organisms used
+59505	Actinotignum schaalii	3.0
+1377	Aerococcus viridans	7.0
+536	Chromobacterium violaceum	8.0
+851	Fusobacterium nucleatum	5.0
+569	Hafnia alvei	8.0
+1764	Mycobacterium avium	1.0
+644	Aeromonas hydrophila	10.0
+1353	Enterococcus gallinarum	mean of all bacterial organisms used
+303	Pseudomonas putida	7.0
+1285	Staphylococcus intermedius	mean of all bacterial organisms used
+253	Chryseobacterium indologenes	6.0
+156976	Corynebacterium riegelii	mean of all bacterial organisms used
+39791	Corynebacterium glucuronolyticum	mean of all bacterial organisms used
+859	Fusobacterium necrophorum	6.0
+28035	Staphylococcus lugdunensis	6.0
+1338	Streptococcus intermedius	4.0
+633	Yersinia pseudotuberculosis	7.0
+38289	Corynebacterium jeikeium	3.0
+76860	Streptococcus constellatus	4.0
+38288	Corynebacterium genitalium	mean of all bacterial organisms used
+1768	Mycobacterium kansasii	1.0
+90245	Oligella urethralis	3.0
+1292	Staphylococcus warneri	5.0
+1290	Staphylococcus hominis	1.0
+1286	Staphylococcus simulans	6.0
+1778	Mycobacterium gordonae	mean of all bacterial organisms used
+1789	Mycobacterium xenopi	mean of all bacterial organisms used
+1313	Streptococcus pneumoniae	4.0
+1781	Mycobacterium marinum	2.0
+1784	Mycobacterium simiae	mean of all bacterial organisms used
+1787	Mycobacterium szulgai	mean of all bacterial organisms used
+1774	Mycobacteroides chelonae	1.0
+1767	Mycobacterium intracellulare	1.0
+1783	Mycobacterium scrofulaceum	mean of all bacterial organisms used
+5476	Candida albicans	mean of all fungal organisms used
+5478	[Candida] glabrata	mean of all fungal organisms used
+5482	Candida tropicalis	mean of all fungal organisms used
+5480	Candida parapsilosis	mean of all fungal organisms used
+5207	Cryptococcus neoformans	48.8
+4909	Pichia kudriavzevii	mean of all fungal organisms used
+82508	Trichosporon asahii	mean of all fungal organisms used
+5059	Aspergillus flavus	mean of all fungal organisms used
+5553	Trichosporon beigelii	mean of all fungal organisms used
+42374	Candida dubliniensis	mean of all fungal organisms used
+36911	Clavispora lusitaniae	mean of all fungal organisms used
+36022	Cyberlindnera fabianii	mean of all fungal organisms used
