@@ -1,0 +1,46 @@
+Quant_dataset,Observation,Internal_control,Bacteria_A,Bacteria_B,Fungi_C,Fungi_D
+,Expected,,Not Detected,Not Detected,Not Detected,Not Detected
+,Observed,,Not Detected,Not Detected,Not Detected,Not Detected
+Q-IC,Delta,1.00E+06,None,None,None,None
+,Expected,,7.50,---,---,---
+,Observed,,7.18,---,---,---
+Q-Bacteria-1,Delta,1.00E+06,0.32,---,---,---
+,Expected,,---,7.50,---,---
+,Observed,,---,7.44,---,---
+Q-Bacteria-2,Delta,1.00E+06,---,0.06,---,---
+,Expected,,7.50,7.50,---,---
+,Observed,,7.17,7.42,---,---
+Q-Bacteria-Mid,Delta,1.00E+06,0.33,0.08,---,---
+,Expected,,8.50,6.50,---,---
+,Observed,,8.14,6.47,---,---
+Q-Bacteria-HiLo-1,Delta,1.00E+06,0.36,0.03,---,---
+,Expected,,6.50,8.50,---,---
+,Observed,,6.43,8.47,---,---
+Q-Bacteria-HiLo-2,Delta,1.00E+06,0.07,0.03,---,---
+,Expected,,---,---,7.50,---
+,Observed,,---,---,7.15,---
+Q-Fungi-1,Delta,1.00E+06,---,---,0.35,---
+,Expected,,---,---,---,7.50
+,Observed,,---,---,---,7.04
+Q-Fungi-2,Delta,1.00E+06,---,---,---,0.46
+,Expected,,---,---,7.50,7.50
+,Observed,,---,---,7.38,7.27
+Q-Fungi-Mid,Delta,1.00E+06,---,---,0.12,0.23
+,Expected,,---,---,8.50,6.50
+,Observed,,---,---,8.15,6.40
+Q-Fungi-HiLo-1,Delta,1.00E+06,---,---,0.35,0.10
+,Expected,,---,---,6.50,8.50
+,Observed,,---,---,6.48,8.04
+Q-Fungi-HiLo-2,Delta,1.00E+06,---,---,0.02,0.46
+,Expected,,Not Quantified,Not Quantified,Not Quantified,Not Quantified
+,Observed,,Not Quantified,Not Quantified,Not Quantified,Not Quantified
+Q-Mixed-Mid-No-IC,Delta,1.00E+06,None,None,None,None
+,Expected,,7.50,7.50,7.50,7.50
+,Observed,,7.17,7.42,7.38,7.27
+Q-Mixed-Mid,Delta,1.00E+06,0.33,0.08,0.12,0.23
+,Expected,,8.50,6.50,8.50,6.50
+,Observed,,8.14,6.47,8.15,6.40
+Q-Mixed-HiLo-1,Delta,1.00E+06,0.36,0.03,0.35,0.10
+,Expected,,6.50,8.50,6.50,8.50
+,Observed,,6.43,8.47,6.48,8.04
+Q-Mixed-HiLo-2,Delta,1.00E+06,0.07,0.03,0.02,0.46

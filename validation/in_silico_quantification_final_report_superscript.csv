@@ -1,0 +1,46 @@
+Quant_dataset,Observation,Internal_control,Bacteria_A,Bacteria_B,Fungi_C,Fungi_D
+,Expected,,Not Detected,Not Detected,Not Detected,Not Detected
+,Observed,,Not Detected,Not Detected,Not Detected,Not Detected
+Q-IC,Delta,1.00E+06,None,None,None,None
+,Expected,,10^{7.50},---,---,---
+,Observed,,10^{7.18},---,---,---
+Q-Bacteria-1,Delta,1.00E+06,10^{0.32},---,---,---
+,Expected,,---,10^{7.50},---,---
+,Observed,,---,10^{7.44},---,---
+Q-Bacteria-2,Delta,1.00E+06,---,10^{0.06},---,---
+,Expected,,10^{7.50},10^{7.50},---,---
+,Observed,,10^{7.17},10^{7.42},---,---
+Q-Bacteria-Mid,Delta,1.00E+06,10^{0.33},10^{0.08},---,---
+,Expected,,10^{8.50},10^{6.50},---,---
+,Observed,,10^{8.14},10^{6.47},---,---
+Q-Bacteria-HiLo-1,Delta,1.00E+06,10^{0.36},10^{0.03},---,---
+,Expected,,10^{6.50},10^{8.50},---,---
+,Observed,,10^{6.43},10^{8.47},---,---
+Q-Bacteria-HiLo-2,Delta,1.00E+06,10^{0.07},10^{0.03},---,---
+,Expected,,---,---,10^{7.50},---
+,Observed,,---,---,10^{7.15},---
+Q-Fungi-1,Delta,1.00E+06,---,---,10^{0.35},---
+,Expected,,---,---,---,10^{7.50}
+,Observed,,---,---,---,10^{7.04}
+Q-Fungi-2,Delta,1.00E+06,---,---,---,10^{0.46}
+,Expected,,---,---,10^{7.50},10^{7.50}
+,Observed,,---,---,10^{7.38},10^{7.27}
+Q-Fungi-Mid,Delta,1.00E+06,---,---,10^{0.12},10^{0.23}
+,Expected,,---,---,10^{8.50},10^{6.50}
+,Observed,,---,---,10^{8.15},10^{6.40}
+Q-Fungi-HiLo-1,Delta,1.00E+06,---,---,10^{0.35},10^{0.10}
+,Expected,,---,---,10^{6.50},10^{8.50}
+,Observed,,---,---,10^{6.48},10^{8.04}
+Q-Fungi-HiLo-2,Delta,1.00E+06,---,---,10^{0.02},10^{0.46}
+,Expected,,Not Quantified,Not Quantified,Not Quantified,Not Quantified
+,Observed,,Not Quantified,Not Quantified,Not Quantified,Not Quantified
+Q-Mixed-Mid-No-IC,Delta,1.00E+06,None,None,None,None
+,Expected,,10^{7.50},10^{7.50},10^{7.50},10^{7.50}
+,Observed,,10^{7.17},10^{7.42},10^{7.38},10^{7.27}
+Q-Mixed-Mid,Delta,1.00E+06,10^{0.33},10^{0.08},10^{0.12},10^{0.23}
+,Expected,,10^{8.50},10^{6.50},10^{8.50},10^{6.50}
+,Observed,,10^{8.14},10^{6.47},10^{8.15},10^{6.40}
+Q-Mixed-HiLo-1,Delta,1.00E+06,10^{0.36},10^{0.03},10^{0.35},10^{0.10}
+,Expected,,10^{6.50},10^{8.50},10^{6.50},10^{8.50}
+,Observed,,10^{6.43},10^{8.47},10^{6.48},10^{8.04}
+Q-Mixed-HiLo-2,Delta,1.00E+06,10^{0.07},10^{0.03},10^{0.02},10^{0.46}

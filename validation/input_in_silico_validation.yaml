@@ -1,0 +1,105 @@
+- accession: Q-Bacteria-1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Bacteria-1.fa
+  tag: None
+  type: rna
+- accession: Q-Bacteria-2
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Bacteria-2.fa
+  tag: None
+  type: rna
+- accession: Q-Bacteria-HiLo-1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Bacteria-HiLo-1.fa
+  tag: None
+  type: rna
+- accession: Q-Bacteria-HiLo-2
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Bacteria-HiLo-2.fa
+  tag: None
+  type: rna
+- accession: Q-Bacteria-Mid
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Bacteria-Mid.fa
+  tag: None
+  type: rna
+- accession: Q-Fungi-1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Fungi-1.fa
+  tag: None
+  type: rna
+- accession: Q-Fungi-2
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Fungi-2.fa
+  tag: None
+  type: rna
+- accession: Q-Fungi-HiLo-1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Fungi-HiLo-1.fa
+  tag: None
+  type: rna
+- accession: Q-Fungi-HiLo-2
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Fungi-HiLo-2.fa
+  tag: None
+  type: rna
+- accession: Q-Fungi-Mid
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Fungi-Mid.fa
+  tag: None
+  type: rna
+- accession: Q-IC
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-IC.fa
+  tag: None
+  type: rna
+- accession: Q-Mixed-HiLo-1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Mixed-HiLo-1.fa
+  tag: None
+  type: rna
+- accession: Q-Mixed-HiLo-2
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Mixed-HiLo-2.fa
+  tag: None
+  type: rna
+- accession: Q-Mixed-Mid
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Mixed-Mid.fa
+  tag: None
+  type: rna
+- accession: Q-Mixed-Mid-No-IC
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /home/jmontgomery/mnt/synergy_validation_simulated
+  read_file: /home/jmontgomery/AbsoluteQuantification/validation/simulated_reads/Q-Mixed-Mid-No-IC.fa
+  tag: None
+  type: rna
