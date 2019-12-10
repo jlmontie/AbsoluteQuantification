@@ -4,6 +4,7 @@ import yaml
 from titration_fit import titration_fit
 import json
 import argparse
+import os
 
 
 def prep_input_files(config):
@@ -12,43 +13,25 @@ def prep_input_files(config):
                                index_col='taxid')
     dilution_factors_df = pd.read_csv(config['SampleDilutionFactors'])
     fqo_merged = fqo.merge(dilution_factors_df, on='Accession')
-    # seq_sple_ls = fqo_merged['Seq Sple']
-    accession_ls = fqo_merged['Accession']
+    seq_sple_ls = fqo_merged['Seq Sple']
+    # accession_ls = fqo_merged['Accession']
     if config['Paths']['SummaryFilePath'] is not None:
         summary_dir_ls = config['Paths']['SummaryFilePath']
         if not isinstance(summary_dir_ls, list):
-            summary_dir_ls = [summary_dir_ls] * len(accession_ls)
+            summary_dir_ls = [summary_dir_ls] * len(seq_sple_ls)
     else:
         summary_dir_ls = fqo['Diagnostic Output Dir'].tolist()
     dilution_ls = fqo_merged['Dilution Factor'].tolist()
-    # ctrls_ls = fqo_merged['Control Int Org Names'].tolist()
-    ctrls_ls = [
-        10760,
-        532076,
-        1176767,
-        1176765,
-        1195074,
-        1176434,
-        227720,
-        1176766,
-        1837842,
-        482822,
-        1527506,
-        2053563,
-        1075775,
-        2079317,
-        1075774,
-        10759,
-        866889,
-        1871708
-    ]
+    ctrls_ls = [10760]
     org_info_dict = initial_conc.to_dict('index')
     with open(config['rDnaResourceFile']) as rdna_file:
         rDNA_copies = json.load(rdna_file)
-    return accession_ls, summary_dir_ls, dilution_ls, ctrls_ls, org_info_dict, rDNA_copies
+    return seq_sple_ls, summary_dir_ls, dilution_ls, ctrls_ls, org_info_dict, rDNA_copies
 
 
 def fit_model(input_info):
+    if not os.path.exists(config['Paths']['OutputDir']):
+        os.mkdir(config['Paths']['OutputDir'])
     model = titration_fit(input_info, fit_coverage=config['Fit']['FitCoverage'],
                           specific_cutoffs=config['Fit']['SpecificCutoffs'])
     model.fit()
@@ -59,6 +42,7 @@ def fit_model(input_info):
     model.plot_fit(show_fig=config['Output']['ShowPlot'],
                    save_fig=config['Output']['SavePlot'],
                    outdir=config['Paths']['OutputDir'])
+    model.save_plot_data(outdir=config['Paths']['OutputDir'])
 
 
 if __name__ == '__main__':

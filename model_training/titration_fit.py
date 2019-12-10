@@ -51,6 +51,9 @@ class titration_fit(object):
 
             org_count_dict_ls = \
                 self._get_counts(seq_sple, summary_dir, dilution, self._ctrls_ls)
+            if org_count_dict_ls is None:
+                print(f"Skipping {seq_sple}. All summary files not found.")
+                continue
             for org_count_dict in org_count_dict_ls:
                 org_count_dict.update({'Accession': seq_sple})
             org_counts.extend(org_count_dict_ls)
@@ -119,8 +122,9 @@ class titration_fit(object):
 
 
     def _get_summary_file(self, seq_sple, summary_dir, organism):
-        # print(summary_dir)
-        # print(organism)
+        print(summary_dir)
+        print(organism)
+        print(seq_sple)
         summary_files = os.listdir(summary_dir)
         seq_sple_filter = [file for file in summary_files if seq_sple in file.lower()]
         if len(seq_sple_filter) == 0:
@@ -130,6 +134,8 @@ class titration_fit(object):
         summary_filter = [file for file in lib_filter if 'dxsm.out.summary' in file]
         # print(summary_files)
         done_filter = [file for file in summary_filter if not file.endswith('done')]
+        if len(done_filter) == 0:
+            return
         final_path = os.path.join(summary_dir, done_filter[0])
         # Skip if file is empty
         if os.stat(final_path).st_size == 0:
@@ -156,7 +162,8 @@ class titration_fit(object):
         file_bac = self._get_summary_file(seq_sple, summary_dir, 'bacterial')
         file_fungpar = self._get_summary_file(seq_sple, summary_dir, 'fungal_parasite')
         file_vir = self._get_summary_file(seq_sple, summary_dir, 'viral')
-
+        if any([summary is None for summary in [file_bac, file_fungpar, file_vir]]):
+            return
         # Get control counts
         # ctrl_orgs = ctrl.split('|')
         ctrl_orgs = ctrl
@@ -216,11 +223,13 @@ class titration_fit(object):
             cov_norm_log_ls.extend(cov_norm_log)
             conc_log_ls.extend(conc_log)
         slope, intercept, rval, pval, stderr = linregress(cov_norm_log_ls, conc_log_ls)
+        residuals = (slope * np.array(cov_norm_log_ls) + intercept) - np.array(conc_log_ls)
         self.slope_ = slope
         self.intercept_ = intercept
         self.fit_metrics_ = {'R-sqr': rval**2, 'P-value': pval, 'Stderr': stderr}
         self._coverage_log = cov_norm_log_ls
         self._concentration_log = conc_log_ls
+        self._residuals = residuals
 
 
     def save_model(self, outdir=None):
@@ -271,12 +280,14 @@ class titration_fit(object):
         ]
         fig = make_subplots(rows=1, cols=2, subplot_titles=('Fit', 'Residuals'))
         cov_norm_log_ls = []
+        conc_log_ls = []
         y_hat_ls = []
         for idx, (taxid, org_dict) in enumerate(self.org_counts.items()):
             org_dict = self.org_counts[taxid]
             cov_norm_log, conc_log = self._get_log_norm_nonzero_vals(taxid, org_dict)
             y_hat = self.slope_ * cov_norm_log + self.intercept_
             cov_norm_log_ls.extend(cov_norm_log)
+            conc_log_ls.extend(conc_log)
             y_hat_ls.extend(y_hat)
             name = ncbi.get_name(taxid)
             # Data scatter
@@ -333,3 +344,15 @@ class titration_fit(object):
             fig.show()
         if save_fig:
             fig.write_html(os.path.join(outdir, 'regression_plot.html'))
+
+
+    def save_plot_data(self, outdir=None):
+        if outdir is None:
+            outdir = os.getcwd()
+        pd.DataFrame(
+            data={
+                'log_coverage': self._coverage_log,
+                'log_conc': self._concentration_log,
+                'residuals': self._residuals
+            }
+        ).to_csv(os.path.join(outdir, 'plot_data.csv'))

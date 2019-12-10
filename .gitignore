@@ -23,3 +23,14 @@ data/arup_urine_summary_files_with_quantification
 *.cov
 T7_reporting_names/t7_simulated_reads.fa
 nohup.out
+synergy/reproducibility/summary_with_quant
+arup_urine_samples_ge_study/human_quantification/kallisto_analysis/kallisto_output
+arup_urine_samples_ge_study/human_quantification/kallisto_analysis/GCF_000001405.39_GRCh38.p13_rna_from_genomic.fna.gz
+arup_urine_samples_ge_study/human_quantification/kallisto_analysis/GCF_000001405.39_GRCh38.p13_rna_from_genomic.idx
+model_training/bootstrap_env/
+lod_dxsm/idbd_7log_std_titration/
+model_training/bootstrap_env
+.vscode/*
+model_training/bootstrap_env
+.vscode/settings.json
+final_script/rubi_test_files/output_files

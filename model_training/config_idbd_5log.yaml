@@ -1,0 +1,42 @@
+# Model training input files
+# Three input files are required:
+#
+# 1) FastQataloguerOutput. The path to the "Export Table" output from
+# FastQataloguer (fastqataloguer.idbydna.com). This file should include only
+# the dilution series samples for which the absolute quantification model
+# should be trained.
+# 2) OrganismStockConcentrations. The path to a comma-separated file
+# with at least the folowing columns describing each organism in the sample:
+#  taxid (organism taxid)
+#  organism (organism name)
+#  stock_concentration (the initial concentration of each organism in the mix)
+# 3) SampleDilutionFactors. The path to a comma-separated file describing the
+# dilution factors for each sample. The following columns are required:
+#  Accession (the accession number of the sample)
+#  Dilution Factor (the dilution factor for the sample, e.g. 10 for a 10X dil)
+
+---
+# REQUIRED INPUTS
+FastQataloguerOutput: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/FastQataloguer_CommunityStd_IDBD_5logs_2019-09-10.csv
+OrganismStockConcentrations: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/CommunityStandardConcentrationsNoPaeruginosa.csv
+SampleDilutionFactors: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/SampleDilutionFactors5LogsIDBD.csv
+rDnaResourceFile: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/rrndb_16s_copies_with_18s.json
+
+# OPTIONAL INPUTS
+Paths:
+  # Alternative directory for output files. Default is current working directory.
+  OutputDir: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/model_training/output_idbd_7logs
+  # Alternative directory containing summary files.
+  SummaryFilePath: /Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/lod_dxsm/idbd_7log_std_titration
+
+Output:
+  # Show fit plot (yes or no)
+  ShowPlot: yes
+  # Save fit plot (yes or no)
+  SavePlot: yes
+
+Fit:
+  # Fit coverage. Otherwise will fit read counts
+  FitCoverage: yes
+  # Apply specific cutoffs to coverage.
+  SpecificCutoffs: yes
