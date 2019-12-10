@@ -15,10 +15,6 @@ var_regions = [
     [1143, 1194]
 ]
 var_color = colors[2]
-# tgs_path = '/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/TaxonomerWork/taxonomer/utils/taxid_updates/output_files/16S_190814_updated.tgs'
-# tgs = pd.read_csv(tgs_path, header=None)
-# tgs.columns = ['t', 'g', 's', 'meta']
-# summary_path = '/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/synergy/zymo_2_titration_idbd/summary_with_quant/190917-1-1-IDBD-D100520-d-01-AHTCM2AFXY-GAACTGAGCG-CGCTCCACGA-5d827495-r.rna.bacterial.dxsm.out.summary'
 summary_path = '/Users/jmontgomery/OneDrive/Documents/IDbyDNA/Code/AbsoluteQuantification/synergy/zymo_2_titration_synergy/summary_with_quant/20190917SEQ-MCS2-1-d-35-0014-GGTAACTCGC-TCACCAACTT-5d851e6a-r.rna.bacterial.dxsm.out.summary'
 with open(summary_path) as file:
     for idx, line in enumerate(file):

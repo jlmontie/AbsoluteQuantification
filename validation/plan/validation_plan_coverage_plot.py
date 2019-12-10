@@ -2,7 +2,7 @@ import json
 import plotly.graph_objects as go
 import numpy as np
 
-summary_path = '../synergy/zymo_2_titration_idbd/summary_with_quant/190917-1-1-IDBD-D100520-d-01-AHTCM2AFXY-GAACTGAGCG-CGCTCCACGA-5d827495-r.rna.bacterial.dxsm.out.summary'
+summary_path = '../../synergy/zymo_2_titration_idbd/summary_with_quant/190917-1-1-IDBD-D100520-d-01-AHTCM2AFXY-GAACTGAGCG-CGCTCCACGA-5d827495-r.rna.bacterial.dxsm.out.summary'
 
 with open(summary_path) as file:
     for line in file:
