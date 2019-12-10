@@ -1,0 +1,728 @@
+- accession: 190828-1-1-IDBD-D100376-d-01-AHMW75AFXY-TGATTATACG-TGTAATCGAC-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100376-d-01-ahmw75afxy-tgattatacg-tgtaatcgac-5d67e5e1/filt/190828-1-1-IDBD-D100376-d-01-AHMW75AFXY-TGATTATACG-TGTAATCGAC-5d67e5e1_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100377-d-02-AHMW75AFXY-CAGCCGCGTA-CACGGCTAGT-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100377-d-02-ahmw75afxy-cagccgcgta-cacggctagt-5d67e5e1/filt/190828-1-1-IDBD-D100377-d-02-AHMW75AFXY-CAGCCGCGTA-CACGGCTAGT-5d67e5e1_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100378-d-03-AHMW75AFXY-GGTAACTCGC-TCACCAACTT-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100378-d-03-ahmw75afxy-ggtaactcgc-tcaccaactt-5d67e5e1/filt/190828-1-1-IDBD-D100378-d-03-AHMW75AFXY-GGTAACTCGC-TCACCAACTT-5d67e5e1_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100379-d-04-AHMW75AFXY-ACCGGCCGTA-AATATTGCCA-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100379-d-04-ahmw75afxy-accggccgta-aatattgcca-5d67e5e1/filt/190828-1-1-IDBD-D100379-d-04-AHMW75AFXY-ACCGGCCGTA-AATATTGCCA-5d67e5e1_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100380-d-05-AHMW75AFXY-TGTAATCGAC-CGCGGTGATC-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100380-d-05-ahmw75afxy-tgtaatcgac-cgcggtgatc-5d67e5e1/filt/190828-1-1-IDBD-D100380-d-05-AHMW75AFXY-TGTAATCGAC-CGCGGTGATC-5d67e5e1_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100381-d-06-AHMW75AFXY-GTGCAGACAG-ACGGATGGTA-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100381-d-06-ahmw75afxy-gtgcagacag-acggatggta-5d67e5e1/filt/190828-1-1-IDBD-D100381-d-06-AHMW75AFXY-GTGCAGACAG-ACGGATGGTA-5d67e5e1_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100382-d-07-AHMW75AFXY-CAATCGGCTG-TTCCTACAGC-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100382-d-07-ahmw75afxy-caatcggctg-ttcctacagc-5d67e5e1/filt/190828-1-1-IDBD-D100382-d-07-AHMW75AFXY-CAATCGGCTG-TTCCTACAGC-5d67e5e1_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100383-d-08-AHMW75AFXY-TATGTAGTCA-CATTAGTGCG-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100383-d-08-ahmw75afxy-tatgtagtca-cattagtgcg-5d67e5e1/filt/190828-1-1-IDBD-D100383-d-08-AHMW75AFXY-TATGTAGTCA-CATTAGTGCG-5d67e5e1_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100384-d-09-AHMW75AFXY-ACTCGGCAAT-TTCAGTTGTC-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100384-d-09-ahmw75afxy-actcggcaat-ttcagttgtc-5d67e5e1/filt/190828-1-1-IDBD-D100384-d-09-AHMW75AFXY-ACTCGGCAAT-TTCAGTTGTC-5d67e5e1_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100386-d-10-AHMW75AFXY-GTCTAATGGC-CCTGACCACT-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100386-d-10-ahmw75afxy-gtctaatggc-cctgaccact-5d67e5e1/filt/190828-1-1-IDBD-D100386-d-10-AHMW75AFXY-GTCTAATGGC-CCTGACCACT-5d67e5e1_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100387-d-11-AHMW75AFXY-CCATCTCGCC-AACCATAGAA-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100387-d-11-ahmw75afxy-ccatctcgcc-aaccatagaa-5d67e5e1/filt/190828-1-1-IDBD-D100387-d-11-AHMW75AFXY-CCATCTCGCC-AACCATAGAA-5d67e5e1_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100388-d-12-AHMW75AFXY-CTGCGAGCCA-TGGCCGGATT-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100388-d-12-ahmw75afxy-ctgcgagcca-tggccggatt-5d67e5e1/filt/190828-1-1-IDBD-D100388-d-12-AHMW75AFXY-CTGCGAGCCA-TGGCCGGATT-5d67e5e1_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100389-d-13-AHMW75AFXY-CGTTATTCTA-AACCTTATGG-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100389-d-13-ahmw75afxy-cgttattcta-aaccttatgg-5d67e5e1/filt/190828-1-1-IDBD-D100389-d-13-AHMW75AFXY-CGTTATTCTA-AACCTTATGG-5d67e5e1_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100390-d-14-AHMW75AFXY-AGATCCATTA-TGGTAGAGAT-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100390-d-14-ahmw75afxy-agatccatta-tggtagagat-5d67e5e1/filt/190828-1-1-IDBD-D100390-d-14-AHMW75AFXY-AGATCCATTA-TGGTAGAGAT-5d67e5e1_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100391-d-15-AHMW75AFXY-GTCCTGGATA-TTCGCCACCG-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100391-d-15-ahmw75afxy-gtcctggata-ttcgccaccg-5d67e5e1/filt/190828-1-1-IDBD-D100391-d-15-AHMW75AFXY-GTCCTGGATA-TTCGCCACCG-5d67e5e1_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100392-d-16-AHMW75AFXY-CAGTGGCACT-CCTATTGTTA-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100392-d-16-ahmw75afxy-cagtggcact-cctattgtta-5d67e5e1/filt/190828-1-1-IDBD-D100392-d-16-AHMW75AFXY-CAGTGGCACT-CCTATTGTTA-5d67e5e1_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100393-d-17-AHMW75AFXY-AGTGTTGCAC-CGTGTACCAG-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100393-d-17-ahmw75afxy-agtgttgcac-cgtgtaccag-5d67e5e1/filt/190828-1-1-IDBD-D100393-d-17-AHMW75AFXY-AGTGTTGCAC-CGTGTACCAG-5d67e5e1_S17_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100394-d-18-AHMW75AFXY-GACACCATGT-TACACGTTGA-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100394-d-18-ahmw75afxy-gacaccatgt-tacacgttga-5d67e5e1/filt/190828-1-1-IDBD-D100394-d-18-AHMW75AFXY-GACACCATGT-TACACGTTGA-5d67e5e1_S18_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100395-d-19-AHMW75AFXY-GTGACACGCA-GTCCGTAAGC-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100395-d-19-ahmw75afxy-gtgacacgca-gtccgtaagc-5d67e5e1/filt/190828-1-1-IDBD-D100395-d-19-AHMW75AFXY-GTGACACGCA-GTCCGTAAGC-5d67e5e1_S19_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190828-1-1-IDBD-D100396-d-20-AHMW75AFXY-ACAGTGTATG-CCGTATGTTC-5d67e5e1
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190828-1-1-idbd-d100396-d-20-ahmw75afxy-acagtgtatg-ccgtatgttc-5d67e5e1/filt/190828-1-1-IDBD-D100396-d-20-AHMW75AFXY-ACAGTGTATG-CCGTATGTTC-5d67e5e1_S20_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100397-d-01-AHTGT2AFXY-AACCATAGAA-CCATCTCGCC-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100397-d-01-ahtgt2afxy-aaccatagaa-ccatctcgcc-5d70f2ad/filt/190904-2-1-IDBD-D100397-d-01-AHTGT2AFXY-AACCATAGAA-CCATCTCGCC-5d70f2ad_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100398-d-02-AHTGT2AFXY-GGTTGCGAGG-TTGCTCTATT-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100398-d-02-ahtgt2afxy-ggttgcgagg-ttgctctatt-5d70f2ad/filt/190904-2-1-IDBD-D100398-d-02-AHTGT2AFXY-GGTTGCGAGG-TTGCTCTATT-5d70f2ad_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100399-d-03-AHTGT2AFXY-TAAGCATCCA-AATGGATTGA-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100399-d-03-ahtgt2afxy-taagcatcca-aatggattga-5d70f2ad/filt/190904-2-1-IDBD-D100399-d-03-AHTGT2AFXY-TAAGCATCCA-AATGGATTGA-5d70f2ad_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100400-d-04-AHTGT2AFXY-ACCACGACAT-CCGCATACGA-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100400-d-04-ahtgt2afxy-accacgacat-ccgcatacga-5d70f2ad/filt/190904-2-1-IDBD-D100400-d-04-AHTGT2AFXY-ACCACGACAT-CCGCATACGA-5d70f2ad_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100401-d-05-AHTGT2AFXY-GCCGCACTCT-CGAGGTCGGA-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100401-d-05-ahtgt2afxy-gccgcactct-cgaggtcgga-5d70f2ad/filt/190904-2-1-IDBD-D100401-d-05-AHTGT2AFXY-GCCGCACTCT-CGAGGTCGGA-5d70f2ad_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100402-d-06-AHTGT2AFXY-CCACCAGGCA-ATTCCATAAG-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100402-d-06-ahtgt2afxy-ccaccaggca-attccataag-5d70f2ad/filt/190904-2-1-IDBD-D100402-d-06-AHTGT2AFXY-CCACCAGGCA-ATTCCATAAG-5d70f2ad_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100403-d-07-AHTGT2AFXY-GTGACACGCA-GTCCGTAAGC-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100403-d-07-ahtgt2afxy-gtgacacgca-gtccgtaagc-5d70f2ad/filt/190904-2-1-IDBD-D100403-d-07-AHTGT2AFXY-GTGACACGCA-GTCCGTAAGC-5d70f2ad_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100404-d-08-AHTGT2AFXY-ACAGTGTATG-CCGTATGTTC-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100404-d-08-ahtgt2afxy-acagtgtatg-ccgtatgttc-5d70f2ad/filt/190904-2-1-IDBD-D100404-d-08-AHTGT2AFXY-ACAGTGTATG-CCGTATGTTC-5d70f2ad_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100405-d-09-AHTGT2AFXY-TGATTATACG-TGTAATCGAC-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100405-d-09-ahtgt2afxy-tgattatacg-tgtaatcgac-5d70f2ad/filt/190904-2-1-IDBD-D100405-d-09-AHTGT2AFXY-TGATTATACG-TGTAATCGAC-5d70f2ad_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100406-d-10-AHTGT2AFXY-CAGCCGCGTA-CACGGCTAGT-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100406-d-10-ahtgt2afxy-cagccgcgta-cacggctagt-5d70f2ad/filt/190904-2-1-IDBD-D100406-d-10-AHTGT2AFXY-CAGCCGCGTA-CACGGCTAGT-5d70f2ad_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100407-d-11-AHTGT2AFXY-GGTAACTCGC-TCACCAACTT-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100407-d-11-ahtgt2afxy-ggtaactcgc-tcaccaactt-5d70f2ad/filt/190904-2-1-IDBD-D100407-d-11-AHTGT2AFXY-GGTAACTCGC-TCACCAACTT-5d70f2ad_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100408-d-12-AHTGT2AFXY-ACCGGCCGTA-AATATTGCCA-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100408-d-12-ahtgt2afxy-accggccgta-aatattgcca-5d70f2ad/filt/190904-2-1-IDBD-D100408-d-12-AHTGT2AFXY-ACCGGCCGTA-AATATTGCCA-5d70f2ad_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100409-d-13-AHTGT2AFXY-TGTAATCGAC-CGCGGTGATC-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100409-d-13-ahtgt2afxy-tgtaatcgac-cgcggtgatc-5d70f2ad/filt/190904-2-1-IDBD-D100409-d-13-AHTGT2AFXY-TGTAATCGAC-CGCGGTGATC-5d70f2ad_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100410-d-14-AHTGT2AFXY-GTGCAGACAG-ACGGATGGTA-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100410-d-14-ahtgt2afxy-gtgcagacag-acggatggta-5d70f2ad/filt/190904-2-1-IDBD-D100410-d-14-AHTGT2AFXY-GTGCAGACAG-ACGGATGGTA-5d70f2ad_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100411-d-01-AHMV3HAFXY-TTGGAATTCC-GTATTGACGT-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100411-d-01-ahmv3hafxy-ttggaattcc-gtattgacgt-5d6fe2cc/filt/190903-1-1-IDBD-D100411-d-01-AHMV3HAFXY-TTGGAATTCC-GTATTGACGT-5d6fe2cc_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100412-d-02-AHMV3HAFXY-CCTCTACATG-AGGAGGTATC-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100412-d-02-ahmv3hafxy-cctctacatg-aggaggtatc-5d6fe2cc/filt/190903-1-1-IDBD-D100412-d-02-AHMV3HAFXY-CCTCTACATG-AGGAGGTATC-5d6fe2cc_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100413-d-03-AHMV3HAFXY-GGAGCGTGTA-ACTTACGGAT-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100413-d-03-ahmv3hafxy-ggagcgtgta-acttacggat-5d6fe2cc/filt/190903-1-1-IDBD-D100413-d-03-AHMV3HAFXY-GGAGCGTGTA-ACTTACGGAT-5d6fe2cc_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100414-d-04-AHMV3HAFXY-TCATAGATTG-CACCTTAATC-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100414-d-04-ahmv3hafxy-tcatagattg-caccttaatc-5d6fe2cc/filt/190903-1-1-IDBD-D100414-d-04-AHMV3HAFXY-TCATAGATTG-CACCTTAATC-5d6fe2cc_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100415-d-05-AHMV3HAFXY-GTATTCCACC-TTGTCTACAT-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100415-d-05-ahmv3hafxy-gtattccacc-ttgtctacat-5d6fe2cc/filt/190903-1-1-IDBD-D100415-d-05-AHMV3HAFXY-GTATTCCACC-TTGTCTACAT-5d6fe2cc_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100416-d-06-AHMV3HAFXY-CCTCCGTCCA-CACCGATGTG-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100416-d-06-ahmv3hafxy-cctccgtcca-caccgatgtg-5d6fe2cc/filt/190903-1-1-IDBD-D100416-d-06-AHMV3HAFXY-CCTCCGTCCA-CACCGATGTG-5d6fe2cc_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100417-d-07-AHMV3HAFXY-TCCATTGCCG-TCGTGCATTC-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100417-d-07-ahmv3hafxy-tccattgccg-tcgtgcattc-5d6fe2cc/filt/190903-1-1-IDBD-D100417-d-07-AHMV3HAFXY-TCCATTGCCG-TCGTGCATTC-5d6fe2cc_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100418-d-08-AHMV3HAFXY-CGGTTACGGC-CTATAGTCTT-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100418-d-08-ahmv3hafxy-cggttacggc-ctatagtctt-5d6fe2cc/filt/190903-1-1-IDBD-D100418-d-08-AHMV3HAFXY-CGGTTACGGC-CTATAGTCTT-5d6fe2cc_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100419-d-09-AHMV3HAFXY-GAGAATGGTT-TTGCTGCCGA-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100419-d-09-ahmv3hafxy-gagaatggtt-ttgctgccga-5d6fe2cc/filt/190903-1-1-IDBD-D100419-d-09-AHMV3HAFXY-GAGAATGGTT-TTGCTGCCGA-5d6fe2cc_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190903-1-1-IDBD-D100420-d-10-AHMV3HAFXY-ACACAGGTGG-ACAACGCTCA-5d6fe2cc
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190903-1-1-idbd-d100420-d-10-ahmv3hafxy-acacaggtgg-acaacgctca-5d6fe2cc/filt/190903-1-1-IDBD-D100420-d-10-AHMV3HAFXY-ACACAGGTGG-ACAACGCTCA-5d6fe2cc_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100438-d-01-AHTGN3AFXY-ACTCGGCAAT-TTCAGTTGTC-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100438-d-01-ahtgn3afxy-actcggcaat-ttcagttgtc-5d711f71/filt/190904-1-1-IDBD-D100438-d-01-AHTGN3AFXY-ACTCGGCAAT-TTCAGTTGTC-5d711f71_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100439-d-02-AHTGN3AFXY-GTCTAATGGC-CCTGACCACT-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100439-d-02-ahtgn3afxy-gtctaatggc-cctgaccact-5d711f71/filt/190904-1-1-IDBD-D100439-d-02-AHTGN3AFXY-GTCTAATGGC-CCTGACCACT-5d711f71_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100440-d-03-AHTGN3AFXY-CCATCTCGCC-AACCATAGAA-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100440-d-03-ahtgn3afxy-ccatctcgcc-aaccatagaa-5d711f71/filt/190904-1-1-IDBD-D100440-d-03-AHTGN3AFXY-CCATCTCGCC-AACCATAGAA-5d711f71_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100441-d-04-AHTGN3AFXY-CTGCGAGCCA-TGGCCGGATT-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100441-d-04-ahtgn3afxy-ctgcgagcca-tggccggatt-5d711f71/filt/190904-1-1-IDBD-D100441-d-04-AHTGN3AFXY-CTGCGAGCCA-TGGCCGGATT-5d711f71_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100442-d-05-AHTGN3AFXY-CGTTATTCTA-AACCTTATGG-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100442-d-05-ahtgn3afxy-cgttattcta-aaccttatgg-5d711f71/filt/190904-1-1-IDBD-D100442-d-05-AHTGN3AFXY-CGTTATTCTA-AACCTTATGG-5d711f71_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100443-d-06-AHTGN3AFXY-AGATCCATTA-TGGTAGAGAT-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100443-d-06-ahtgn3afxy-agatccatta-tggtagagat-5d711f71/filt/190904-1-1-IDBD-D100443-d-06-AHTGN3AFXY-AGATCCATTA-TGGTAGAGAT-5d711f71_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100444-d-15-AHTGT2AFXY-CAATCGGCTG-TTCCTACAGC-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100444-d-15-ahtgt2afxy-caatcggctg-ttcctacagc-5d70f2ad/filt/190904-2-1-IDBD-D100444-d-15-AHTGT2AFXY-CAATCGGCTG-TTCCTACAGC-5d70f2ad_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100445-d-16-AHTGT2AFXY-TATGTAGTCA-CATTAGTGCG-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100445-d-16-ahtgt2afxy-tatgtagtca-cattagtgcg-5d70f2ad/filt/190904-2-1-IDBD-D100445-d-16-AHTGT2AFXY-TATGTAGTCA-CATTAGTGCG-5d70f2ad_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100446-d-07-AHTGN3AFXY-GTCCTGGATA-TTCGCCACCG-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100446-d-07-ahtgn3afxy-gtcctggata-ttcgccaccg-5d711f71/filt/190904-1-1-IDBD-D100446-d-07-AHTGN3AFXY-GTCCTGGATA-TTCGCCACCG-5d711f71_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100447-d-08-AHTGN3AFXY-CAGTGGCACT-CCTATTGTTA-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100447-d-08-ahtgn3afxy-cagtggcact-cctattgtta-5d711f71/filt/190904-1-1-IDBD-D100447-d-08-AHTGN3AFXY-CAGTGGCACT-CCTATTGTTA-5d711f71_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100448-d-09-AHTGN3AFXY-AGTGTTGCAC-CGTGTACCAG-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100448-d-09-ahtgn3afxy-agtgttgcac-cgtgtaccag-5d711f71/filt/190904-1-1-IDBD-D100448-d-09-AHTGN3AFXY-AGTGTTGCAC-CGTGTACCAG-5d711f71_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100450-d-17-AHTGT2AFXY-AGAGGCAACC-CCATCATTAG-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100450-d-17-ahtgt2afxy-agaggcaacc-ccatcattag-5d70f2ad/filt/190904-2-1-IDBD-D100450-d-17-AHTGT2AFXY-AGAGGCAACC-CCATCATTAG-5d70f2ad_S17_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100451-d-18-AHTGT2AFXY-CCATCATTAG-AGAGGCAACC-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100451-d-18-ahtgt2afxy-ccatcattag-agaggcaacc-5d70f2ad/filt/190904-2-1-IDBD-D100451-d-18-AHTGT2AFXY-CCATCATTAG-AGAGGCAACC-5d70f2ad_S18_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100452-d-19-AHTGT2AFXY-GATAGGCCGA-GCCATGTGCG-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100452-d-19-ahtgt2afxy-gataggccga-gccatgtgcg-5d70f2ad/filt/190904-2-1-IDBD-D100452-d-19-AHTGT2AFXY-GATAGGCCGA-GCCATGTGCG-5d70f2ad_S19_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-2-1-IDBD-D100453-d-20-AHTGT2AFXY-ATGGTTGACT-AGGACAGGCC-5d70f2ad
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-2-1-idbd-d100453-d-20-ahtgt2afxy-atggttgact-aggacaggcc-5d70f2ad/filt/190904-2-1-IDBD-D100453-d-20-AHTGT2AFXY-ATGGTTGACT-AGGACAGGCC-5d70f2ad_S20_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100454-d-10-AHTGN3AFXY-GACACCATGT-TACACGTTGA-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100454-d-10-ahtgn3afxy-gacaccatgt-tacacgttga-5d711f71/filt/190904-1-1-IDBD-D100454-d-10-AHTGN3AFXY-GACACCATGT-TACACGTTGA-5d711f71_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100455-d-11-AHTGN3AFXY-CCTGTCTGTC-TCACAACAGT-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100455-d-11-ahtgn3afxy-cctgtctgtc-tcacaacagt-5d711f71/filt/190904-1-1-IDBD-D100455-d-11-AHTGN3AFXY-CCTGTCTGTC-TCACAACAGT-5d711f71_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100456-d-12-AHTGN3AFXY-TGATGTAAGA-AAGGACGCAC-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100456-d-12-ahtgn3afxy-tgatgtaaga-aaggacgcac-5d711f71/filt/190904-1-1-IDBD-D100456-d-12-AHTGN3AFXY-TGATGTAAGA-AAGGACGCAC-5d711f71_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100457-d-13-AHTGN3AFXY-GGAATTGTAA-AGGATGTGCT-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100457-d-13-ahtgn3afxy-ggaattgtaa-aggatgtgct-5d711f71/filt/190904-1-1-IDBD-D100457-d-13-AHTGN3AFXY-GGAATTGTAA-AGGATGTGCT-5d711f71_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100458-d-14-AHTGN3AFXY-GCATAAGCTT-TGCGACGGAA-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100458-d-14-ahtgn3afxy-gcataagctt-tgcgacggaa-5d711f71/filt/190904-1-1-IDBD-D100458-d-14-AHTGN3AFXY-GCATAAGCTT-TGCGACGGAA-5d711f71_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100459-d-15-AHTGN3AFXY-CTGAGGAATA-AGTGGTTAAG-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100459-d-15-ahtgn3afxy-ctgaggaata-agtggttaag-5d711f71/filt/190904-1-1-IDBD-D100459-d-15-AHTGN3AFXY-CTGAGGAATA-AGTGGTTAAG-5d711f71_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190904-1-1-IDBD-D100460-d-16-AHTGN3AFXY-AACGCACGAG-TATCCGAGGC-5d711f71
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190904-1-1-idbd-d100460-d-16-ahtgn3afxy-aacgcacgag-tatccgaggc-5d711f71/filt/190904-1-1-IDBD-D100460-d-16-AHTGN3AFXY-AACGCACGAG-TATCCGAGGC-5d711f71_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100461-d-01-AHTF3MAFXY-TCTGGTATCC-GTAAGCAACG-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100461-d-01-ahtf3mafxy-tctggtatcc-gtaagcaacg-5d77c3ce/filt/190909-1-1-IDBD-D100461-d-01-AHTF3MAFXY-TCTGGTATCC-GTAAGCAACG-5d77c3ce_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100462-d-02-AHTF3MAFXY-CATTAGTGCG-TATGTAGTCA-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100462-d-02-ahtf3mafxy-cattagtgcg-tatgtagtca-5d77c3ce/filt/190909-1-1-IDBD-D100462-d-02-AHTF3MAFXY-CATTAGTGCG-TATGTAGTCA-5d77c3ce_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100463-d-03-AHTF3MAFXY-ACGGTCAGGA-AACGAGGCCG-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100463-d-03-ahtf3mafxy-acggtcagga-aacgaggccg-5d77c3ce/filt/190909-1-1-IDBD-D100463-d-03-AHTF3MAFXY-ACGGTCAGGA-AACGAGGCCG-5d77c3ce_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100464-d-04-AHTF3MAFXY-GGCAAGCCAG-CGGATGCTTG-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100464-d-04-ahtf3mafxy-ggcaagccag-cggatgcttg-5d77c3ce/filt/190909-1-1-IDBD-D100464-d-04-AHTF3MAFXY-GGCAAGCCAG-CGGATGCTTG-5d77c3ce_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100465-d-05-AHTF3MAFXY-TTGGAATTCC-GTATTGACGT-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100465-d-05-ahtf3mafxy-ttggaattcc-gtattgacgt-5d77c3ce/filt/190909-1-1-IDBD-D100465-d-05-AHTF3MAFXY-TTGGAATTCC-GTATTGACGT-5d77c3ce_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100466-d-06-AHTF3MAFXY-CCTCTACATG-AGGAGGTATC-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100466-d-06-ahtf3mafxy-cctctacatg-aggaggtatc-5d77c3ce/filt/190909-1-1-IDBD-D100466-d-06-AHTF3MAFXY-CCTCTACATG-AGGAGGTATC-5d77c3ce_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100467-d-07-AHTF3MAFXY-GGAGCGTGTA-ACTTACGGAT-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100467-d-07-ahtf3mafxy-ggagcgtgta-acttacggat-5d77c3ce/filt/190909-1-1-IDBD-D100467-d-07-AHTF3MAFXY-GGAGCGTGTA-ACTTACGGAT-5d77c3ce_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100468-d-08-AHTF3MAFXY-TCATAGATTG-CACCTTAATC-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100468-d-08-ahtf3mafxy-tcatagattg-caccttaatc-5d77c3ce/filt/190909-1-1-IDBD-D100468-d-08-AHTF3MAFXY-TCATAGATTG-CACCTTAATC-5d77c3ce_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100469-d-09-AHTF3MAFXY-TATTGCGCTC-CCTAACACAG-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100469-d-09-ahtf3mafxy-tattgcgctc-cctaacacag-5d77c3ce/filt/190909-1-1-IDBD-D100469-d-09-AHTF3MAFXY-TATTGCGCTC-CCTAACACAG-5d77c3ce_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100470-d-10-AHTF3MAFXY-ACGCCTTGTT-ACGTTCCTTA-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100470-d-10-ahtf3mafxy-acgccttgtt-acgttcctta-5d77c3ce/filt/190909-1-1-IDBD-D100470-d-10-AHTF3MAFXY-ACGCCTTGTT-ACGTTCCTTA-5d77c3ce_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190909-1-1-IDBD-D100471-d-11-AHTF3MAFXY-TTCTACATAC-TTACAGTTAG-5d77c3ce
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190909-1-1-idbd-d100471-d-11-ahtf3mafxy-ttctacatac-ttacagttag-5d77c3ce/filt/190909-1-1-IDBD-D100471-d-11-AHTF3MAFXY-TTCTACATAC-TTACAGTTAG-5d77c3ce_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100472-d-01-AHTF37AFXY-TCTATCCTAA-CCAGTCGACG-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100472-d-01-ahtf37afxy-tctatcctaa-ccagtcgacg-5d728861/filt/190905-2-1-IDBD-D100472-d-01-AHTF37AFXY-TCTATCCTAA-CCAGTCGACG-5d728861_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100473-d-02-AHTF37AFXY-CTCGCTTCGG-TTGACTAGTA-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100473-d-02-ahtf37afxy-ctcgcttcgg-ttgactagta-5d728861/filt/190905-2-1-IDBD-D100473-d-02-AHTF37AFXY-CTCGCTTCGG-TTGACTAGTA-5d728861_S2_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100474-d-03-AHTF37AFXY-CTGTTGGTCC-AACGGTCTAT-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100474-d-03-ahtf37afxy-ctgttggtcc-aacggtctat-5d728861/filt/190905-2-1-IDBD-D100474-d-03-AHTF37AFXY-CTGTTGGTCC-AACGGTCTAT-5d728861_S3_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100475-d-04-AHTF37AFXY-TTACCTGGAA-CTGGAACTGT-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100475-d-04-ahtf37afxy-ttacctggaa-ctggaactgt-5d728861/filt/190905-2-1-IDBD-D100475-d-04-AHTF37AFXY-TTACCTGGAA-CTGGAACTGT-5d728861_S4_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100476-d-05-AHTF37AFXY-TGGCTAATCA-CTACATGCCT-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100476-d-05-ahtf37afxy-tggctaatca-ctacatgcct-5d728861/filt/190905-2-1-IDBD-D100476-d-05-AHTF37AFXY-TGGCTAATCA-CTACATGCCT-5d728861_S5_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100477-d-06-AHTF37AFXY-AACACTGTTA-TGAGACTTGC-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100477-d-06-ahtf37afxy-aacactgtta-tgagacttgc-5d728861/filt/190905-2-1-IDBD-D100477-d-06-AHTF37AFXY-AACACTGTTA-TGAGACTTGC-5d728861_S6_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100478-d-07-AHTF37AFXY-ATTGCGCGGT-GCGGAGCCAA-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100478-d-07-ahtf37afxy-attgcgcggt-gcggagccaa-5d728861/filt/190905-2-1-IDBD-D100478-d-07-AHTF37AFXY-ATTGCGCGGT-GCGGAGCCAA-5d728861_S7_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100479-d-08-AHTF37AFXY-TGGCGCGAAC-AGTATCAGTT-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100479-d-08-ahtf37afxy-tggcgcgaac-agtatcagtt-5d728861/filt/190905-2-1-IDBD-D100479-d-08-AHTF37AFXY-TGGCGCGAAC-AGTATCAGTT-5d728861_S8_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100480-d-09-AHTF37AFXY-TAATGTGTCT-TATGCCTTAC-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100480-d-09-ahtf37afxy-taatgtgtct-tatgccttac-5d728861/filt/190905-2-1-IDBD-D100480-d-09-AHTF37AFXY-TAATGTGTCT-TATGCCTTAC-5d728861_S9_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100481-d-10-AHTF37AFXY-ATACCAACGC-CGCAGCAATT-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100481-d-10-ahtf37afxy-ataccaacgc-cgcagcaatt-5d728861/filt/190905-2-1-IDBD-D100481-d-10-AHTF37AFXY-ATACCAACGC-CGCAGCAATT-5d728861_S10_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100482-d-11-AHTF37AFXY-AGGATGTGCT-GGAATTGTAA-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100482-d-11-ahtf37afxy-aggatgtgct-ggaattgtaa-5d728861/filt/190905-2-1-IDBD-D100482-d-11-AHTF37AFXY-AGGATGTGCT-GGAATTGTAA-5d728861_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100483-d-12-AHTF37AFXY-CACGGAACAA-GTGCTAGGTT-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100483-d-12-ahtf37afxy-cacggaacaa-gtgctaggtt-5d728861/filt/190905-2-1-IDBD-D100483-d-12-AHTF37AFXY-CACGGAACAA-GTGCTAGGTT-5d728861_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100484-d-13-AHTF37AFXY-TGGAGTACTT-TCCACACAGA-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100484-d-13-ahtf37afxy-tggagtactt-tccacacaga-5d728861/filt/190905-2-1-IDBD-D100484-d-13-AHTF37AFXY-TGGAGTACTT-TCCACACAGA-5d728861_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100485-d-14-AHTF37AFXY-GTATTGACGT-TTGGAATTCC-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100485-d-14-ahtf37afxy-gtattgacgt-ttggaattcc-5d728861/filt/190905-2-1-IDBD-D100485-d-14-AHTF37AFXY-GTATTGACGT-TTGGAATTCC-5d728861_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100486-d-15-AHTF37AFXY-CTTGTACACC-AAGCGCGCTT-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100486-d-15-ahtf37afxy-cttgtacacc-aagcgcgctt-5d728861/filt/190905-2-1-IDBD-D100486-d-15-AHTF37AFXY-CTTGTACACC-AAGCGCGCTT-5d728861_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100487-d-16-AHTF37AFXY-ACACAGGTGG-ACAACGCTCA-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100487-d-16-ahtf37afxy-acacaggtgg-acaacgctca-5d728861/filt/190905-2-1-IDBD-D100487-d-16-AHTF37AFXY-ACACAGGTGG-ACAACGCTCA-5d728861_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100488-d-17-AHTF37AFXY-CCTGCGGAAC-AGCCTATGAT-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100488-d-17-ahtf37afxy-cctgcggaac-agcctatgat-5d728861/filt/190905-2-1-IDBD-D100488-d-17-AHTF37AFXY-CCTGCGGAAC-AGCCTATGAT-5d728861_S17_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100489-d-18-AHTF37AFXY-TTCATAAGGT-CCTTCTAACA-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100489-d-18-ahtf37afxy-ttcataaggt-ccttctaaca-5d728861/filt/190905-2-1-IDBD-D100489-d-18-AHTF37AFXY-TTCATAAGGT-CCTTCTAACA-5d728861_S18_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100490-d-19-AHTF37AFXY-CTCTGCAGCG-TACATCCATC-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100490-d-19-ahtf37afxy-ctctgcagcg-tacatccatc-5d728861/filt/190905-2-1-IDBD-D100490-d-19-AHTF37AFXY-CTCTGCAGCG-TACATCCATC-5d728861_S19_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190905-2-1-IDBD-D100491-d-20-AHTF37AFXY-CTGACTCTAC-TGACGGCCGT-5d728861
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190905-2-1-idbd-d100491-d-20-ahtf37afxy-ctgactctac-tgacggccgt-5d728861/filt/190905-2-1-IDBD-D100491-d-20-AHTF37AFXY-CTGACTCTAC-TGACGGCCGT-5d728861_S20_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100509-d-02-AHTF3TAFXY-ACTTCAAGCG-TTCATGGTTC-5d7ce905
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190913-1-1-idbd-d100509-d-02-ahtf3tafxy-acttcaagcg-ttcatggttc-5d7ce905/filt/190913-1-1-IDBD-D100509-d-02-AHTF3TAFXY-ACTTCAAGCG-TTCATGGTTC-5d7ce905_S12_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100492-d-01-AHTF3TAFXY-GTCCGTAAGC-AAGATACACG-5d7ce905
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190913-1-1-idbd-d100492-d-01-ahtf3tafxy-gtccgtaagc-aagatacacg-5d7ce905/filt/190913-1-1-IDBD-D100492-d-01-AHTF3TAFXY-GTCCGTAAGC-AAGATACACG-5d7ce905_S11_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100511-d-04-AHTF3TAFXY-GCGTTGGTAT-GGAAGTATGT-5d7ce905
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190913-1-1-idbd-d100511-d-04-ahtf3tafxy-gcgttggtat-ggaagtatgt-5d7ce905/filt/190913-1-1-IDBD-D100511-d-04-AHTF3TAFXY-GCGTTGGTAT-GGAAGTATGT-5d7ce905_S14_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100512-d-05-AHTF3TAFXY-ACATATCCAG-ATTGCACATA-5d7ce905
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190913-1-1-idbd-d100512-d-05-ahtf3tafxy-acatatccag-attgcacata-5d7ce905/filt/190913-1-1-IDBD-D100512-d-05-AHTF3TAFXY-ACATATCCAG-ATTGCACATA-5d7ce905_S15_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100514-d-07-AHTF3TAFXY-GTATTCCACC-TTGTCTACAT-5d7ce905
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190913-1-1-idbd-d100514-d-07-ahtf3tafxy-gtattccacc-ttgtctacat-5d7ce905/filt/190913-1-1-IDBD-D100514-d-07-AHTF3TAFXY-GTATTCCACC-TTGTCTACAT-5d7ce905_S17_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100510-d-03-AHTF3TAFXY-TCAGAAGGCG-TATGATGGCC-5d7ce905
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190913-1-1-idbd-d100510-d-03-ahtf3tafxy-tcagaaggcg-tatgatggcc-5d7ce905/filt/190913-1-1-IDBD-D100510-d-03-AHTF3TAFXY-TCAGAAGGCG-TATGATGGCC-5d7ce905_S13_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
+- accession: 190913-1-1-IDBD-D100513-d-06-AHTF3TAFXY-TCATAGATTG-CACCTTAATC-5d7ce905
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /data/taxonomer2/jmontgomery/synergy_validation/
+  read_file: /common/idbydna-archives/fastqs/illumina/rnd/190913-1-1-idbd-d100513-d-06-ahtf3tafxy-tcatagattg-caccttaatc-5d7ce905/filt/190913-1-1-IDBD-D100513-d-06-AHTF3TAFXY-TCATAGATTG-CACCTTAATC-5d7ce905_S16_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
