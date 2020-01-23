@@ -35,6 +35,7 @@ model_training/bootstrap_env
 .vscode/settings.json
 final_script/rubi_test_files/output_files
 <<<<<<< HEAD
+<<<<<<< HEAD
 final_script/rubi_test_files/
 .vscode/
 validation/simulated_reads/*.fa
@@ -42,3 +43,7 @@ validation/simulated_reads/*.fa
 model_training/bootstrap_env
 *.dxsm.out.summary
 >>>>>>> 95857275a1d3875912bd3c76d33b1cb90ca79e09
+=======
+model_training/bootstrap_env
+*.dxsm.out.summary
+>>>>>>> origin/final_script
