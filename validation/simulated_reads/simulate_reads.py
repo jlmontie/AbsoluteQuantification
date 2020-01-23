@@ -1,10 +1,11 @@
-import sys
-sys.path.insert(0, '/home/jmontgomery/taxonomer/utils/explify_v2/simulation_scripts')
 from sim_reads import simulate_reads_tiled_by_depth as simulate
 from sim_reads import simulate_reads_tiled as simulate_tiled
 import glob
 import numpy as np
 import os
+
+# asimov directory
+output_dir = '/data/taxonomer2/jmontgomery/synergy_validation/quantification_simulated_sequences'
 
 # Calculate required coverages
 ic_count = 1e6
@@ -15,8 +16,13 @@ rdna_copies_dict = {
     '5482_c_tropicalis': 48.4
 }
 # Model coefficients
-m = 1.013875881594209
-b = 12.446039813516776
+# Initial Synergy validation
+# m = 1.013875881594209
+# b = 12.446039813516776
+# Second Synergy validation Jan 2020
+m = 0.7797973340233221
+b = 11.247277836330708
+
 quantification_ls = [10**(6.5), 10**(7.5), 10**(8.5)]
 
 fa_ls = glob.glob("../ref_seqs/*.fa")
@@ -31,7 +37,8 @@ for fa in fa_ls:
             print(f"depth: {depth}")
             file_in.readline()
             sequence = file_in.readline()
-            with open(f"{sequence_name}_quant_{np.log10(quantification):0.1f}_depth_{depth:0.0f}.fa", "w") as file_out:
+            filename_out = f"{sequence_name}_quant_{np.log10(quantification):0.1f}_depth_{depth:0.0f}.fa"
+            with open(os.path.join(output_dir, filename_out), "w") as file_out:
                 simulate(sequence_name, sequence, depth, 100, file_handle=file_out)
 
 # T7 simulation
@@ -45,6 +52,6 @@ with open(t7) as t7_file:
         block = simulate_tiled(t7_sequence_name, t7_sequence, 1, 100)
         t7_blocks_ls.extend(block)
     t7_blocks_ls = t7_blocks_ls[:1000000]
-    with open('../ref_seqs/T7_090918RESP115-18250402467-d_NC_001604.fa', 'w') as t7_out:
+    with open(os.path.join(output_dir, 'T7_090918RESP115-18250402467-d_NC_001604.fa'), 'w') as t7_out:
         for item in t7_blocks_ls:
             t7_out.write(item)

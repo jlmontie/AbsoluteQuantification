@@ -1,4 +1,9 @@
+import os
+
 import numpy as np
+
+# asimov directory
+sim_reads_dir = '/data/taxonomer2/jmontgomery/synergy_validation/quantification_simulated_sequences'
 
 files = np.array([
     'T7_090918RESP115-18250402467-d_NC_001604.fa',  # 0 - IC
@@ -53,8 +58,8 @@ combo_names = np.array([
 ])
 
 for idx_ls, name in zip(combo_idx, combo_names):
-    with open(name, 'w') as file_out:
+    with open(os.path.join(sim_reads_dir, name), 'w') as file_out:
         for idx in idx_ls:
-            with open(files[idx]) as file_in:
+            with open(os.path.join(sim_reads_dir, files[idx])) as file_in:
                 for line in file_in:
                     file_out.write(line)
