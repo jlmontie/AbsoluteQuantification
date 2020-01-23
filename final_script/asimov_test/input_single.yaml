@@ -1,0 +1,7 @@
+- accession: 190828-1-1-IDBD-D100376-d-01-AHMW75AFXY-TGATTATACG-TGTAATCGAC-5d6e759f
+  internal_control_reporting_ids:
+  - '26706_10760'
+  output_dir: /uufs/chpc.utah.edu/common/home/u0002613/synergy_validation
+  read_file: /srv/idbydna-group3/results/idbd_dev/190828_NB551543_0126_AHMW75AFXY/fqs/fq_filt/Nextera/190828-1-1-IDBD-D100376-d-01-AHMW75AFXY-TGATTATACG-TGTAATCGAC-5d6e759f_S1_R1_001.postAdapt.postQual.fastq.gz
+  tag: None
+  type: rna
