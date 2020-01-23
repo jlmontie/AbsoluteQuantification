@@ -9,7 +9,7 @@ verify_ssl = true
 numpy = "*"
 pandas = "*"
 plotly = "*"
-pysam = "*"
+pysam = "~=0.15.4"
 
 [requires]
 python_version = "3.7"
