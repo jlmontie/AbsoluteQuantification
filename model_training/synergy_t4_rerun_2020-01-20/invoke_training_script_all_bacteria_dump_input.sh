@@ -1,0 +1,3 @@
+TRAIN_SCRIPT=/home/jmontgomery/AbsoluteQuantification/model_training/train_model.py
+CONFIG=/home/jmontgomery/AbsoluteQuantification/model_training/synergy_t4_rerun_2020-01-20/config_all_bacteria_dump_input.yaml
+python $TRAIN_SCRIPT $CONFIG

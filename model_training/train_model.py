@@ -14,6 +14,7 @@ def prep_input_files(config):
     dilution_factors_df = pd.read_csv(config['SampleDilutionFactors'])
     fqo_merged = fqo.merge(dilution_factors_df, on='Accession')
     seq_sple_ls = fqo_merged['Seq Sple']
+    accession_ls = fqo_merged['Accession']
     # accession_ls = fqo_merged['Accession']
     if config['Paths']['SummaryFilePath'] is not None:
         summary_dir_ls = config['Paths']['SummaryFilePath']
@@ -22,18 +23,22 @@ def prep_input_files(config):
     else:
         summary_dir_ls = fqo['Diagnostic Output Dir'].tolist()
     dilution_ls = fqo_merged['Dilution Factor'].tolist()
-    ctrls_ls = [10760]
+    if config['CtrlTaxa'] is not None:
+        ctrls_ls = config['CtrlTaxa']
+    else:
+        ctrls_ls = [10760] # T7 taxid
     org_info_dict = initial_conc.to_dict('index')
     with open(config['rDnaResourceFile']) as rdna_file:
         rDNA_copies = json.load(rdna_file)
-    return seq_sple_ls, summary_dir_ls, dilution_ls, ctrls_ls, org_info_dict, rDNA_copies
+    return seq_sple_ls, accession_ls, summary_dir_ls, dilution_ls, ctrls_ls, org_info_dict, rDNA_copies
 
 
 def fit_model(input_info):
     if not os.path.exists(config['Paths']['OutputDir']):
         os.mkdir(config['Paths']['OutputDir'])
     model = titration_fit(input_info, fit_coverage=config['Fit']['FitCoverage'],
-                          specific_cutoffs=config['Fit']['SpecificCutoffs'])
+                          specific_cutoffs=config['Fit']['SpecificCutoffs'],
+                          dump_file=config['Paths']['DumpFile'])
     model.fit()
     print(f"Slope: {model.slope_}")
     print(f"Intercept: {model.intercept_}")

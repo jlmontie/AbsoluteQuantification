@@ -1,0 +1,46 @@
+# Model training input files
+# Three input files are required:
+#
+# 1) FastQataloguerOutput. The path to the "Export Table" output from
+# FastQataloguer (fastqataloguer.idbydna.com). This file should include only
+# the dilution series samples for which the absolute quantification model
+# should be trained.
+# 2) OrganismStockConcentrations. The path to a comma-separated file
+# with at least the folowing columns describing each organism in the sample:
+#  taxid (organism taxid)
+#  organism (organism name)
+#  stock_concentration (the initial concentration of each organism in the mix)
+# 3) SampleDilutionFactors. The path to a comma-separated file describing the
+# dilution factors for each sample. The following columns are required:
+#  Accession (the accession number of the sample)
+#  Dilution Factor (the dilution factor for the sample, e.g. 10 for a 10X dil)
+
+---
+# REQUIRED INPUTS
+FastQataloguerOutput: /home/jmontgomery/AbsoluteQuantification/model_training/synergy_t4_rerun_2020-01-20/FastQataloguer_Synergy_T4_2020-01-20.csv
+OrganismStockConcentrations: /home/jmontgomery/AbsoluteQuantification/model_training/concentration_files/CommunityStandardConcentrationsNoFungi.csv
+SampleDilutionFactors: /home/jmontgomery/AbsoluteQuantification/model_training/synergy_t4_rerun_2020-01-20/SampleDilutionFactors.csv
+rDnaResourceFile: /home/jmontgomery/AbsoluteQuantification/model_training/rrndb_16s_copies_with_18s.json
+
+# OPTIONAL INPUTS
+Paths:
+  # Alternative directory for output files. Default is current working directory.
+  OutputDir: /home/jmontgomery/AbsoluteQuantification/model_training/synergy_t4_rerun_2020-01-20/model_output_all_bacteria_dump_input
+  # Alternative directory containing summary files.
+  SummaryFilePath: /data/analysis_group2/results/synergy-uti/200119_NDX550287_RUO_0067_AH3GTNAFX2/tax
+  # Dump file to only include organisms in review portal.
+  DumpFile: /home/jmontgomery/AbsoluteQuantification/model_training/synergy_t4_rerun_2020-01-20/explify-synergy-dev-export-200120.xlsx
+
+Output:
+  # Show fit plot (yes or no)
+  ShowPlot: no
+  # Save fit plot (yes or no)
+  SavePlot: yes
+
+Fit:
+  # Fit coverage. Otherwise will fit read counts
+  FitCoverage: yes
+  # Apply specific cutoffs to coverage.
+  SpecificCutoffs: no
+
+CtrlTaxa: [10665] # must be a list

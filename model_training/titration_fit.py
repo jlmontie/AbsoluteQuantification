@@ -5,6 +5,7 @@ import numpy as np
 import sys
 import pandas as pd
 import gzip
+from decimal import Decimal
 from collections import defaultdict
 import re
 import plotly.express as px
@@ -14,12 +15,12 @@ pd.set_option('mode.chained_assignment', None)
 import yaml
 from scipy.stats import linregress
 import numpy as np
-from ncbi_taxonomy_utils import ncbi_taxonomy
+from idbd_bio_utils import ncbi_taxonomy
 ncbi = ncbi_taxonomy()
 
 
 class titration_fit(object):
-    def __init__(self, args, fit_coverage=True, specific_cutoffs=False):
+    def __init__(self, args, fit_coverage=True, specific_cutoffs=False, dump_file=None):
         """
         Trains a model for absolute quantification from dilution series of a
         quantified organism mix.
@@ -38,25 +39,39 @@ class titration_fit(object):
             otherwise fit to rDNA read counts. Default True.
         """
         self._seq_sple_ls = args[0]
-        self._summary_dir_ls = args[1]
-        self._dilution_ls = args[2]
-        self._ctrls_ls = args[3]
-        self._org_info = args[4]
-        self._rdna_copies = args[5]
+        self._accession_ls = args[1]
+        self._summary_dir_ls = args[2]
+        self._dilution_ls = args[3]
+        self._ctrls_ls = args[4]
+        self._org_info = args[5]
+        self._rdna_copies = args[6]
         self.specific_cutoffs = specific_cutoffs
+        self.detections = None
+        if dump_file is not None:
+            dump_df = pd.read_excel(dump_file, sheet_name='organisms')
+            dump_accessions = dump_df['Accession']
+            detections = {}
+            for accession in dump_accessions:
+                detections.update({
+                    accession.lower():
+                    dump_df.loc[dump_df['Accession'] == accession,
+                                'Organism Name'].tolist()
+                })
+            self.detections = detections
         org_counts = []
         print("Calculating organism coverages")
-        for seq_sple, summary_dir, dilution in \
-            zip(self._seq_sple_ls, self._summary_dir_ls, self._dilution_ls):
-
+        for seq_sple, accession, summary_dir, dilution in \
+            zip(self._seq_sple_ls, self._accession_ls, self._summary_dir_ls,
+                self._dilution_ls):
             org_count_dict_ls = \
-                self._get_counts(seq_sple, summary_dir, dilution, self._ctrls_ls)
+                self._get_counts(seq_sple, accession, summary_dir, dilution, self._ctrls_ls)
             if org_count_dict_ls is None:
                 print(f"Skipping {seq_sple}. All summary files not found.")
                 continue
             for org_count_dict in org_count_dict_ls:
-                org_count_dict.update({'Accession': seq_sple})
+                org_count_dict.update({'Accession': accession})
             org_counts.extend(org_count_dict_ls)
+        print(f"org_counts:\n{org_counts}")
 
         print("Combining coverage dictionaries")
         self.org_counts = self._combine_dictionaries(org_counts)
@@ -92,10 +107,15 @@ class titration_fit(object):
         return ctrl_count
 
 
-    def _get_organism_counts(self, file, org_count_dict_ls, dilution, ctrl_count):
+    def _get_organism_counts(self, file, org_count_dict_ls, dilution, ctrl_count,
+        accession):
         for line in file:
             cov_info = json.loads(line)
             if cov_info['taxid'] in self._org_info:
+                if self.detections is not None:
+                    if accession in self.detections:
+                        if cov_info['name'] not in self.detections[accession]:
+                            continue
                 taxid = cov_info['taxid']
                 organism = self._org_info[taxid]['organism']
                 conc = self._org_info[taxid]['stock_concentration'] / dilution
@@ -122,9 +142,6 @@ class titration_fit(object):
 
 
     def _get_summary_file(self, seq_sple, summary_dir, organism):
-        print(summary_dir)
-        print(organism)
-        print(seq_sple)
         summary_files = os.listdir(summary_dir)
         seq_sple_filter = [file for file in summary_files if seq_sple in file.lower()]
         if len(seq_sple_filter) == 0:
@@ -132,7 +149,6 @@ class titration_fit(object):
         organism_filter = [file for file in seq_sple_filter if organism in file]
         lib_filter = [file for file in organism_filter if 'rna' in file]
         summary_filter = [file for file in lib_filter if 'dxsm.out.summary' in file]
-        # print(summary_files)
         done_filter = [file for file in summary_filter if not file.endswith('done')]
         if len(done_filter) == 0:
             return
@@ -157,7 +173,7 @@ class titration_fit(object):
         return d
 
 
-    def _get_counts(self, seq_sple, summary_dir, dilution, ctrl):
+    def _get_counts(self, seq_sple, accession, summary_dir, dilution, ctrl):
         print(seq_sple)
         file_bac = self._get_summary_file(seq_sple, summary_dir, 'bacterial')
         file_fungpar = self._get_summary_file(seq_sple, summary_dir, 'fungal_parasite')
@@ -179,19 +195,19 @@ class titration_fit(object):
         org_count_dict_ls = []
         org_count_dict_ls = \
             self._get_organism_counts(file_bac, org_count_dict_ls,
-                                      dilution, ctrl_count)
+                                      dilution, ctrl_count, accession)
 
         # Get 18s gene counts for fungal
         org_count_dict_ls = \
             self._get_organism_counts(file_fungpar, org_count_dict_ls,
-                                      dilution, ctrl_count)
+                                      dilution, ctrl_count, accession)
         file_bac.close()
         file_fungpar.close()
         file_vir.close()
         return org_count_dict_ls
 
 
-    def _get_log_norm_nonzero_vals(self, taxid, org_dict):
+    def _get_log_norm_nonzero_vals(self, taxid, org_dict, *args):
         if self._fit_coverage:
             cov_key = 'Coverage'
         else:
@@ -206,7 +222,10 @@ class titration_fit(object):
         conc_nonzero = np.log10(conc[cov_nonzero_idx])
         cov_norm = cov_nonzero / ctrls_nonzero
         cov_norm_log = np.log10(cov_norm)
-        return cov_norm_log, conc_nonzero
+        arg_return_ls = []
+        for arg in args: # additional lists to filter based on nonzero values
+            arg_return_ls.append(list(np.array(arg)[cov_nonzero_idx]))
+        return cov_norm_log, conc_nonzero, arg_return_ls
 
 
     def fit(self):
@@ -219,9 +238,11 @@ class titration_fit(object):
         conc_log_ls = []
         for taxid, org_dict in self.org_counts.items():
             org_dict = self.org_counts[taxid]
-            cov_norm_log, conc_log = self._get_log_norm_nonzero_vals(taxid, org_dict)
+            cov_norm_log, conc_log, _ = self._get_log_norm_nonzero_vals(taxid, org_dict)
             cov_norm_log_ls.extend(cov_norm_log)
             conc_log_ls.extend(conc_log)
+        print(f"fit data coverage\n{cov_norm_log_ls}")
+        print(f"fit data conc\n{conc_log_ls}")
         slope, intercept, rval, pval, stderr = linregress(cov_norm_log_ls, conc_log_ls)
         residuals = (slope * np.array(cov_norm_log_ls) + intercept) - np.array(conc_log_ls)
         self.slope_ = slope
@@ -261,11 +282,6 @@ class titration_fit(object):
             xtitle = 'log(Normalized Coverage)'
         else:
             xtitle = 'log(Normalized Read Count)'
-        # text = [f"Accession: {accession}<br>Organism: {org}<br>Taxid: {taxid}"
-        #         for accession, org, taxid in zip(self._accessions_extended,
-        #                                          self._org_names_extended,
-        #                                          self._taxids_extended)]
-        # y_hat = self.slope_ * self._coverage_log + self.intercept_
         colors = [
             '#1f77b4',
             '#ff7f0e',
@@ -282,9 +298,15 @@ class titration_fit(object):
         cov_norm_log_ls = []
         conc_log_ls = []
         y_hat_ls = []
+        print(f"self.org_counts:\n{self.org_counts}")
         for idx, (taxid, org_dict) in enumerate(self.org_counts.items()):
-            org_dict = self.org_counts[taxid]
-            cov_norm_log, conc_log = self._get_log_norm_nonzero_vals(taxid, org_dict)
+            hover_info = [org_dict['Accession'], org_dict['Coverage'],
+                             org_dict['Concentration']]
+            cov_norm_log, conc_log, filtered_hover_info = \
+                self._get_log_norm_nonzero_vals(
+                    taxid, org_dict, *hover_info)
+            accession_ls, coverage_ls, concentration_ls = \
+                filtered_hover_info[0], filtered_hover_info[1], filtered_hover_info[2]
             y_hat = self.slope_ * cov_norm_log + self.intercept_
             cov_norm_log_ls.extend(cov_norm_log)
             conc_log_ls.extend(conc_log)
@@ -293,10 +315,19 @@ class titration_fit(object):
             # Data scatter
             fig.add_trace(
                 go.Scatter(
+                    hovertemplate =
+                    '%{text}',
                     x=cov_norm_log,
                     y=conc_log,
                     mode='markers',
                     name=name,
+                    text=[
+                        f"Accession: {accession}<br>Norm. coverage:"
+                        f"{coverage:0.0f}<br>Conc. (GE/ml):"
+                        f"{Decimal(concentration):0.2E}"
+                        for accession, coverage, concentration in
+                        zip(accession_ls, coverage_ls, concentration_ls)
+                    ],
                     legendgroup=taxid,
                     marker = dict(
                         color=colors[idx]
