@@ -10,6 +10,8 @@ numpy = "*"
 pandas = "*"
 plotly = "*"
 pysam = "~=0.15.4"
+pyyaml = "*"
+redis = "*"
 
 [requires]
 python_version = "3.7"

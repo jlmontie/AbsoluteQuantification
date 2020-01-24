@@ -4,8 +4,10 @@ import os
 import numpy as np
 import pandas as pd
 
-output_dir = '/home/jmontgomery/mnt/synergy_validation_simulated'
-path_ls = glob.glob(os.path.join(output_dir, '*.rna.*.dxsm.out.summary'))
+report_dir = 'synergy_validation_jan_2020'
+classification_output_dir = '/data/analysis_group1/synergy_validation/quantification/validation_jan_2020/classification_pipeline_output'
+
+path_ls = glob.glob(os.path.join(classification_output_dir, '*.rna.*.dxsm.out.summary'))
 path_ls = [path for path in path_ls if not path.endswith('.done')]
 
 taxid_ls = [562, 573, 5476, 5482]
@@ -28,7 +30,10 @@ for path in path_ls:
                 sample_ls.append(os.path.basename(path).split('.')[0])
                 org_ls.append(obj['name'])
                 quant_ls.append(obj['absolute_quant'])
-                quant_log_ls.append(np.log10(obj['absolute_quant']))
+                if obj['absolute_quant'] is not None:
+                    quant_log_ls.append(np.log10(obj['absolute_quant']))
+                else:
+                    quant_log_ls.append(None)
                 quant_bin_ls.append(obj['absolute_quant_bin'])
                 for gene in obj['gene_info']:
                     if gene['geneid'] == 0:
@@ -55,4 +60,4 @@ df = pd.DataFrame(data={
     'depth q3': coverage_q3_ls,
     'depth max': coverage_max_ls
 })
-df.to_csv('in_silico_quantification_results.csv', index=False)
+df.to_csv(os.path.join(report_dir, 'in_silico_quantification_results.csv'), index=False)

@@ -2,23 +2,41 @@ import os
 
 import numpy as np
 
-# asimov directory
-sim_reads_dir = '/data/taxonomer2/jmontgomery/synergy_validation/quantification_simulated_sequences'
+# banks directory
+sim_reads_dir = '/data/analysis_group1/synergy_validation/quantification/validation_jan_2020/simulated_sequences/'
 
+# Original Synergy T7 validation
+# files = np.array([
+#     'T7_090918RESP115-18250402467-d_NC_001604.fa',  # 0 - T7 IC
+#     '562_e_coli_quant_6.5_depth_10.fa',  # 1 - Bacteria A
+#     '562_e_coli_quant_7.5_depth_93.fa',  # 2 - Bacteria A
+#     '562_e_coli_quant_8.5_depth_898.fa',  # 3 - Bacteria A
+#     '573_k_pneumoniae_quant_6.5_depth_11.fa',  # 4 - Bacteria B
+#     '573_k_pneumoniae_quant_7.5_depth_106.fa',  # 5 - Bacteria B
+#     '573_k_pneumoniae_quant_8.5_depth_1026.fa',  # 6 - Bacteria B
+#     '5476_c_albicans_quant_6.5_depth_66.fa',  # 7 - Fungi C
+#     '5476_c_albicans_quant_7.5_depth_640.fa',  # 8 - Fungi C
+#     '5476_c_albicans_quant_8.5_depth_6206.fa',  # 9 - Fungi C
+#     '5482_c_tropicalis_quant_6.5_depth_66.fa',  # 10 - Fungi D
+#     '5482_c_tropicalis_quant_7.5_depth_640.fa',  # 11 - Fungi D
+#     '5482_c_tropicalis_quant_8.5_depth_6206.fa'  # 12 - Fungi D
+# ])
+
+# Synergy T4 validation Jan 2020
 files = np.array([
-    'T7_090918RESP115-18250402467-d_NC_001604.fa',  # 0 - IC
-    '562_e_coli_quant_6.5_depth_10.fa',  # 1 - Bacteria A
-    '562_e_coli_quant_7.5_depth_93.fa',  # 2 - Bacteria A
-    '562_e_coli_quant_8.5_depth_898.fa',  # 3 - Bacteria A
-    '573_k_pneumoniae_quant_6.5_depth_11.fa',  # 4 - Bacteria B
-    '573_k_pneumoniae_quant_7.5_depth_106.fa',  # 5 - Bacteria B
-    '573_k_pneumoniae_quant_8.5_depth_1026.fa',  # 6 - Bacteria B
-    '5476_c_albicans_quant_6.5_depth_66.fa',  # 7 - Fungi C
-    '5476_c_albicans_quant_7.5_depth_640.fa',  # 8 - Fungi C
-    '5476_c_albicans_quant_8.5_depth_6206.fa',  # 9 - Fungi C
-    '5482_c_tropicalis_quant_6.5_depth_66.fa',  # 10 - Fungi D
-    '5482_c_tropicalis_quant_7.5_depth_640.fa',  # 11 - Fungi D
-    '5482_c_tropicalis_quant_8.5_depth_6206.fa'  # 12 - Fungi D
+    't4_viral_seqs_190405_40236.fa',  # 0 - T7 IC
+    '562_e_coli_quant_6.5_depth_6.fa',  # 1 - Bacteria A
+    '562_e_coli_quant_7.5_depth_110.fa',  # 2 - Bacteria A
+    '562_e_coli_quant_8.5_depth_2099.fa',  # 3 - Bacteria A
+    '573_k_pneumoniae_quant_6.5_depth_7.fa',  # 4 - Bacteria B
+    '573_k_pneumoniae_quant_7.5_depth_125.fa',  # 5 - Bacteria B
+    '573_k_pneumoniae_quant_8.5_depth_2399.fa',  # 6 - Bacteria B
+    '5476_c_albicans_quant_6.5_depth_40.fa',  # 7 - Fungi C
+    '5476_c_albicans_quant_7.5_depth_758.fa',  # 8 - Fungi C
+    '5476_c_albicans_quant_8.5_depth_14514.fa',  # 9 - Fungi C
+    '5482_c_tropicalis_quant_6.5_depth_40.fa',  # 10 - Fungi D
+    '5482_c_tropicalis_quant_7.5_depth_758.fa',  # 11 - Fungi D
+    '5482_c_tropicalis_quant_8.5_depth_14514.fa'  # 12 - Fungi D
 ])
 
 combo_idx = [

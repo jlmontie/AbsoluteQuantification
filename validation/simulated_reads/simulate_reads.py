@@ -4,8 +4,8 @@ import glob
 import numpy as np
 import os
 
-# asimov directory
-output_dir = '/data/taxonomer2/jmontgomery/synergy_validation/quantification_simulated_sequences'
+# banks directory
+output_dir = '/data/analysis_group1/synergy_validation/quantification/validation_jan_2020/simulated_sequences/'
 
 # Calculate required coverages
 ic_count = 1e6
@@ -42,16 +42,33 @@ for fa in fa_ls:
                 simulate(sequence_name, sequence, depth, 100, file_handle=file_out)
 
 # T7 simulation
-t7 = '../ref_seqs/T7 (090918RESP115-18250402467-d, NC_001604).fasta'
-with open(t7) as t7_file:
-    t7_file.readline()
-    t7_sequence = t7_file.readline()
-    t7_sequence_name = 'T7_090918RESP115-18250402467-d_NC_001604'
-    t7_blocks_ls = []
-    while len(t7_blocks_ls) < 1e6:
-        block = simulate_tiled(t7_sequence_name, t7_sequence, 1, 100)
-        t7_blocks_ls.extend(block)
-    t7_blocks_ls = t7_blocks_ls[:1000000]
-    with open(os.path.join(output_dir, 'T7_090918RESP115-18250402467-d_NC_001604.fa'), 'w') as t7_out:
-        for item in t7_blocks_ls:
-            t7_out.write(item)
+# ic = '../ref_seqs/T7 (090918RESP115-18250402467-d, NC_001604).fasta'
+# T4 simulation
+ic = '../ref_seqs/t4_viral_seqs_190405_40236.fasta'
+with open(ic) as ic_file:
+    ic_file.readline()
+    ic_sequence = ic_file.readline()
+    ic_sequence_name = os.path.splitext(os.path.basename(ic))[0]
+    ic_blocks_ls = []
+    while len(ic_blocks_ls) < 1e6:
+        block = simulate_tiled(ic_sequence_name, ic_sequence, 1, 100)
+        ic_blocks_ls.extend(block)
+    ic_blocks_ls = ic_blocks_ls[:1000000]
+    with open(os.path.join(output_dir, ic_sequence_name + '.fa'), 'w') as ic_out:
+        for item in ic_blocks_ls:
+            ic_out.write(item)
+
+# # T7 simulation
+# t7 = '../ref_seqs/T7 (090918RESP115-18250402467-d, NC_001604).fasta'
+# with open(t7) as t7_file:
+#     t7_file.readline()
+#     t7_sequence = t7_file.readline()
+#     t7_sequence_name = 'T7_090918RESP115-18250402467-d_NC_001604'
+#     t7_blocks_ls = []
+#     while len(t7_blocks_ls) < 1e6:
+#         block = simulate_tiled(t7_sequence_name, t7_sequence, 1, 100)
+#         t7_blocks_ls.extend(block)
+#     t7_blocks_ls = t7_blocks_ls[:1000000]
+#     with open(os.path.join(output_dir, 'T7_090918RESP115-18250402467-d_NC_001604.fa'), 'w') as t7_out:
+#         for item in t7_blocks_ls:
+#             t7_out.write(item)
